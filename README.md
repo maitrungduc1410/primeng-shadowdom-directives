@@ -46,3 +46,20 @@ You can apply multiple directives in the same component. For example:
 ```html
 <p-calendar psdTooltip pTooltip="Hello World" psdCalendar></p-calendar>
 ```
+
+# Demo
+Check `projects/demo-app` to see samples on how to use this package.
+
+To run the demo, first run
+```
+npm install
+```
+Then build the directives:
+```
+npm run build
+```
+Finally start the demo-app:
+```
+npm start
+```
+Now you can access from browser at: http://localhost:4200
