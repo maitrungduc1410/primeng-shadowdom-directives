@@ -9,6 +9,11 @@ Below are list of components that currently supported:
 - [x] Tooltip
 
 To request for new component, please submit issue or PR
+# Installation
+This package is available on npm registry. Install it with command:
+```
+npm install primeng-shadowdom-directives
+```
 # Usage
 Import this package into your module where you want to apply these directives (normally will be `app.module.ts`)
 ```js
