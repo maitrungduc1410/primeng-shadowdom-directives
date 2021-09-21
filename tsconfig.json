@@ -5,7 +5,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    // "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "primeng-shadowdom-directives": [
+        "dist/primeng-shadowdom-directives/primeng-shadowdom-directives",
+        "dist/primeng-shadowdom-directives"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [

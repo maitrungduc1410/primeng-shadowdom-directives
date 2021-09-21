@@ -1,0 +1,4 @@
+{
+  "packageFiles": "projects/primeng-shadowdom-directives/package.json",
+  "bumpFiles": ["projects/primeng-shadowdom-directives/package.json"]
+}
