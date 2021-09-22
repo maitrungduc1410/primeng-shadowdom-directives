@@ -7,23 +7,23 @@ import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler"
 })
 export class psdCalendarDirective {
   constructor(
-    @Host() @Self() @Optional() private readonly hostSel: Calendar
+    @Host() @Self() @Optional() private readonly hostEl: Calendar
   ) {
-    hostSel.bindScrollListener = () => {
-      if (!hostSel.scrollHandler) {
-        hostSel.scrollHandler = new ConnectedOverlayScrollHandler(hostSel.containerViewChild.nativeElement, () => {
-          if (hostSel.overlayVisible) {
-            hostSel.hideOverlay();
+    hostEl.bindScrollListener = () => {
+      if (!hostEl.scrollHandler) {
+        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, () => {
+          if (hostEl.overlayVisible) {
+            hostEl.hideOverlay();
           }
         });
       }
 
-      hostSel.scrollHandler.bindScrollListener();
+      hostEl.scrollHandler.bindScrollListener();
     }
 
-    hostSel.isOutsideClicked = (event: any) => {
+    hostEl.isOutsideClicked = (event: any) => {
       const target = event.target.shadowRoot ? event.path[0] : event.target
-      return !(this.hostSel.el.nativeElement.isSameNode(target) || this.hostSel.el.nativeElement.contains(target) || (this.hostSel.overlay && this.hostSel.overlay.contains(<Node>target)));
+      return !(this.hostEl.el.nativeElement.isSameNode(target) || this.hostEl.el.nativeElement.contains(target) || (this.hostEl.overlay && this.hostEl.overlay.contains(<Node>target)));
     }
   }
 }

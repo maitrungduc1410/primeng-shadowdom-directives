@@ -1,5 +1,17 @@
 <p-dropdown psdTooltip pTooltip="Hello World" psdDropdown [options]="cities" optionLabel="name"></p-dropdown>
 <p-calendar psdTooltip pTooltip="Hello World" psdCalendar></p-calendar>
-<button psdTooltip pTooltip="Hello World" type="button" pButton icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
+<button psdTooltip pTooltip="Hello World" type="button" pButton icon="pi pi-bars" label="Show"
+    (click)="menu.toggle($event)"></button>
 <p-menu psdTooltip pTooltip="Hello World" psdMenu #menu [popup]="true" [model]="items"></p-menu>
 <p-multiSelect psdTooltip pTooltip="Hello World" psdMultiSelect [options]="cities" optionLabel="name"></p-multiSelect>
+
+<p-autoComplete psdAutoComplete [(ngModel)]="text" [suggestions]="results" field="name" [minLength]="1"
+    (completeMethod)="search($event)"></p-autoComplete>
+<p-cascadeSelect psdCascadeSelect [(ngModel)]="selectedCity1" [options]="countries" optionLabel="cname"
+    optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}">
+</p-cascadeSelect>
+<p-colorPicker psdColorPicker></p-colorPicker>
+
+<p-megaMenu psdMegaMenu [model]="megaItems"></p-megaMenu>
+
+<p-menubar psdMenuBar [model]="menuBarItems"></p-menubar>

@@ -7,18 +7,18 @@ import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler"
 })
 export class psdMenuDirective {
   constructor(
-    @Host() @Self() @Optional() private readonly hostSel: Menu
+    @Host() @Self() @Optional() private readonly hostEl: Menu
   ) {
-    hostSel.bindScrollListener = () => {
-      if (!hostSel.scrollHandler) {
-        hostSel.scrollHandler = new ConnectedOverlayScrollHandler(hostSel.containerViewChild.nativeElement, (event: any) => {
-          if (hostSel.visible) {
-            hostSel.hide();
+    hostEl.bindScrollListener = () => {
+      if (!hostEl.scrollHandler) {
+        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, (event: any) => {
+          if (hostEl.visible) {
+            hostEl.hide();
           }
         });
       }
 
-      hostSel.scrollHandler.bindScrollListener();
+      hostEl.scrollHandler.bindScrollListener();
     }
   }
 }

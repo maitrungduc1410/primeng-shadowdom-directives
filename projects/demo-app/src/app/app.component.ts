@@ -1,11 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MegaMenuItem, MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss',
+    "../../../../node_modules/primeicons/primeicons.css",
     "../../../../node_modules/primeng/resources/themes/saga-blue/theme.css",
     "../../../../node_modules/primeng/resources/primeng.min.css"
   ],
@@ -14,8 +16,15 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
   cities: any[];
   items: MenuItem[];
+  menuBarItems: MenuItem[];
+  megaItems: MegaMenuItem[];
 
-  constructor() {
+
+  countries: any[];
+
+  selectedCity1: any;
+
+  constructor(private http: HttpClient) {
     this.cities = [
       { name: 'New York', code: 'NY' },
       { name: 'Rome', code: 'RM' },
@@ -29,5 +38,335 @@ export class AppComponent {
       { label: 'Open', icon: 'pi pi-fw pi-download' },
       { label: 'Undo', icon: 'pi pi-fw pi-refresh' }
     ];
+
+    this.countries = [
+      {
+        name: 'Australia',
+        code: 'AU',
+        states: [
+          {
+            name: 'New South Wales',
+            cities: [
+              { cname: 'Sydney', code: 'A-SY' },
+              { cname: 'Newcastle', code: 'A-NE' },
+              { cname: 'Wollongong', code: 'A-WO' }
+            ]
+          },
+          {
+            name: 'Queensland',
+            cities: [
+              { cname: 'Brisbane', code: 'A-BR' },
+              { cname: 'Townsville', code: 'A-TO' }
+            ]
+          },
+
+        ]
+      },
+      {
+        name: 'Canada',
+        code: 'CA',
+        states: [
+          {
+            name: 'Quebec',
+            cities: [
+              { cname: 'Montreal', code: 'C-MO' },
+              { cname: 'Quebec City', code: 'C-QU' }
+            ]
+          },
+          {
+            name: 'Ontario',
+            cities: [
+              { cname: 'Ottawa', code: 'C-OT' },
+              { cname: 'Toronto', code: 'C-TO' }
+            ]
+          },
+
+        ]
+      },
+      {
+        name: 'United States',
+        code: 'US',
+        states: [
+          {
+            name: 'California',
+            cities: [
+              { cname: 'Los Angeles', code: 'US-LA' },
+              { cname: 'San Diego', code: 'US-SD' },
+              { cname: 'San Francisco', code: 'US-SF' }
+            ]
+          },
+          {
+            name: 'Florida',
+            cities: [
+              { cname: 'Jacksonville', code: 'US-JA' },
+              { cname: 'Miami', code: 'US-MI' },
+              { cname: 'Tampa', code: 'US-TA' },
+              { cname: 'Orlando', code: 'US-OR' }
+            ]
+          },
+          {
+            name: 'Texas',
+            cities: [
+              { cname: 'Austin', code: 'US-AU' },
+              { cname: 'Dallas', code: 'US-DA' },
+              { cname: 'Houston', code: 'US-HO' }
+            ]
+          }
+        ]
+      }
+    ];
+
+    this.megaItems = [
+      {
+        label: 'Videos', icon: 'pi pi-fw pi-video',
+        items: [
+          [
+            {
+              label: 'Video 1',
+              items: [{ label: 'Video 1.1' }, { label: 'Video 1.2' }]
+            },
+            {
+              label: 'Video 2',
+              items: [{ label: 'Video 2.1' }, { label: 'Video 2.2' }]
+            }
+          ],
+          [
+            {
+              label: 'Video 3',
+              items: [{ label: 'Video 3.1' }, { label: 'Video 3.2' }]
+            },
+            {
+              label: 'Video 4',
+              items: [{ label: 'Video 4.1' }, { label: 'Video 4.2' }]
+            }
+          ]
+        ]
+      },
+      {
+        label: 'Users', icon: 'pi pi-fw pi-users',
+        items: [
+          [
+            {
+              label: 'User 1',
+              items: [{ label: 'User 1.1' }, { label: 'User 1.2' }]
+            },
+            {
+              label: 'User 2',
+              items: [{ label: 'User 2.1' }, { label: 'User 2.2' }]
+            },
+          ],
+          [
+            {
+              label: 'User 3',
+              items: [{ label: 'User 3.1' }, { label: 'User 3.2' }]
+            },
+            {
+              label: 'User 4',
+              items: [{ label: 'User 4.1' }, { label: 'User 4.2' }]
+            }
+          ],
+          [
+            {
+              label: 'User 5',
+              items: [{ label: 'User 5.1' }, { label: 'User 5.2' }]
+            },
+            {
+              label: 'User 6',
+              items: [{ label: 'User 6.1' }, { label: 'User 6.2' }]
+            }
+          ]
+        ]
+      },
+      {
+        label: 'Events', icon: 'pi pi-fw pi-calendar',
+        items: [
+          [
+            {
+              label: 'Event 1',
+              items: [{ label: 'Event 1.1' }, { label: 'Event 1.2' }]
+            },
+            {
+              label: 'Event 2',
+              items: [{ label: 'Event 2.1' }, { label: 'Event 2.2' }]
+            }
+          ],
+          [
+            {
+              label: 'Event 3',
+              items: [{ label: 'Event 3.1' }, { label: 'Event 3.2' }]
+            },
+            {
+              label: 'Event 4',
+              items: [{ label: 'Event 4.1' }, { label: 'Event 4.2' }]
+            }
+          ]
+        ]
+      },
+      {
+        label: 'Settings', icon: 'pi pi-fw pi-cog',
+        items: [
+          [
+            {
+              label: 'Setting 1',
+              items: [{ label: 'Setting 1.1' }, { label: 'Setting 1.2' }]
+            },
+            {
+              label: 'Setting 2',
+              items: [{ label: 'Setting 2.1' }, { label: 'Setting 2.2' }]
+            },
+            {
+              label: 'Setting 3',
+              items: [{ label: 'Setting 3.1' }, { label: 'Setting 3.2' }]
+            }
+          ],
+          [
+            {
+              label: 'Technology 4',
+              items: [{ label: 'Setting 4.1' }, { label: 'Setting 4.2' }]
+            }
+          ]
+        ]
+      }
+    ]
+
+    this.menuBarItems = [
+      {
+          label:'File',
+          icon:'pi pi-fw pi-file',
+          items:[
+              {
+                  label:'New',
+                  icon:'pi pi-fw pi-plus',
+                  items:[
+                  {
+                      label:'Bookmark',
+                      icon:'pi pi-fw pi-bookmark'
+                  },
+                  {
+                      label:'Video',
+                      icon:'pi pi-fw pi-video'
+                  },
+
+                  ]
+              },
+              {
+                  label:'Delete',
+                  icon:'pi pi-fw pi-trash'
+              },
+              {
+                  separator:true
+              },
+              {
+                  label:'Export',
+                  icon:'pi pi-fw pi-external-link'
+              }
+          ]
+      },
+      {
+          label:'Edit',
+          icon:'pi pi-fw pi-pencil',
+          items:[
+              {
+                  label:'Left',
+                  icon:'pi pi-fw pi-align-left'
+              },
+              {
+                  label:'Right',
+                  icon:'pi pi-fw pi-align-right'
+              },
+              {
+                  label:'Center',
+                  icon:'pi pi-fw pi-align-center'
+              },
+              {
+                  label:'Justify',
+                  icon:'pi pi-fw pi-align-justify'
+              },
+
+          ]
+      },
+      {
+          label:'Users',
+          icon:'pi pi-fw pi-user',
+          items:[
+              {
+                  label:'New',
+                  icon:'pi pi-fw pi-user-plus',
+
+              },
+              {
+                  label:'Delete',
+                  icon:'pi pi-fw pi-user-minus',
+
+              },
+              {
+                  label:'Search',
+                  icon:'pi pi-fw pi-users',
+                  items:[
+                  {
+                      label:'Filter',
+                      icon:'pi pi-fw pi-filter',
+                      items:[
+                          {
+                              label:'Print',
+                              icon:'pi pi-fw pi-print'
+                          }
+                      ]
+                  },
+                  {
+                      icon:'pi pi-fw pi-bars',
+                      label:'List'
+                  }
+                  ]
+              }
+          ]
+      },
+      {
+          label:'Events',
+          icon:'pi pi-fw pi-calendar',
+          items:[
+              {
+                  label:'Edit',
+                  icon:'pi pi-fw pi-pencil',
+                  items:[
+                  {
+                      label:'Save',
+                      icon:'pi pi-fw pi-calendar-plus'
+                  },
+                  {
+                      label:'Delete',
+                      icon:'pi pi-fw pi-calendar-minus'
+                  },
+
+                  ]
+              },
+              {
+                  label:'Archieve',
+                  icon:'pi pi-fw pi-calendar-times',
+                  items:[
+                  {
+                      label:'Remove',
+                      icon:'pi pi-fw pi-calendar-minus'
+                  }
+                  ]
+              }
+          ]
+      },
+      {
+          label:'Quit',
+          icon:'pi pi-fw pi-power-off'
+      }
+  ];
+  }
+
+  text: string;
+
+  results: string[];
+
+  search(event) {
+    this.http.get('https://primefaces.org/primeng/showcase/assets/showcase/data/countries.json')
+      .subscribe((res: any) => {
+        this.results = res.data;
+      })
   }
 }

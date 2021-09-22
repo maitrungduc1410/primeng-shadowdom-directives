@@ -1,9 +1,16 @@
 import { NgModule } from "@angular/core";
-import { psdCalendarDirective } from "./directives/calendar";
-import { psdDropdownDirective } from "./directives/dropdown";
-import { psdMenuDirective } from "./directives/menu";
-import { psdMultiSelectDirective } from "./directives/multiselect";
-import { psdTooltipDirective } from "./directives/tooltip";
+import {
+  psdCalendarDirective,
+  psdDropdownDirective,
+  psdMenuDirective,
+  psdMultiSelectDirective,
+  psdTooltipDirective,
+  psdAutoCompleteDirective,
+  psdCascadeSelectDirective,
+  psdColorPickerDirective,
+  psdMegaMenuDirective,
+  psdMenuBarDirective,
+} from "./directives";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -12,7 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     psdCalendarDirective,
     psdTooltipDirective,
     psdMultiSelectDirective,
-    psdMenuDirective
+    psdMenuDirective,
+    psdAutoCompleteDirective,
+    psdCascadeSelectDirective,
+    psdColorPickerDirective,
+    psdMegaMenuDirective,
+    psdMenuBarDirective,
   ],
   imports: [
     BrowserAnimationsModule
@@ -22,7 +34,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     psdCalendarDirective,
     psdTooltipDirective,
     psdMultiSelectDirective,
-    psdMenuDirective
+    psdMenuDirective,
+    psdAutoCompleteDirective,
+    psdCascadeSelectDirective,
+    psdColorPickerDirective,
+    psdMegaMenuDirective,
+    psdMenuBarDirective,
   ]
 })
 export class PrimeNgOverrideModule { }

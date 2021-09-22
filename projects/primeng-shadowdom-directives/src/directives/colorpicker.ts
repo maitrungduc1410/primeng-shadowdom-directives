@@ -1,18 +1,18 @@
 import { Directive, Host, Optional, Self } from "@angular/core";
-import { Tooltip } from "primeng/tooltip";
+import { ColorPicker } from "primeng/colorpicker";
 import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
 
 @Directive({
-  selector: '[psdTooltip]',
+  selector: '[psdColorPicker]',
 })
-export class psdTooltipDirective {
+export class psdColorPickerDirective {
   constructor(
-    @Host() @Self() @Optional() private readonly hostEl: Tooltip
+    @Host() @Self() @Optional() private readonly hostEl: ColorPicker
   ) {
     hostEl.bindScrollListener = () => {
       if (!hostEl.scrollHandler) {
-        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.el.nativeElement, () => {
-          if (hostEl.container) {
+        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, (event: any) => {
+          if (hostEl.overlayVisible) {
             hostEl.hide();
           }
         });

@@ -8,6 +8,13 @@ import { CalendarModule } from 'primeng/calendar';
 import { MenuModule } from 'primeng/menu';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { TooltipModule } from 'primeng/tooltip';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { TooltipModule } from 'primeng/tooltip';
     PrimeNgOverrideModule,
     MenuModule,
     MultiSelectModule,
-    TooltipModule
+    TooltipModule,
+    AutoCompleteModule,
+    HttpClientModule,
+    FormsModule,
+    CascadeSelectModule,
+    ColorPickerModule,
+    MegaMenuModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
