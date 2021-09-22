@@ -5,8 +5,13 @@ Below are list of components that currently supported:
 - [x] Calendar
 - [x] Dropdown
 - [x] Menu
-- [x] MultiSelect
+- [x] Multi Select
 - [x] Tooltip
+- [x] Auto Complete
+- [x] Cascade Select
+- [x] Color Picker
+- [x] Mega Menu
+- [x] Menu Bar
 
 To request for new component, please submit issue or PR
 # Installation
