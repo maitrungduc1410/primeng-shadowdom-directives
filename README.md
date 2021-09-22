@@ -1,17 +1,17 @@
 # Primeng Shadowdom Directives
 Set of directives to fix PrimeNg "overlay" components got-chas when rendered inside ShadowDOM
 
-Below are list of components that currently supported:
-- [x] Calendar
-- [x] Dropdown
-- [x] Menu
-- [x] Multi Select
-- [x] Tooltip
-- [x] Auto Complete
-- [x] Cascade Select
-- [x] Color Picker
-- [x] Mega Menu
-- [x] Menu Bar
+Below are list of components that currently supported (all directives start with prefix `psd = PrimeNg ShadowDOM Directive`):
+- [x] Calendar (`psdCalendar`)
+- [x] Dropdown (`psdDropdown`)
+- [x] Menu (`psdMenu`)
+- [x] Multi Select (`psdMultiSelect`)
+- [x] Tooltip (`psdTooltip`)
+- [x] Auto Complete (`psdAutoComplete`)
+- [x] Cascade Select (`psdCascadeSelect`)
+- [x] Color Picker (`psdColorPicker`)
+- [x] Mega Menu (`psdMegaMenu`)
+- [x] Menu Bar (`psdMenuBar`)
 
 To request for new component, please submit issue or PR
 # Installation
