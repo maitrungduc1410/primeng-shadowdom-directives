@@ -42,4 +42,4 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     psdMenuBarDirective,
   ]
 })
-export class PrimeNgOverrideModule { }
+export class PrimeNGShadowDOMDirective { }

@@ -23,11 +23,11 @@ npm install primeng-shadowdom-directives
 Import this package into your module where you want to apply these directives (normally will be `app.module.ts`)
 ```js
 
-import { PrimeNgOverrideModule } from 'primeng-shadowdom-directives';
+import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
 
 @NgModule({
   imports: [
-    PrimeNgOverrideModule, // import here
+    PrimeNGShadowDOMDirective, // import here
     ...
   ],
 })
@@ -51,6 +51,8 @@ Then in your component file, apply the directives:
 
 <!-- multi select -->
 <p-multiSelect psdMultiSelect ...></p-multiSelect>
+
+<!-- and others -->
 ```
 You can apply multiple directives in the same component. For example:
 ```html

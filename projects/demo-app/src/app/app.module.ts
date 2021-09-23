@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { PrimeNgOverrideModule } from 'primeng-shadowdom-directives';
+import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
 import { CalendarModule } from 'primeng/calendar';
 import { MenuModule } from 'primeng/menu';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -24,7 +24,7 @@ import { MenubarModule } from 'primeng/menubar';
     BrowserModule,
     DropdownModule,
     CalendarModule,
-    PrimeNgOverrideModule,
+    PrimeNGShadowDOMDirective,
     MenuModule,
     MultiSelectModule,
     TooltipModule,
