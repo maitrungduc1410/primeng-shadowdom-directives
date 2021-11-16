@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.0.4...v0.0.5) (2021-11-16)
+
+
+### Features
+
+* add confirm popup ([c0faec2](https://github.com/maitrungduc1410/primeng-shadowdom-directives/commit/c0faec29b49b109619e1be0f8d5ff2ea8e80b433))
+
 ### [0.0.4](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.0.3...v0.0.4) (2021-09-23)
 
 ### [0.0.3](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.0.2...v0.0.3) (2021-09-22)
