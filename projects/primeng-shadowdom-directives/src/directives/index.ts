@@ -2,6 +2,7 @@ import { psdAutoCompleteDirective } from "./autocomplete";
 import { psdCalendarDirective } from "./calendar";
 import { psdCascadeSelectDirective } from "./cascadeselect";
 import { psdColorPickerDirective } from "./colorpicker";
+import { psdConfirmPopupDirective } from "./confirmpopup";
 import { psdDropdownDirective } from "./dropdown";
 import { psdMegaMenuDirective } from "./megamenu";
 import { psdMenuDirective } from "./menu";
@@ -20,4 +21,5 @@ export {
   psdColorPickerDirective,
   psdMegaMenuDirective,
   psdMenuBarDirective,
+  psdConfirmPopupDirective,
 }

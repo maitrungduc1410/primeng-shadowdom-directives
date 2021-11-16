@@ -12,6 +12,7 @@ import {
   psdMenuBarDirective,
 } from "./directives";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { psdConfirmPopupDirective } from "./directives/confirmpopup";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     psdColorPickerDirective,
     psdMegaMenuDirective,
     psdMenuBarDirective,
+    psdConfirmPopupDirective,
   ],
   imports: [
     BrowserAnimationsModule
@@ -40,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     psdColorPickerDirective,
     psdMegaMenuDirective,
     psdMenuBarDirective,
+    psdConfirmPopupDirective,
   ]
 })
 export class PrimeNGShadowDOMDirective { }

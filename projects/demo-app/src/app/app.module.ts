@@ -15,6 +15,8 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { MenubarModule } from 'primeng/menubar';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { MenubarModule } from 'primeng/menubar';
     CascadeSelectModule,
     ColorPickerModule,
     MegaMenuModule,
-    MenubarModule
+    MenubarModule,
+    ConfirmPopupModule
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

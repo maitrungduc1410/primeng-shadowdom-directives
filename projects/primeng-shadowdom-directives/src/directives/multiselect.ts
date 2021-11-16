@@ -22,7 +22,8 @@ export class psdMultiSelectDirective {
     }
 
     hostEl.isOutsideClicked = (event: any) => {
-      const target = event.target.shadowRoot ? event.path[0] : event.target
+      const path = event.path || (event.composedPath && event.composedPath());
+      const target = event.target.shadowRoot ? path[0] : event.target
       return !(this.hostEl.el.nativeElement.isSameNode(target) || this.hostEl.el.nativeElement.contains(target) || (this.hostEl.overlay && this.hostEl.overlay.contains(<Node>target)));
     }
   }

@@ -1,4 +1,4 @@
-import {DomHandler} from './domhandler';
+import { DomHandler } from './domhandler';
 
 export class ConnectedOverlayScrollHandler {
 
@@ -8,7 +8,7 @@ export class ConnectedOverlayScrollHandler {
 
     scrollableParents: any;
 
-    constructor(element: any, listener: any = () => {}) {
+    constructor(element: any, listener: any = () => { }) {
         this.element = element;
         this.listener = listener;
     }
