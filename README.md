@@ -12,6 +12,7 @@ Below are list of components that currently supported (all directives start with
 - [x] Color Picker (`psdColorPicker`)
 - [x] Mega Menu (`psdMegaMenu`)
 - [x] Menu Bar (`psdMenuBar`)
+- [x] Confirm Popup (`psdConfirmPopup`)
 
 To request for new component, please submit issue or PR
 # Installation
@@ -69,6 +70,9 @@ npm install
 Then build the directives:
 ```
 npm run build
+
+# watch mode
+npm run watch
 ```
 Finally start the demo-app:
 ```
