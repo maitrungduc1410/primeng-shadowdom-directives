@@ -13,6 +13,11 @@ Below are list of components that currently supported (all directives start with
 - [x] Mega Menu (`psdMegaMenu`)
 - [x] Menu Bar (`psdMenuBar`)
 - [x] Confirm Popup (`psdConfirmPopup`)
+- [x] Overlay Panel (`psdOverlayPanel`)
+- [x] Slide Menu (`psdSlideMenu`)
+- [x] Split Button (`psdSplitButton`)
+- [x] Tiered Menu (`psdTieredMenu`)
+- [x] Tree Select (`psdTreeSelect`)
 
 To request for new component, please submit issue or PR
 # Installation

@@ -10,6 +10,11 @@ import {
   psdColorPickerDirective,
   psdMegaMenuDirective,
   psdMenuBarDirective,
+  psdSlideMenuDirective,
+  psdTieredMenuDirective,
+  psdOverlayPanelDirective,
+  psdSplitButtonDirective,
+  psdTreeSelectDirective,
 } from "./directives";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { psdConfirmPopupDirective } from "./directives/confirmpopup";
@@ -27,6 +32,11 @@ import { psdConfirmPopupDirective } from "./directives/confirmpopup";
     psdMegaMenuDirective,
     psdMenuBarDirective,
     psdConfirmPopupDirective,
+    psdSlideMenuDirective,
+    psdTieredMenuDirective,
+    psdOverlayPanelDirective,
+    psdSplitButtonDirective,
+    psdTreeSelectDirective,
   ],
   imports: [
     BrowserAnimationsModule
@@ -43,6 +53,11 @@ import { psdConfirmPopupDirective } from "./directives/confirmpopup";
     psdMegaMenuDirective,
     psdMenuBarDirective,
     psdConfirmPopupDirective,
+    psdSlideMenuDirective,
+    psdTieredMenuDirective,
+    psdOverlayPanelDirective,
+    psdSplitButtonDirective,
+    psdTreeSelectDirective,
   ]
 })
 export class PrimeNGShadowDOMDirective { }

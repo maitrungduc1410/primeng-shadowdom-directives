@@ -8,7 +8,12 @@ import { psdMegaMenuDirective } from "./megamenu";
 import { psdMenuDirective } from "./menu";
 import { psdMenuBarDirective } from "./menubar";
 import { psdMultiSelectDirective } from "./multiselect";
+import { psdOverlayPanelDirective } from "./overlaypanel";
+import { psdSlideMenuDirective } from "./slidemenu";
+import { psdSplitButtonDirective } from "./splitbutton";
+import { psdTieredMenuDirective } from "./tieredmenu";
 import { psdTooltipDirective } from "./tooltip";
+import { psdTreeSelectDirective } from "./treeselect";
 
 export {
   psdDropdownDirective,
@@ -22,4 +27,9 @@ export {
   psdMegaMenuDirective,
   psdMenuBarDirective,
   psdConfirmPopupDirective,
+  psdSlideMenuDirective,
+  psdTieredMenuDirective,
+  psdOverlayPanelDirective,
+  psdSplitButtonDirective,
+  psdTreeSelectDirective,
 }

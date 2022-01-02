@@ -18,3 +18,42 @@
 
 <p-confirmPopup psdConfirmPopup></p-confirmPopup>
 <button (click)="confirm($event)" pButton icon="pi pi-check" label="Confirm"></button>
+
+<h5>Slide Menu</h5>
+<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="slideMenu.toggle($event)"></button>
+<p-slideMenu psdSlideMenu #slideMenu [model]="slideItems" [popup]="true" [viewportHeight]="250"></p-slideMenu>
+
+<h5>Tiered Menu</h5>
+<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="tieredMenu.toggle($event)"></button>
+<p-tieredMenu psdTieredMenu #tieredMenu [model]="tieredItems" [popup]="true"></p-tieredMenu>
+
+<h5>Context Menu</h5>
+<img #img src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/nature/nature3.jpg" alt="Logo" aria-haspopup="true">
+<p-contextMenu appendTo="body" [target]="img" [model]="contextItems"></p-contextMenu>
+
+<p-overlayPanel psdOverlayPanel #op appendTo="body">
+    <ng-template pTemplate>
+        Content
+    </ng-template>
+</p-overlayPanel>
+
+<button type="text" pButton label="Basic" (click)="op.toggle($event)"></button>
+
+
+<h5>Split Button</h5>
+<p-splitButton psdSplitButton label="Save" icon="pi pi-plus" [model]="items"></p-splitButton>
+<!-- 
+<div class="card">
+    <h5>Linear</h5>
+    <div style="height: 500px; position: relative;" class="speeddial-linear-demo">
+        <p-speedDial  [model]="speedDialItems" direction="right"></p-speedDial>
+    </div>
+</div> -->
+
+
+<!-- <h5>Editor</h5>
+<p-editor [style]="{'height':'320px'}"></p-editor> -->
+
+
+<h5>Single</h5>
+<p-treeSelect psdTreeSelect [options]="node1" placeholder="Select Item"></p-treeSelect>
