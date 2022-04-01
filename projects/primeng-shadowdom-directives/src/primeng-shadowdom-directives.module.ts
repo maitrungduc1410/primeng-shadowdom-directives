@@ -16,7 +16,6 @@ import {
   psdSplitButtonDirective,
   psdTreeSelectDirective,
 } from "./directives";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { psdConfirmPopupDirective } from "./directives/confirmpopup";
 
 @NgModule({
@@ -37,9 +36,6 @@ import { psdConfirmPopupDirective } from "./directives/confirmpopup";
     psdOverlayPanelDirective,
     psdSplitButtonDirective,
     psdTreeSelectDirective,
-  ],
-  imports: [
-    BrowserAnimationsModule
   ],
   exports: [
     psdDropdownDirective,

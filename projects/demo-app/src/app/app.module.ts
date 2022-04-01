@@ -25,6 +25,7 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { EditorModule } from 'primeng/editor';
 import { TreeSelectModule } from 'primeng/treeselect';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     SpeedDialModule,
     EditorModule,
     TreeSelectModule,
+    BrowserAnimationsModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
