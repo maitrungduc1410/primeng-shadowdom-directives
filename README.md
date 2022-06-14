@@ -4,6 +4,7 @@ Set of directives to fix PrimeNg "overlay" components got-chas when rendered ins
 Below are list of components that currently supported (all directives start with prefix `psd = PrimeNg ShadowDOM Directive`):
 - [x] Calendar (`psdCalendar`)
 - [x] Dropdown (`psdDropdown`)
+- [x] Dropdown inside Paginator (`psdPaginator`)
 - [x] Menu (`psdMenu`)
 - [x] Multi Select (`psdMultiSelect`)
 - [x] Tooltip (`psdTooltip`)
