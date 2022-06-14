@@ -26,6 +26,7 @@ import { SpeedDialModule } from 'primeng/speeddial';
 import { EditorModule } from 'primeng/editor';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SpeedDialModule,
     EditorModule,
     TreeSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PaginatorModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

@@ -7,22 +7,21 @@ import { Menubar } from "primeng/menubar";
 export class psdMenuBarDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: Menubar
-  ) {
+  ) {}
 
-    setTimeout(() => { // wait for next event loop (after content rendered)
-      hostEl.rootmenu.bindDocumentClickListener = () => {
-        if (!hostEl.rootmenu.documentClickListener) {
-          hostEl.rootmenu.documentClickListener = (event) => {
-            if (hostEl.rootmenu.el && !hostEl.rootmenu.el.nativeElement.contains(event.target.shadowRoot ? event.target.shadowRoot.activeElement : event.target)) {
-              hostEl.rootmenu.activeItem = null;
-              (hostEl.rootmenu as any).cd.markForCheck();
-              hostEl.rootmenu.unbindDocumentClickListener();
-            }
-          };
-  
-          document.addEventListener('click', hostEl.rootmenu.documentClickListener);
-        }
+  ngAfterViewInit() {
+    this.hostEl.rootmenu.bindDocumentClickListener = () => {
+      if (!this.hostEl.rootmenu.documentClickListener) {
+        this.hostEl.rootmenu.documentClickListener = (event) => {
+          if (this.hostEl.rootmenu.el && !this.hostEl.rootmenu.el.nativeElement.contains(event.target.shadowRoot ? event.target.shadowRoot.activeElement : event.target)) {
+            this.hostEl.rootmenu.activeItem = null;
+            (this.hostEl.rootmenu as any).cd.markForCheck();
+            this.hostEl.rootmenu.unbindDocumentClickListener();
+          }
+        };
+
+        document.addEventListener('click', this.hostEl.rootmenu.documentClickListener);
       }
-    }, 0)
+    }
   }
 }

@@ -8,20 +8,19 @@ import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler"
 export class psdSplitButtonDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: SplitButton
-  ) {
-    // wait for next event loop, after first render
-    setTimeout(() => {
-      hostEl.menu.bindScrollListener = () => {
-        if (!hostEl.menu.scrollHandler) {
-          hostEl.menu.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, (event: any) => {
-            if (hostEl.menu.visible) {
-              hostEl.menu.hide();
-            }
-          });
-        }
-  
-        hostEl.menu.scrollHandler.bindScrollListener();
+  ) {}
+
+  ngAfterViewInit() {
+    this.hostEl.menu.bindScrollListener = () => {
+      if (!this.hostEl.menu.scrollHandler) {
+        this.hostEl.menu.scrollHandler = new ConnectedOverlayScrollHandler(this.hostEl.containerViewChild.nativeElement, (event: any) => {
+          if (this.hostEl.menu.visible) {
+            this.hostEl.menu.hide();
+          }
+        });
       }
-    })
+
+      this.hostEl.menu.scrollHandler.bindScrollListener();
+    }
   }
 }

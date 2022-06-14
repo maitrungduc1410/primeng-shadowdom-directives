@@ -15,6 +15,7 @@ import {
   psdOverlayPanelDirective,
   psdSplitButtonDirective,
   psdTreeSelectDirective,
+  psdPaginatorDirective,
 } from "./directives";
 import { psdConfirmPopupDirective } from "./directives/confirmpopup";
 
@@ -36,6 +37,7 @@ import { psdConfirmPopupDirective } from "./directives/confirmpopup";
     psdOverlayPanelDirective,
     psdSplitButtonDirective,
     psdTreeSelectDirective,
+    psdPaginatorDirective,
   ],
   exports: [
     psdDropdownDirective,
@@ -54,6 +56,7 @@ import { psdConfirmPopupDirective } from "./directives/confirmpopup";
     psdOverlayPanelDirective,
     psdSplitButtonDirective,
     psdTreeSelectDirective,
+    psdPaginatorDirective,
   ]
 })
 export class PrimeNGShadowDOMDirective { }
