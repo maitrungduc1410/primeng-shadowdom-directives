@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.1.2...v0.1.3) (2022-06-14)
+
+
+### Features
+
+* add support for paginator ([abd56a3](https://github.com/maitrungduc1410/primeng-shadowdom-directives/commit/abd56a342075a5b6438f16b5cef0f893d55c59b3))
+
 ### [0.1.2](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.0.5...v0.1.2) (2022-04-01)
 
 
