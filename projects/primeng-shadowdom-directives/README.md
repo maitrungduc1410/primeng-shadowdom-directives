@@ -4,6 +4,7 @@ Set of directives to fix PrimeNg "overlay" components got-chas when rendered ins
 Below are list of components that currently supported (all directives start with prefix `psd = PrimeNg ShadowDOM Directive`):
 - [x] Calendar (`psdCalendar`)
 - [x] Dropdown (`psdDropdown`)
+- [x] Dropdown inside Paginator (`psdPaginator`)
 - [x] Menu (`psdMenu`)
 - [x] Multi Select (`psdMultiSelect`)
 - [x] Tooltip (`psdTooltip`)
@@ -12,6 +13,12 @@ Below are list of components that currently supported (all directives start with
 - [x] Color Picker (`psdColorPicker`)
 - [x] Mega Menu (`psdMegaMenu`)
 - [x] Menu Bar (`psdMenuBar`)
+- [x] Confirm Popup (`psdConfirmPopup`)
+- [x] Overlay Panel (`psdOverlayPanel`)
+- [x] Slide Menu (`psdSlideMenu`)
+- [x] Split Button (`psdSplitButton`)
+- [x] Tiered Menu (`psdTieredMenu`)
+- [x] Tree Select (`psdTreeSelect`)
 
 To request for new component, please submit issue or PR
 # Installation
@@ -69,6 +76,9 @@ npm install
 Then build the directives:
 ```
 npm run build
+
+# watch mode
+npm run watch
 ```
 Finally start the demo-app:
 ```
