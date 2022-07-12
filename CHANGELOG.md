@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.1.4...v0.1.5) (2022-07-12)
+
+
+### Bug Fixes
+
+* add tslib as deps ([fd4fda5](https://github.com/maitrungduc1410/primeng-shadowdom-directives/commit/fd4fda5a8c4bc88e0285cfd1a1aeb4abfe348f0a))
+
 ### [0.1.4](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.1.3...v0.1.4) (2022-07-12)
 
 ### [0.1.3](https://github.com/maitrungduc1410/primeng-shadowdom-directives/compare/v0.1.2...v0.1.3) (2022-06-14)
