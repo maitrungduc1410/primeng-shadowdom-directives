@@ -1,6 +1,5 @@
 import { Directive, Host, Optional, Self } from "@angular/core";
 import { CascadeSelect } from "primeng/cascadeselect";
-import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
 
 @Directive({
   selector: '[psdCascadeSelect]',
@@ -9,19 +8,6 @@ export class psdCascadeSelectDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: CascadeSelect
   ) {
-    hostEl.bindScrollListener = () => {
-      if (!hostEl.scrollHandler) {
-        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerEl.nativeElement, () => {
-          if (hostEl.overlayVisible) {
-            hostEl.hide();
-          }
-        });
-      }
-
-      hostEl.scrollHandler.bindScrollListener();
-    }
-
-
     hostEl.bindOutsideClickListener = () => {
       if (!hostEl.outsideClickListener) {
         hostEl.outsideClickListener = (event) => {

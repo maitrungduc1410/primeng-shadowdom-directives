@@ -1,20 +1,7 @@
 import { Directive, Host, Optional, Self } from "@angular/core";
 import { Dropdown } from "primeng/dropdown";
-import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
 
 export const overrideDropdownFunctions = (hostEl: Dropdown) => {
-  hostEl.bindScrollListener = () => {
-    if (!hostEl.scrollHandler) {
-      hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, (event: any) => {
-        if (hostEl.overlayVisible) {
-          hostEl.hide();
-        }
-      });
-    }
-
-    hostEl.scrollHandler.bindScrollListener();
-  }
-
   hostEl.isOutsideClicked = (event: any) => {
     const path = event.path || (event.composedPath && event.composedPath());
     const target = event.target.shadowRoot ? path[0] : event.target

@@ -5,20 +5,21 @@ Below are list of components that currently supported (all directives start with
 - [x] Calendar (`psdCalendar`)
 - [x] Dropdown (`psdDropdown`)
 - [x] Dropdown inside Paginator (`psdPaginator`)
-- [x] Menu (`psdMenu`)
+- [x] Menu (*No directive required*)
 - [x] Multi Select (`psdMultiSelect`)
-- [x] Tooltip (`psdTooltip`)
+- [x] Tooltip (*No directive required*)
 - [x] Auto Complete (`psdAutoComplete`)
 - [x] Cascade Select (`psdCascadeSelect`)
-- [x] Color Picker (`psdColorPicker`)
+- [x] Color Picker (*No directive required*)
 - [x] Mega Menu (`psdMegaMenu`)
 - [x] Menu Bar (`psdMenuBar`)
 - [x] Confirm Popup (`psdConfirmPopup`)
 - [x] Overlay Panel (`psdOverlayPanel`)
-- [x] Slide Menu (`psdSlideMenu`)
-- [x] Split Button (`psdSplitButton`)
-- [x] Tiered Menu (`psdTieredMenu`)
+- [x] Slide Menu (*No directive required*)
+- [x] Split Button (*No directive required*)
+- [x] Tiered Menu (*No directive required*)
 - [x] Tree Select (`psdTreeSelect`)
+> Note that not all components need custom directive, since this library already contains some logics which reduce the effort of writing custom directive for those components. That means for components marked as *No directive required*, they just work.
 
 To request for new component, please submit issue or PR
 # Installation
@@ -48,24 +49,11 @@ Then in your component file, apply the directives:
 <!-- calendar -->
 <p-calendar psdCalendar ...></p-calendar>
 
-
-<!-- tooltip -->
-<button psdTooltip pTooltip="Hello World"></button>
-
-<!-- menu -->
-<p-menu psdMenu ...></p-menu>
-
-
 <!-- multi select -->
 <p-multiSelect psdMultiSelect ...></p-multiSelect>
 
 <!-- and others -->
 ```
-You can apply multiple directives in the same component. For example:
-```html
-<p-calendar psdTooltip pTooltip="Hello World" psdCalendar></p-calendar>
-```
-
 # Demo
 Check `projects/demo-app` to see samples on how to use this package.
 

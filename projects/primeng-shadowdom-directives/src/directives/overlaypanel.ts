@@ -1,7 +1,6 @@
 import { Directive, Host, NgZone, Optional, Self } from "@angular/core";
 import { OverlayPanel } from "primeng/overlaypanel";
-import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
-import { DomHandler } from "../domhandler";
+import { DomHandler } from "primeng/dom";
 
 @Directive({
   selector: '[psdOverlayPanel]',
@@ -11,18 +10,6 @@ export class psdOverlayPanelDirective {
     @Host() @Self() @Optional() private readonly hostEl: OverlayPanel,
     private zone: NgZone
   ) {
-    hostEl.bindScrollListener = () => {
-      if (!hostEl.scrollHandler) {
-        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.target, () => {
-          if (hostEl.overlayVisible) {
-            hostEl.hide();
-          }
-        });
-      }
-
-      hostEl.scrollHandler.bindScrollListener();
-    }
-
     hostEl.bindDocumentClickListener = () => {
       if (!hostEl.documentClickListener && hostEl.dismissable) {
         this.zone.runOutsideAngular(() => {

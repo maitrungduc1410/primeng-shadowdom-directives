@@ -1,7 +1,6 @@
 import { Directive, Host, Optional, Self } from "@angular/core";
 import { ConfirmPopup } from "primeng/confirmpopup";
-import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
-import { DomHandler } from "../domhandler";
+import { DomHandler } from "primeng/dom";
 
 @Directive({
   selector: '[psdConfirmPopup]',
@@ -10,18 +9,6 @@ export class psdConfirmPopupDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: ConfirmPopup
   ) {
-    hostEl.bindScrollListener = () => {
-      if (!hostEl.scrollHandler) {
-        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.confirmation.target, () => {
-          if (hostEl.visible) {
-            hostEl.hide();
-          }
-        });
-      }
-
-      hostEl.scrollHandler.bindScrollListener();
-    }
-
     hostEl.bindDocumentClickListener = () => {
       if (!hostEl.documentClickListener) {
           let documentEvent = DomHandler.isIOS() ? 'touchstart' : 'click';

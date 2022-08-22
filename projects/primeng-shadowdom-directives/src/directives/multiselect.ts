@@ -1,6 +1,5 @@
 import { Directive, Host, Optional, Self } from "@angular/core";
 import { MultiSelect } from "primeng/multiselect";
-import { ConnectedOverlayScrollHandler } from "../connectedoverlayscrollhandler";
 
 @Directive({
   selector: '[psdMultiSelect]',
@@ -9,18 +8,6 @@ export class psdMultiSelectDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: MultiSelect
   ) {
-    hostEl.bindScrollListener = () => {
-      if (!hostEl.scrollHandler) {
-        hostEl.scrollHandler = new ConnectedOverlayScrollHandler(hostEl.containerViewChild.nativeElement, () => {
-          if (hostEl.overlayVisible) {
-            hostEl.hide();
-          }
-        });
-      }
-
-      hostEl.scrollHandler.bindScrollListener();
-    }
-
     hostEl.isOutsideClicked = (event: any) => {
       const path = event.path || (event.composedPath && event.composedPath());
       const target = event.target.shadowRoot ? path[0] : event.target
