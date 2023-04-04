@@ -1,49 +1,959 @@
-<p-dropdown psdTooltip pTooltip="Hello World" psdDropdown [options]="cities" optionLabel="name"></p-dropdown>
-<p-calendar psdTooltip pTooltip="Hello World" psdCalendar></p-calendar>
-<button psdTooltip pTooltip="Hello World" type="button" pButton icon="pi pi-bars" label="Show"
-    (click)="menu.toggle($event)"></button>
-<p-menu psdTooltip pTooltip="Hello World" psdMenu #menu [popup]="true" [model]="items"></p-menu>
-<p-multiSelect psdTooltip pTooltip="Hello World" psdMultiSelect [options]="cities" optionLabel="name"></p-multiSelect>
-
-<p-autoComplete psdAutoComplete [(ngModel)]="text" [suggestions]="results" [minLength]="1"
-    (completeMethod)="search($event)"></p-autoComplete>
-<p-cascadeSelect psdCascadeSelect [(ngModel)]="selectedCity1" [options]="countries" optionLabel="cname"
-    optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}">
-</p-cascadeSelect>
-<p-colorPicker psdColorPicker></p-colorPicker>
-
-<p-megaMenu psdMegaMenu [model]="megaItems"></p-megaMenu>
-
-<p-menubar psdMenuBar [model]="menuBarItems"></p-menubar>
-
-<p-confirmPopup psdConfirmPopup></p-confirmPopup>
-<button (click)="confirm($event)" pButton icon="pi pi-check" label="Confirm"></button>
-
-<h5>Slide Menu</h5>
-<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="slideMenu.toggle($event)"></button>
-<p-slideMenu psdSlideMenu #slideMenu [model]="slideItems" [popup]="true" [viewportHeight]="250"></p-slideMenu>
-
-<h5>Tiered Menu</h5>
-<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="tieredMenu.toggle($event)"></button>
-<p-tieredMenu psdTieredMenu #tieredMenu [model]="tieredItems" [popup]="true"></p-tieredMenu>
-
-<h5>Context Menu</h5>
-<img #img src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/nature/nature3.jpg" alt="Logo" aria-haspopup="true">
-<p-contextMenu appendTo="body" [target]="img" [model]="contextItems"></p-contextMenu>
-
-<p-overlayPanel psdOverlayPanel #op appendTo="body">
-    <ng-template pTemplate>
-        Content
-    </ng-template>
-</p-overlayPanel>
-
-<button type="text" pButton label="Basic" (click)="op.toggle($event)"></button>
-
-
-<h5>Split Button</h5>
-<p-splitButton psdSplitButton label="Save" icon="pi pi-plus" [model]="items"></p-splitButton>
-
-<h5>Single</h5>
-<p-treeSelect psdTreeSelect [options]="node1" placeholder="Select Item"></p-treeSelect>
-
-<p-paginator psdPaginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+<div class="layout-page hide-when-top-nav-responsive-open page-with-contextual-sidebar">
+  <aside
+    aria-label="Project navigation"
+    class="nav-sidebar"
+    data-track-action="render"
+    data-track-label="projects_side_navigation"
+    data-track-property="projects_side_navigation"
+  >
+    <div class="nav-sidebar-inner-scroll" style="overflow-y: scroll">
+      <ul class="sidebar-top-level-items" data-qa-selector="project_sidebar">
+        <li data-track-label="project_information_menu" class="home">
+          <a
+            aria-label="Project information"
+            class="shortcuts-project-information has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Project information"
+            href="/maitrungduc1410/txt-app/activity"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="project-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#project"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Project information </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name">
+                  Project information
+                </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="activity" class="">
+              <a
+                aria-label="Activity"
+                class="shortcuts-project-activity gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Activity"
+                href="/maitrungduc1410/txt-app/activity"
+                ><span class="gl-flex-grow-1"> Activity </span>
+              </a>
+            </li>
+            <li data-track-label="labels" class="">
+              <a
+                aria-label="Labels"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Labels"
+                href="/maitrungduc1410/txt-app/-/labels"
+                ><span class="gl-flex-grow-1"> Labels </span>
+              </a>
+            </li>
+            <li data-track-label="members" class="">
+              <a
+                aria-label="Members"
+                id="js-onboarding-members-link"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Members"
+                href="/maitrungduc1410/txt-app/-/project_members"
+                ><span class="gl-flex-grow-1"> Members </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="repository_menu" class="">
+          <a
+            aria-label="Repository"
+            class="shortcuts-tree has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Repository"
+            href="/maitrungduc1410/txt-app/-/tree/master"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="doc-text-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#doc-text"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name" id="js-onboarding-repo-link">
+              Repository
+            </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Repository </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="files" class="">
+              <a
+                aria-label="Files"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Files"
+                href="/maitrungduc1410/txt-app/-/tree/master"
+                ><span class="gl-flex-grow-1"> Files </span>
+              </a>
+            </li>
+            <li data-track-label="commits" class="">
+              <a
+                aria-label="Commits"
+                id="js-onboarding-commits-link"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Commits"
+                href="/maitrungduc1410/txt-app/-/commits/master?ref_type=heads"
+                ><span class="gl-flex-grow-1"> Commits </span>
+              </a>
+            </li>
+            <li data-track-label="branches" class="">
+              <a
+                aria-label="Branches"
+                id="js-onboarding-branches-link"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Branches"
+                href="/maitrungduc1410/txt-app/-/branches"
+                ><span class="gl-flex-grow-1"> Branches </span>
+              </a>
+            </li>
+            <li data-track-label="tags" class="">
+              <a
+                aria-label="Tags"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Tags"
+                href="/maitrungduc1410/txt-app/-/tags"
+                ><span class="gl-flex-grow-1"> Tags </span>
+              </a>
+            </li>
+            <li data-track-label="contributors" class="">
+              <a
+                aria-label="Contributor statistics"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Contributor statistics"
+                href="/maitrungduc1410/txt-app/-/graphs/master?ref_type=heads"
+                ><span class="gl-flex-grow-1"> Contributor statistics </span>
+              </a>
+            </li>
+            <li data-track-label="graphs" class="">
+              <a
+                aria-label="Graph"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Graph"
+                href="/maitrungduc1410/txt-app/-/network/master?ref_type=heads"
+                ><span class="gl-flex-grow-1"> Graph </span>
+              </a>
+            </li>
+            <li data-track-label="compare" class="">
+              <a
+                aria-label="Compare revisions"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Compare revisions"
+                href="/maitrungduc1410/txt-app/-/compare?from=master&amp;to=master"
+                ><span class="gl-flex-grow-1"> Compare revisions </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="issues_menu" class="">
+          <a
+            aria-label="Issues"
+            class="shortcuts-issues has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Issues"
+            href="/maitrungduc1410/txt-app/-/issues"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="issues-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#issues"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name" id="js-onboarding-issues-link">
+              Issues
+            </span>
+            <span
+              class="gl-badge badge badge-pill badge-info sm count issue_counter"
+              >0
+            </span></a
+          >
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Issues </strong>
+                <span
+                  class="gl-badge badge badge-pill badge-info sm count fly-out-badge issue_counter"
+                  >0
+                </span></span
+              >
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="issue_list" class="">
+              <a
+                aria-label="Issues"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="List"
+                href="/maitrungduc1410/txt-app/-/issues"
+                ><span class="gl-flex-grow-1"> List </span>
+              </a>
+            </li>
+            <li data-track-label="boards" class="">
+              <a
+                aria-label="Boards"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Boards"
+                href="/maitrungduc1410/txt-app/-/boards"
+                ><span class="gl-flex-grow-1"> Boards </span>
+              </a>
+            </li>
+            <li data-track-label="service_desk" class="">
+              <a
+                aria-label="Service Desk"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Service Desk"
+                href="/maitrungduc1410/txt-app/-/issues/service_desk"
+                ><span class="gl-flex-grow-1"> Service Desk </span>
+              </a>
+            </li>
+            <li data-track-label="milestones" class="">
+              <a
+                aria-label="Milestones"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Milestones"
+                href="/maitrungduc1410/txt-app/-/milestones"
+                ><span class="gl-flex-grow-1"> Milestones </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="merge_requests_menu" class="">
+          <a
+            aria-label="Merge requests"
+            class="shortcuts-merge_requests gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Merge requests"
+            href="/maitrungduc1410/txt-app/-/merge_requests"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="git-merge-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#git-merge"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name" id="js-onboarding-mr-link">
+              Merge requests
+            </span>
+            <span
+              class="gl-badge badge badge-pill badge-info sm count merge_counter js-merge-counter"
+              >0
+            </span></a
+          >
+          <ul class="sidebar-sub-level-items is-fly-out-only">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Merge requests </strong>
+                <span
+                  class="gl-badge badge badge-pill badge-info sm count fly-out-badge merge_counter js-merge-counter"
+                  >0
+                </span></span
+              >
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="ci_cd_menu" class="">
+          <a
+            aria-label="CI/CD"
+            class="shortcuts-pipelines rspec-link-pipelines has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="CI/CD"
+            href="/maitrungduc1410/txt-app/-/pipelines"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="rocket-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#rocket"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name" id="js-onboarding-pipelines-link">
+              CI/CD
+            </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> CI/CD </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="pipelines" class="">
+              <a
+                aria-label="Pipelines"
+                class="shortcuts-pipelines gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Pipelines"
+                href="/maitrungduc1410/txt-app/-/pipelines"
+                ><span class="gl-flex-grow-1"> Pipelines </span>
+              </a>
+            </li>
+            <li data-track-label="pipelines_editor" class="">
+              <a
+                aria-label="Editor"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Editor"
+                href="/maitrungduc1410/txt-app/-/ci/editor?branch_name=master"
+                ><span class="gl-flex-grow-1"> Editor </span>
+              </a>
+            </li>
+            <li data-track-label="jobs" class="">
+              <a
+                aria-label="Jobs"
+                class="shortcuts-builds gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Jobs"
+                href="/maitrungduc1410/txt-app/-/jobs"
+                ><span class="gl-flex-grow-1"> Jobs </span>
+              </a>
+            </li>
+            <li data-track-label="artifacts" class="">
+              <a
+                aria-label="Artifacts"
+                class="shortcuts-builds gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Artifacts"
+                href="/maitrungduc1410/txt-app/-/artifacts"
+                ><span class="gl-flex-grow-1"> Artifacts </span>
+              </a>
+            </li>
+            <li data-track-label="pipeline_schedules" class="">
+              <a
+                aria-label="Schedules"
+                class="shortcuts-builds gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Schedules"
+                href="/maitrungduc1410/txt-app/-/pipeline_schedules"
+                ><span class="gl-flex-grow-1"> Schedules </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="security_compliance_menu" class="">
+          <a
+            aria-label="Security and Compliance"
+            class="has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Security and Compliance"
+            href="/maitrungduc1410/txt-app/-/security/discover"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="shield-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#shield"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Security and Compliance </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name">
+                  Security and Compliance
+                </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="discover_project_security" class="">
+              <a
+                aria-label="Security capabilities"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Security capabilities"
+                href="/maitrungduc1410/txt-app/-/security/discover"
+                ><span class="gl-flex-grow-1"> Security capabilities </span>
+              </a>
+            </li>
+            <li data-track-label="audit_events" class="">
+              <a
+                aria-label="Audit events"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Audit events"
+                href="/maitrungduc1410/txt-app/-/audit_events"
+                ><span class="gl-flex-grow-1"> Audit events </span>
+              </a>
+            </li>
+            <li data-track-label="configuration" class="">
+              <a
+                aria-label="Security configuration"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Security configuration"
+                href="/maitrungduc1410/txt-app/-/security/configuration"
+                ><span class="gl-flex-grow-1"> Security configuration </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="deployments_menu" class="">
+          <a
+            aria-label="Deployments"
+            class="shortcuts-deployments has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Deployments"
+            href="/maitrungduc1410/txt-app/-/environments"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="deployments-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#deployments"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Deployments </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Deployments </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="environments" class="">
+              <a
+                aria-label="Environments"
+                class="shortcuts-environments gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Environments"
+                href="/maitrungduc1410/txt-app/-/environments"
+                ><span class="gl-flex-grow-1"> Environments </span>
+              </a>
+            </li>
+            <li data-track-label="feature_flags" class="">
+              <a
+                aria-label="Feature flags"
+                class="shortcuts-feature-flags gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Feature flags"
+                href="/maitrungduc1410/txt-app/-/feature_flags"
+                ><span class="gl-flex-grow-1"> Feature flags </span>
+              </a>
+            </li>
+            <li data-track-label="releases" class="">
+              <a
+                aria-label="Releases"
+                class="shortcuts-deployments-releases gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Releases"
+                href="/maitrungduc1410/txt-app/-/releases"
+                ><span class="gl-flex-grow-1"> Releases </span>
+              </a>
+            </li>
+            <li data-track-label="pages" class="">
+              <a
+                aria-label="Pages"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Pages"
+                href="/maitrungduc1410/txt-app/pages"
+                ><span class="gl-flex-grow-1"> Pages </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="packages_registries_menu" class="">
+          <a
+            aria-label="Packages and registries"
+            class="has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Packages and registries"
+            href="/maitrungduc1410/txt-app/-/packages"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="package-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#package"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Packages and registries </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name">
+                  Packages and registries
+                </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="packages_registry" class="">
+              <a
+                aria-label="Package Registry"
+                class="shortcuts-container-registry gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Package Registry"
+                href="/maitrungduc1410/txt-app/-/packages"
+                ><span class="gl-flex-grow-1"> Package Registry </span>
+              </a>
+            </li>
+            <li data-track-label="container_registry" class="">
+              <a
+                aria-label="Container Registry"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Container Registry"
+                href="/maitrungduc1410/txt-app/container_registry"
+                ><span class="gl-flex-grow-1"> Container Registry </span>
+              </a>
+            </li>
+            <li data-track-label="infrastructure_registry" class="">
+              <a
+                aria-label="Infrastructure Registry"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Infrastructure Registry"
+                href="/maitrungduc1410/txt-app/-/infrastructure_registry"
+                ><span class="gl-flex-grow-1"> Infrastructure Registry </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="infrastructure_menu" class="">
+          <a
+            aria-label="Infrastructure"
+            class="shortcuts-infrastructure has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Infrastructure"
+            href="/maitrungduc1410/txt-app/-/clusters"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="cloud-gear-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#cloud-gear"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Infrastructure </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Infrastructure </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="kubernetes" class="">
+              <a
+                aria-label="Kubernetes clusters"
+                class="shortcuts-kubernetes gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Kubernetes clusters"
+                href="/maitrungduc1410/txt-app/-/clusters"
+                ><span class="gl-flex-grow-1"> Kubernetes clusters </span>
+              </a>
+            </li>
+            <li data-track-label="terraform" class="">
+              <a
+                aria-label="Terraform"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Terraform"
+                href="/maitrungduc1410/txt-app/-/terraform"
+                ><span class="gl-flex-grow-1"> Terraform </span>
+              </a>
+            </li>
+            <li data-track-label="google_cloud" class="">
+              <a
+                aria-label="Google Cloud"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Google Cloud"
+                href="/maitrungduc1410/txt-app/-/google_cloud/configuration"
+                ><span class="gl-flex-grow-1"> Google Cloud </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="monitor_menu" class="">
+          <a
+            aria-label="Monitor"
+            class="shortcuts-monitor has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Monitor"
+            href="/maitrungduc1410/txt-app/-/metrics"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="monitor-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#monitor"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Monitor </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Monitor </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="metrics" class="">
+              <a
+                aria-label="Metrics"
+                class="shortcuts-metrics gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Metrics"
+                href="/maitrungduc1410/txt-app/-/metrics"
+                ><span class="gl-flex-grow-1"> Metrics </span>
+              </a>
+            </li>
+            <li data-track-label="error_tracking" class="">
+              <a
+                aria-label="Error Tracking"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Error Tracking"
+                href="/maitrungduc1410/txt-app/-/error_tracking"
+                ><span class="gl-flex-grow-1"> Error Tracking </span>
+              </a>
+            </li>
+            <li data-track-label="alert_management" class="">
+              <a
+                aria-label="Alerts"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Alerts"
+                href="/maitrungduc1410/txt-app/-/alert_management"
+                ><span class="gl-flex-grow-1"> Alerts </span>
+              </a>
+            </li>
+            <li data-track-label="incidents" class="">
+              <a
+                aria-label="Incidents"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Incidents"
+                href="/maitrungduc1410/txt-app/-/incidents"
+                ><span class="gl-flex-grow-1"> Incidents </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="analytics_menu" class="">
+          <a
+            aria-label="Analytics"
+            class="shortcuts-analytics has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Analytics"
+            href="/maitrungduc1410/txt-app/-/value_stream_analytics"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="chart-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#chart"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Analytics </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Analytics </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="cycle_analytics" class="">
+              <a
+                aria-label="Value stream"
+                class="shortcuts-project-cycle-analytics gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Value stream"
+                href="/maitrungduc1410/txt-app/-/value_stream_analytics"
+                ><span class="gl-flex-grow-1"> Value stream </span>
+              </a>
+            </li>
+            <li data-track-label="ci_cd_analytics" class="">
+              <a
+                aria-label="CI/CD"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="CI/CD"
+                href="/maitrungduc1410/txt-app/-/pipelines/charts"
+                ><span class="gl-flex-grow-1"> CI/CD </span>
+              </a>
+            </li>
+            <li data-track-label="repository_analytics" class="">
+              <a
+                aria-label="Repository"
+                class="shortcuts-repository-charts gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Repository"
+                href="/maitrungduc1410/txt-app/-/graphs/master/charts"
+                ><span class="gl-flex-grow-1"> Repository </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="wiki_menu" class="">
+          <a
+            aria-label="Wiki"
+            class="shortcuts-wiki gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Wiki"
+            href="/maitrungduc1410/txt-app/-/wikis/home"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="book-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#book"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Wiki </span>
+          </a>
+          <ul class="sidebar-sub-level-items is-fly-out-only">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Wiki </strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="snippets_menu" class="">
+          <a
+            aria-label="Snippets"
+            class="shortcuts-snippets gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Snippets"
+            href="/maitrungduc1410/txt-app/-/snippets"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="snippet-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#snippet"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name"> Snippets </span>
+          </a>
+          <ul class="sidebar-sub-level-items is-fly-out-only">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Snippets </strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li data-track-label="settings_menu" class="">
+          <a
+            aria-label="Settings"
+            class="has-sub-items gl-link"
+            data-qa-selector="sidebar_menu_link"
+            data-qa-menu-item="Settings"
+            href="/maitrungduc1410/txt-app/edit"
+            ><span class="nav-icon-container">
+              <svg class="s16" data-testid="settings-icon">
+                <use
+                  href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#settings"
+                ></use>
+              </svg>
+            </span>
+            <span class="nav-item-name" id="js-onboarding-settings-link">
+              Settings
+            </span>
+          </a>
+          <ul class="sidebar-sub-level-items" style="">
+            <li class="fly-out-top-item">
+              <span class="fly-out-top-item-container">
+                <strong class="fly-out-top-item-name"> Settings </strong>
+              </span>
+            </li>
+            <li class="divider fly-out-top-item"></li>
+            <li data-track-label="general" class="">
+              <a
+                aria-label="General"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="General"
+                href="/maitrungduc1410/txt-app/edit"
+                ><span class="gl-flex-grow-1"> General </span>
+              </a>
+            </li>
+            <li data-track-label="integrations" class="">
+              <a
+                aria-label="Integrations"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Integrations"
+                href="/maitrungduc1410/txt-app/-/settings/integrations"
+                ><span class="gl-flex-grow-1"> Integrations </span>
+              </a>
+            </li>
+            <li data-track-label="webhooks" class="">
+              <a
+                aria-label="Webhooks"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Webhooks"
+                href="/maitrungduc1410/txt-app/-/hooks"
+                ><span class="gl-flex-grow-1"> Webhooks </span>
+              </a>
+            </li>
+            <li data-track-label="access_tokens" class="">
+              <a
+                aria-label="Access Tokens"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Access Tokens"
+                href="/maitrungduc1410/txt-app/-/settings/access_tokens"
+                ><span class="gl-flex-grow-1"> Access Tokens </span>
+              </a>
+            </li>
+            <li data-track-label="repository" class="">
+              <a
+                aria-label="Repository"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Repository"
+                href="/maitrungduc1410/txt-app/-/settings/repository"
+                ><span class="gl-flex-grow-1"> Repository </span>
+              </a>
+            </li>
+            <li data-track-label="merge_requests" class="">
+              <a
+                aria-label="Merge requests"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Merge requests"
+                href="/maitrungduc1410/txt-app/-/settings/merge_requests"
+                ><span class="gl-flex-grow-1"> Merge requests </span>
+              </a>
+            </li>
+            <li data-track-label="ci_cd" class="">
+              <a
+                aria-label="CI/CD"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="CI/CD"
+                href="/maitrungduc1410/txt-app/-/settings/ci_cd"
+                ><span class="gl-flex-grow-1"> CI/CD </span>
+              </a>
+            </li>
+            <li data-track-label="packages_and_registries" class="">
+              <a
+                aria-label="Packages and registries"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Packages and registries"
+                href="/maitrungduc1410/txt-app/-/settings/packages_and_registries"
+                ><span class="gl-flex-grow-1"> Packages and registries </span>
+              </a>
+            </li>
+            <li data-track-label="monitor" class="">
+              <a
+                aria-label="Monitor"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Monitor"
+                href="/maitrungduc1410/txt-app/-/settings/operations"
+                ><span class="gl-flex-grow-1"> Monitor </span>
+              </a>
+            </li>
+            <li data-track-label="usage_quotas" class="">
+              <a
+                aria-label="Usage Quotas"
+                class="gl-link"
+                data-qa-selector="sidebar_menu_item_link"
+                data-qa-menu-item="Usage Quotas"
+                href="/maitrungduc1410/txt-app/-/usage_quotas"
+                ><span class="gl-flex-grow-1"> Usage Quotas </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Activity"
+            class="shortcuts-project-activity gl-link"
+            href="/maitrungduc1410/txt-app/activity"
+            >Activity
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Graph"
+            class="shortcuts-network gl-link"
+            href="/maitrungduc1410/txt-app/-/network/master"
+            >Graph
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Create a new issue"
+            class="shortcuts-new-issue gl-link"
+            href="/maitrungduc1410/txt-app/-/issues/new"
+            >Create a new issue
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Jobs"
+            class="shortcuts-builds gl-link"
+            href="/maitrungduc1410/txt-app/-/jobs"
+            >Jobs
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Commits"
+            class="shortcuts-commits gl-link"
+            href="/maitrungduc1410/txt-app/-/commits/master"
+            >Commits
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            aria-label="Issue Boards"
+            class="shortcuts-issue-boards gl-link"
+            href="/maitrungduc1410/txt-app/-/boards"
+            >Issue Boards
+          </a>
+        </li>
+      </ul>
+      <a
+        class="toggle-sidebar-button js-toggle-sidebar rspec-toggle-sidebar"
+        role="button"
+        title="Toggle sidebar"
+        type="button"
+      >
+        <svg
+          class="s12 icon-chevron-double-lg-left"
+          data-testid="chevron-double-lg-left-icon"
+        >
+          <use
+            href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#chevron-double-lg-left"
+          ></use>
+        </svg>
+        <span class="collapse-text gl-ml-3">Collapse sidebar</span>
+      </a>
+      <button name="button" type="button" class="close-nav-button">
+        <svg class="s16" data-testid="close-icon">
+          <use
+            href="/assets/icons-87cb0ce1047e0d3e1ddd352a88d6807e6155673ebba21022180ab5ee153c2026.svg#close"
+          ></use>
+        </svg>
+        <span class="collapse-text gl-ml-3">Close sidebar</span>
+      </button>
+    </div>
+  </aside>
+  <div class="w-full">adkasjdajsdaksdj</div>
+</div>
