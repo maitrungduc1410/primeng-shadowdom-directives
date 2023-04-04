@@ -10,8 +10,8 @@ import {
   psdOverlayPanelDirective,
   psdTreeSelectDirective,
   psdPaginatorDirective,
+  psdConfirmPopupDirective
 } from "./directives";
-import { psdConfirmPopupDirective } from "./directives/confirmpopup";
 import { DomHandler } from 'primeng/dom'
 
 DomHandler.getScrollableParents = (element: any) => {

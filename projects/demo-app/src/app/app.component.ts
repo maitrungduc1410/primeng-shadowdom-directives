@@ -696,11 +696,18 @@ export class AppComponent {
 
   results: string[];
 
-  search(event) {
-    this.http.get('https://primefaces.org/primeng/showcase/assets/showcase/data/countries.json')
-      .subscribe((res: any) => {
-        this.results = res.data;
-      })
+  async search(event) {
+
+    await new Promise((re, rj) => {
+      setTimeout(() => {
+        this.results = ['Test 1', 'Test 2']
+        re(true)
+      }, 500)
+    })
+    // this.http.get('https://primefaces.org/primeng/showcase/assets/showcase/data/countries.json')
+    //   .subscribe((res: any) => {
+    //     this.results = res.data;
+    //   })
   }
 
   confirm(event: Event) {

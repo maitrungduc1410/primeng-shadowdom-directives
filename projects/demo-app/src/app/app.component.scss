@@ -1,0 +1,15 @@
+.w-full {
+  width: 100%;
+}
+
+.layout-page {
+
+}
+
+.page-with-contextual-sidebar {
+  transition: padding-left 0.2s;
+}
+
+.layout-page {
+  padding-top: var(--header-height, 48px);
+}

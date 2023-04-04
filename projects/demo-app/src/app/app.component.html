@@ -5,7 +5,7 @@
 <p-menu psdTooltip pTooltip="Hello World" psdMenu #menu [popup]="true" [model]="items"></p-menu>
 <p-multiSelect psdTooltip pTooltip="Hello World" psdMultiSelect [options]="cities" optionLabel="name"></p-multiSelect>
 
-<p-autoComplete psdAutoComplete [(ngModel)]="text" [suggestions]="results" field="name" [minLength]="1"
+<p-autoComplete psdAutoComplete [(ngModel)]="text" [suggestions]="results" [minLength]="1"
     (completeMethod)="search($event)"></p-autoComplete>
 <p-cascadeSelect psdCascadeSelect [(ngModel)]="selectedCity1" [options]="countries" optionLabel="cname"
     optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}">
@@ -42,18 +42,6 @@
 
 <h5>Split Button</h5>
 <p-splitButton psdSplitButton label="Save" icon="pi pi-plus" [model]="items"></p-splitButton>
-<!-- 
-<div class="card">
-    <h5>Linear</h5>
-    <div style="height: 500px; position: relative;" class="speeddial-linear-demo">
-        <p-speedDial  [model]="speedDialItems" direction="right"></p-speedDial>
-    </div>
-</div> -->
-
-
-<!-- <h5>Editor</h5>
-<p-editor [style]="{'height':'320px'}"></p-editor> -->
-
 
 <h5>Single</h5>
 <p-treeSelect psdTreeSelect [options]="node1" placeholder="Select Item"></p-treeSelect>
