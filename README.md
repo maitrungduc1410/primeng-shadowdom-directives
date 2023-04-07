@@ -19,6 +19,7 @@ Below are list of components that currently supported (all directives start with
 - [x] Split Button (*No directive required*)
 - [x] Tiered Menu (*No directive required*)
 - [x] Tree Select (`psdTreeSelect`)
+- [x] Input Mask (`psdInputMask`)
 > Note that not all components need custom directive, since this library already contains some logics which reduce the effort of writing custom directive for those components. That means for components marked as *No directive required*, they just work.
 
 To request for new component, please submit issue or PR
