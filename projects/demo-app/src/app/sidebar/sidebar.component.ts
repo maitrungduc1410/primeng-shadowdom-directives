@@ -16,6 +16,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class SidebarComponent {
   text: string = '';
+  inputMaskVal = ''
 
   results: string[] = [];
 

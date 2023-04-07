@@ -21,7 +21,6 @@ export class AppComponent {
   menuBarItems: MenuItem[];
   megaItems: MegaMenuItem[];
 
-
   countries: any[];
 
   selectedCity1: any;

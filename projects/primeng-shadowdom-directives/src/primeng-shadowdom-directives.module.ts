@@ -10,7 +10,8 @@ import {
   psdOverlayPanelDirective,
   psdTreeSelectDirective,
   psdPaginatorDirective,
-  psdConfirmPopupDirective
+  psdConfirmPopupDirective,
+  psdInputMaskDirective
 } from "./directives";
 import { DomHandler } from 'primeng/dom'
 
@@ -59,6 +60,7 @@ DomHandler.getScrollableParents = (element: any) => {
     psdOverlayPanelDirective,
     psdTreeSelectDirective,
     psdPaginatorDirective,
+    psdInputMaskDirective
   ],
   exports: [
     psdDropdownDirective,
@@ -72,6 +74,7 @@ DomHandler.getScrollableParents = (element: any) => {
     psdOverlayPanelDirective,
     psdTreeSelectDirective,
     psdPaginatorDirective,
+    psdInputMaskDirective
   ]
 })
 export class PrimeNGShadowDOMDirective { }

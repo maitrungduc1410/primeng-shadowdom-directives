@@ -9,6 +9,7 @@ import { psdMultiSelectDirective } from "./multiselect";
 import { psdOverlayPanelDirective } from "./overlaypanel";
 import { psdPaginatorDirective } from "./paginator";
 import { psdTreeSelectDirective } from "./treeselect";
+import { psdInputMaskDirective } from "./inputmask";
 
 export {
   psdDropdownDirective,
@@ -22,4 +23,5 @@ export {
   psdOverlayPanelDirective,
   psdTreeSelectDirective,
   psdPaginatorDirective,
+  psdInputMaskDirective
 }
