@@ -8,6 +8,7 @@ import { ConfirmationService, MegaMenuItem, MenuItem } from 'primeng/api';
   styleUrls: [
     './app.component.scss',
     "../../../../node_modules/primeicons/primeicons.css",
+    "../../../../node_modules/primeflex/primeflex.min.css",
     "../../../../node_modules/primeng/resources/themes/saga-blue/theme.css",
     "../../../../node_modules/primeng/resources/primeng.min.css",
     "../../../../node_modules/quill/dist/quill.core.css",
@@ -16,6 +17,8 @@ import { ConfirmationService, MegaMenuItem, MenuItem } from 'primeng/api';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
+  inputMaskVal = ''
+  
   cities: any[];
   items: MenuItem[];
   menuBarItems: MenuItem[];
@@ -691,11 +694,11 @@ export class AppComponent {
     ];
   }
 
-  text: string;
+  text: string = '';
 
-  results: string[];
+  results: string[] = [];
 
-  async search(event) {
+  async search(event: any) {
 
     await new Promise((re, rj) => {
       setTimeout(() => {
@@ -711,7 +714,7 @@ export class AppComponent {
 
   confirm(event: Event) {
     this.confirmationService.confirm({
-      target: event.target,
+      target: event.target!,
       message: 'Are you sure that you want to proceed?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {

@@ -1,27 +1,21 @@
-import { psdAutoCompleteDirective } from "./autocomplete";
-import { psdCalendarDirective } from "./calendar";
-import { psdCascadeSelectDirective } from "./cascadeselect";
-import { psdConfirmPopupDirective } from "./confirmpopup";
-import { psdDropdownDirective } from "./dropdown";
-import { psdMegaMenuDirective } from "./megamenu";
-import { psdMenuBarDirective } from "./menubar";
-import { psdMultiSelectDirective } from "./multiselect";
-import { psdOverlayPanelDirective } from "./overlaypanel";
-import { psdPaginatorDirective } from "./paginator";
-import { psdTreeSelectDirective } from "./treeselect";
-import { psdInputMaskDirective } from "./inputmask";
+import { psdAutoCompleteDirective } from './autocomplete';
+import { psdMegaMenuDirective } from './megamenu';
+import { psdMenuDirective } from './menu';
+import { psdMenuBarDirective } from './menubar';
+import { psdOverlayPanelDirective } from './overlaypanel';
+import { psdInputMaskDirective } from './inputmask';
+import { psdSlideMenuDirective } from './slidemenu';
+import { psdSplitButtonDirective } from './splitbutton';
+import { psdTieredMenuDirective } from './tieredmenu';
 
 export {
-  psdDropdownDirective,
-  psdCalendarDirective,
-  psdMultiSelectDirective,
   psdAutoCompleteDirective,
-  psdCascadeSelectDirective,
   psdMegaMenuDirective,
+  psdMenuDirective,
   psdMenuBarDirective,
-  psdConfirmPopupDirective,
   psdOverlayPanelDirective,
-  psdTreeSelectDirective,
-  psdPaginatorDirective,
-  psdInputMaskDirective
-}
+  psdInputMaskDirective,
+  psdSlideMenuDirective,
+  psdSplitButtonDirective,
+  psdTieredMenuDirective,
+};

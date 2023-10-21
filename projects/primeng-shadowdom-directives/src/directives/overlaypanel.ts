@@ -19,7 +19,7 @@ export class psdOverlayPanelDirective {
           hostEl.documentClickListener = hostEl.renderer.listen(documentTarget, documentEvent, (event) => {
             const path = event.path || (event.composedPath && event.composedPath());
             const target = event.target.shadowRoot ? path[0] : event.target
-            if (!hostEl.container.contains(target) && hostEl.target !== target && !hostEl.target.contains(target) && !hostEl.selfClick) {
+            if (!hostEl.container?.contains(target) && hostEl.target !== target && !hostEl.target.contains(target) && !hostEl.selfClick) {
               this.zone.run(() => {
                 hostEl.hide();
               });

@@ -9,8 +9,8 @@ export class psdAutoCompleteDirective {
     @Host() @Self() @Optional() private readonly hostEl: AutoComplete
   ) {
     hostEl.show = (event?: Event) => {
-      if (hostEl.multiInputEL || hostEl.inputEL) {
-        const el = hostEl.multiple ? hostEl.multiInputEL.nativeElement : hostEl.inputEL.nativeElement
+      if (hostEl.multiInputEl || hostEl.inputEL) {
+        const el = hostEl.multiple ? hostEl.multiInputEl!.nativeElement : hostEl.inputEL!.nativeElement
         const activeEl = el.getRootNode().activeElement
         const hasFocus = activeEl === el
 

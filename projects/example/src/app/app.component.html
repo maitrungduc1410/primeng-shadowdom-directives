@@ -1,0 +1,195 @@
+<h1>PrimeNG ShadowDOM Directives</h1>
+
+<div class="flex flex-wrap gap-5">
+  <div>
+    <div class="mb-2">Cascade Select</div>
+    <p-cascadeSelect
+      [(ngModel)]="selectedCity1"
+      [options]="countries"
+      optionLabel="cname"
+      optionGroupLabel="name"
+      [optionGroupChildren]="['states', 'cities']"
+      [style]="{ minWidth: '14rem' }"
+    >
+    </p-cascadeSelect>
+  </div>
+
+  <div>
+    <div class="mb-2">Input Mask</div>
+
+    <p-inputMask
+      psdInputMask
+      mask="99-999999"
+      [(ngModel)]="inputMaskVal"
+      placeholder="99-999999"
+    ></p-inputMask>
+  </div>
+  <div>
+    <div class="mb-2">Dropdown</div>
+    <p-dropdown
+      pTooltip="Hello World"
+      [options]="cities"
+      optionLabel="name"
+    ></p-dropdown>
+  </div>
+
+  <div>
+    <div class="mb-2">Calendar</div>
+    <p-calendar pTooltip="Hello World"></p-calendar>
+  </div>
+
+  <div>
+    <div class="mb-2">p-menu</div>
+    <button
+      pTooltip="Hello World"
+      type="button"
+      pButton
+      icon="pi pi-bars"
+      label="Show"
+      (click)="menu.toggle($event)"
+    ></button>
+    <p-menu
+      pTooltip="Hello World"
+      psdMenu
+      #menu
+      [popup]="true"
+      [model]="items"
+    ></p-menu>
+  </div>
+
+  <div>
+    <div class="mb-2">Multiselect</div>
+    <p-multiSelect
+      pTooltip="Hello World"
+      [options]="cities"
+      optionLabel="name"
+    ></p-multiSelect>
+  </div>
+
+  <div>
+    <div class="mb-2">Autocomplete</div>
+    <p-autoComplete
+      psdAutoComplete
+      [(ngModel)]="text"
+      [suggestions]="results"
+      [minLength]="1"
+      (completeMethod)="search($event)"
+      [dropdown]="true"
+    ></p-autoComplete>
+  </div>
+
+  <div>
+    <div class="mb-2">Color Picker</div>
+    <p-colorPicker></p-colorPicker>
+  </div>
+
+  <div>
+    <div class="mb-2">MenuBar</div>
+    <p-menubar psdMenuBar [model]="menuBarItems"></p-menubar>
+  </div>
+
+  <div>
+    <div class="mb-2">MegaMenu</div>
+    <p-megaMenu psdMegaMenu [model]="megaItems"></p-megaMenu>
+  </div>
+
+  <div>
+    <div class="mb-2">Confirm Popup</div>
+    <p-confirmPopup></p-confirmPopup>
+    <button
+      (click)="confirm($event)"
+      pButton
+      icon="pi pi-check"
+      label="Confirm"
+    ></button>
+  </div>
+
+  <div>
+    <div class="mb-2">Slide menu</div>
+    <button
+      #btn
+      type="button"
+      pButton
+      icon="pi pi-bars"
+      label="Show"
+      (click)="slideMenu.toggle($event)"
+    ></button>
+    <p-slideMenu
+      psdSlideMenu
+      #slideMenu
+      [model]="slideItems"
+      [popup]="true"
+      [viewportHeight]="250"
+    ></p-slideMenu>
+  </div>
+
+  <div>
+    <div class="mb-2">Tiered menu</div>
+
+    <button
+      #btn
+      type="button"
+      pButton
+      icon="pi pi-bars"
+      label="Show"
+      (click)="tieredMenu.toggle($event)"
+    ></button>
+    <p-tieredMenu
+      psdTieredMenu
+      #tieredMenu
+      [model]="tieredItems"
+      [popup]="true"
+      appendTo="body"
+    ></p-tieredMenu>
+  </div>
+
+  <div>
+    <div class="mb-2">Context menu</div>
+    <img
+      #img
+      src="https://viblo.asia/logo_full.svg"
+      alt="Logo"
+      aria-haspopup="true"
+      style="width: 200px"
+    />
+    <p-contextMenu [target]="img" [model]="contextItems"></p-contextMenu>
+  </div>
+
+  <div>
+    <div class="mb-2">Overlay Panel</div>
+    <p-overlayPanel psdOverlayPanel #op>
+      <ng-template pTemplate> Content </ng-template>
+    </p-overlayPanel>
+    <button
+      type="text"
+      pButton
+      label="Basic"
+      (click)="op.toggle($event)"
+    ></button>
+  </div>
+
+  <div>
+    <div class="mb-2">Split Button</div>
+    <p-splitButton
+      psdSplitButton
+      label="Save"
+      icon="pi pi-plus"
+      [model]="items"
+      appendTo="body"
+    ></p-splitButton>
+  </div>
+
+  <div>
+    <div class="mb-2">Tree Select</div>
+    <p-treeSelect [options]="node1" placeholder="Select Item"></p-treeSelect>
+  </div>
+
+  <div>
+    <div class="mb-2">Paginator with Dropdown</div>
+    <p-paginator
+      [rows]="10"
+      [totalRecords]="120"
+      [rowsPerPageOptions]="[10, 20, 30]"
+    ></p-paginator>
+  </div>
+</div>

@@ -15,11 +15,10 @@ export class psdInputMaskDirective {
       let range, begin, end;
 
       if (
-        !hostEl.inputViewChild.nativeElement.offsetParent ||
+        !hostEl.inputViewChild?.nativeElement.offsetParent ||
         hostEl.inputViewChild.nativeElement !==
-        hostEl.inputViewChild.nativeElement.getRootNode().activeElement
+          hostEl.inputViewChild.nativeElement.getRootNode().activeElement
       ) {
-        // @ts-ignore
         return;
       }
 
@@ -39,8 +38,11 @@ export class psdInputMaskDirective {
         if (hostEl.inputViewChild.nativeElement.setSelectionRange) {
           begin = hostEl.inputViewChild.nativeElement.selectionStart;
           end = hostEl.inputViewChild.nativeElement.selectionEnd;
-        } else if (document['selection'] && document['selection'].createRange) {
-          range = document['selection'].createRange();
+        } else if (
+          (document as any)['selection'] &&
+          (document as any)['selection'].createRange
+        ) {
+          range = (document as any)['selection'].createRange();
           begin = 0 - range.duplicate().moveStart('character', -100000);
           end = begin + range.text.length;
         }

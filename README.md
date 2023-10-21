@@ -2,31 +2,65 @@
 Set of directives to fix PrimeNg "overlay" components got-chas when rendered inside ShadowDOM
 
 Below are list of components that currently supported (all directives start with prefix `psd = PrimeNg ShadowDOM Directive`):
-- [x] Calendar (`psdCalendar`)
-- [x] Dropdown (`psdDropdown`)
-- [x] Dropdown inside Paginator (`psdPaginator`)
-- [x] Menu (*No directive required*)
-- [x] Multi Select (`psdMultiSelect`)
-- [x] Tooltip (*No directive required*)
-- [x] Auto Complete (`psdAutoComplete`)
-- [x] Cascade Select (`psdCascadeSelect`)
-- [x] Color Picker (*No directive required*)
-- [x] Mega Menu (`psdMegaMenu`)
-- [x] Menu Bar (`psdMenuBar`)
-- [x] Confirm Popup (`psdConfirmPopup`)
-- [x] Overlay Panel (`psdOverlayPanel`)
-- [x] Slide Menu (*No directive required*)
-- [x] Split Button (*No directive required*)
-- [x] Tiered Menu (*No directive required*)
-- [x] Tree Select (`psdTreeSelect`)
-- [x] Input Mask (`psdInputMask`)
+
+<details>
+  <summary>Angular >= 16</summary>
+  
+  - [x] Calendar (*No directive required*)
+  - [x] Dropdown (*No directive required*)
+  - [x] Dropdown inside Paginator (*No directive required*)
+  - [x] Menu (`psdMenu`)
+  - [x] Multi Select (*No directive required*)
+  - [x] Tooltip (*No directive required*)
+  - [x] Auto Complete (`psdAutoComplete`)
+  - [x] Cascade Select (*No directive required*)
+  - [x] Color Picker (*No directive required*)
+  - [x] Mega Menu (`psdMegaMenu`)
+  - [x] Menu Bar (`psdMenuBar`)
+  - [x] Confirm Popup (*No directive required*)
+  - [x] Overlay Panel (`psdOverlayPanel`)
+  - [x] Slide Menu (`psdSlideMenu`)
+  - [x] Split Button (`psdSplitButton`)
+  - [x] Tiered Menu (`psdTieredMenu`)
+  - [x] Tree Select (*No directive required*)
+  - [x] Input Mask (`psdInputMask`)
+</details>
+
+<details>
+  <summary>Angular < 16</summary>
+  
+  - [x] Calendar (`psdCalendar`)
+  - [x] Dropdown (`psdDropdown`)
+  - [x] Dropdown inside Paginator (`psdPaginator`)
+  - [x] Menu (*No directive required*)
+  - [x] Multi Select (`psdMultiSelect`)
+  - [x] Tooltip (*No directive required*)
+  - [x] Auto Complete (`psdAutoComplete`)
+  - [x] Cascade Select (`psdCascadeSelect`)
+  - [x] Color Picker (*No directive required*)
+  - [x] Mega Menu (`psdMegaMenu`)
+  - [x] Menu Bar (`psdMenuBar`)
+  - [x] Confirm Popup (`psdConfirmPopup`)
+  - [x] Overlay Panel (`psdOverlayPanel`)
+  - [x] Slide Menu (*No directive required*)
+  - [x] Split Button (*No directive required*)
+  - [x] Tiered Menu (*No directive required*)
+  - [x] Tree Select (`psdTreeSelect`)
+  - [x] Input Mask (`psdInputMask`)
+</details>
+
+
 > Note that not all components need custom directive, since this library already contains some logics which reduce the effort of writing custom directive for those components. That means for components marked as *No directive required*, they just work.
 
 To request for new component, please submit issue or PR
 # Installation
 This package is available on npm registry. Install it with command:
-```
+```sh
+# for Angular >= 16
 npm install primeng-shadowdom-directives
+
+# for Angular < 16
+npm install primeng-shadowdom-directives@^0.2.2
 ```
 # Usage
 Import this package into your module where you want to apply these directives (normally will be `app.module.ts`)

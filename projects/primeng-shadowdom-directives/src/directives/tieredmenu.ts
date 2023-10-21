@@ -1,4 +1,3 @@
-import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   Host,
@@ -7,14 +6,15 @@ import {
   PLATFORM_ID,
   Self,
 } from '@angular/core';
-import { MegaMenu } from 'primeng/megamenu';
+import { TieredMenu } from 'primeng/tieredmenu';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
-  selector: '[psdMegaMenu]',
+  selector: '[psdTieredMenu]',
 })
-export class psdMegaMenuDirective {
+export class psdTieredMenuDirective {
   constructor(
-    @Host() @Self() @Optional() private readonly hostEl: MegaMenu,
+    @Host() @Self() @Optional() private readonly hostEl: TieredMenu,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
     hostEl.bindOutsideClickListener = () => {
@@ -29,10 +29,15 @@ export class psdMegaMenuDirective {
               const target = event.target.shadowRoot ? path[0] : event.target;
 
               const isOutsideContainer =
-                hostEl.rootmenu?.el.nativeElement !== target &&
-                !hostEl.rootmenu?.el.nativeElement.contains(target);
-
-              if (isOutsideContainer) {
+                hostEl.containerViewChild &&
+                !hostEl.containerViewChild.nativeElement.contains(target);
+              const isOutsideTarget = hostEl.popup
+                ? !(
+                    hostEl.target &&
+                    (hostEl.target === target || hostEl.target.contains(target))
+                  )
+                : true;
+              if (isOutsideContainer && isOutsideTarget) {
                 hostEl.hide();
               }
             }

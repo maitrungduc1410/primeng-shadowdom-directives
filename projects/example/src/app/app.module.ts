@@ -27,13 +27,11 @@ import { EditorModule } from 'primeng/editor';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginatorModule } from 'primeng/paginator';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
   ],
   imports: [
     BrowserModule,
