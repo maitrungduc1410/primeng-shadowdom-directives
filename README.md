@@ -7,7 +7,7 @@ Below are list of components that currently supported (all directives start with
 > Once you import this module library, it'll automatically handle most of components (those marked as *No directive required*), the rest will need to pass directive explicitly
 
 <details>
-  <summary>Angular 17</summary>
+  <summary>Angular 17 & 18</summary>
   
   - [x] Calendar (*No directive required*)
   - [x] Dropdown (*No directive required*)
@@ -79,6 +79,9 @@ To request for new component, please submit issue or PR
 # Installation
 This package is available on npm registry. Install it with command:
 ```sh
+# for Angular 18
+npm install primeng-shadowdom-directives@^18.0.0
+
 # for Angular 17
 npm install primeng-shadowdom-directives@^17.0.0
 
