@@ -79,8 +79,11 @@ To request for new component, please submit issue or PR
 # Installation
 This package is available on npm registry. Install it with command:
 ```sh
-# for Angular >= 16
-npm install primeng-shadowdom-directives
+# for Angular 17
+npm install primeng-shadowdom-directives@^17.0.0
+
+# for Angular 16
+npm install primeng-shadowdom-directives@^1.0.0
 
 # for Angular < 16
 npm install primeng-shadowdom-directives@^0.2.2
