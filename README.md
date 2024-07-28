@@ -3,8 +3,34 @@ Set of directives to fix PrimeNg "overlay" components got-chas when rendered ins
 
 Below are list of components that currently supported (all directives start with prefix `psd = PrimeNg ShadowDOM Directive`):
 
+> [!TIP]
+> Once you import this module library, it'll automatically handle most of components (those marked as *No directive required*), the rest will need to pass directive explicitly
+
 <details>
-  <summary>Angular >= 16</summary>
+  <summary>Angular 17</summary>
+  
+  - [x] Calendar (*No directive required*)
+  - [x] Dropdown (*No directive required*)
+  - [x] Dropdown inside Paginator (*No directive required*)
+  - [x] Menu (`psdMenu`)
+  - [x] Multi Select (*No directive required*)
+  - [x] Tooltip (*No directive required*)
+  - [x] Auto Complete (*No directive required*)
+  - [x] Cascade Select (*No directive required*)
+  - [x] Color Picker (*No directive required*)
+  - [x] Mega Menu (*No directive required*)
+  - [x] Menu Bar (*No directive required*)
+  - [x] Confirm Popup (*No directive required*)
+  - [x] Overlay Panel (`psdOverlayPanel`)
+  - [x] Slide Menu (`psdSlideMenu`)
+  - [x] Split Button (`psdSplitButton`)
+  - [x] Tiered Menu (`psdTieredMenu`)
+  - [x] Tree Select (*No directive required*)
+  - [x] Input Mask (`psdInputMask`)
+</details>
+
+<details>
+  <summary>Angular 16</summary>
   
   - [x] Calendar (*No directive required*)
   - [x] Dropdown (*No directive required*)
@@ -48,9 +74,6 @@ Below are list of components that currently supported (all directives start with
   - [x] Tree Select (`psdTreeSelect`)
   - [x] Input Mask (`psdInputMask`)
 </details>
-
-
-> Note that not all components need custom directive, since this library already contains some logics which reduce the effort of writing custom directive for those components. That means for components marked as *No directive required*, they just work.
 
 To request for new component, please submit issue or PR
 # Installation

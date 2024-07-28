@@ -69,7 +69,6 @@
   <div>
     <div class="mb-2">Autocomplete</div>
     <p-autoComplete
-      psdAutoComplete
       [(ngModel)]="text"
       [suggestions]="results"
       [minLength]="1"
@@ -85,12 +84,12 @@
 
   <div>
     <div class="mb-2">MenuBar</div>
-    <p-menubar psdMenuBar [model]="menuBarItems"></p-menubar>
+    <p-menubar [model]="menuBarItems"></p-menubar>
   </div>
 
   <div>
     <div class="mb-2">MegaMenu</div>
-    <p-megaMenu psdMegaMenu [model]="megaItems"></p-megaMenu>
+    <p-megaMenu [model]="megaItems"></p-megaMenu>
   </div>
 
   <div>

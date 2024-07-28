@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import {
-  psdAutoCompleteDirective,
-  psdMegaMenuDirective,
-  psdMenuBarDirective,
   psdOverlayPanelDirective,
   psdInputMaskDirective,
   psdMenuDirective,
@@ -53,10 +50,7 @@ DomHandler.getScrollableParents = (element: any) => {
 
 @NgModule({
   declarations: [
-    psdAutoCompleteDirective,
-    psdMegaMenuDirective,
     psdMenuDirective,
-    psdMenuBarDirective,
     psdOverlayPanelDirective,
     psdInputMaskDirective,
     psdSlideMenuDirective,
@@ -64,10 +58,7 @@ DomHandler.getScrollableParents = (element: any) => {
     psdTieredMenuDirective,
   ],
   exports: [
-    psdAutoCompleteDirective,
-    psdMegaMenuDirective,
     psdMenuDirective,
-    psdMenuBarDirective,
     psdOverlayPanelDirective,
     psdInputMaskDirective,
     psdSlideMenuDirective,
