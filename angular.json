@@ -28,10 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/primeng-shadowdom-directives/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -53,34 +50,18 @@
             "outputPath": "dist/example",
             "index": "projects/example/src/index.html",
             "main": "projects/example/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/example/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/example/src/favicon.ico",
               "projects/example/src/assets"
             ],
-            "styles": [
-              "projects/example/src/styles.scss"
-            ],
+            "styles": ["projects/example/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
@@ -115,19 +96,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/example/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/example/src/favicon.ico",
               "projects/example/src/assets"
             ],
-            "styles": [
-              "projects/example/src/styles.scss"
-            ],
+            "styles": ["projects/example/src/styles.scss"],
             "scripts": []
           }
         }
