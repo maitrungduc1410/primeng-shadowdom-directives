@@ -2,7 +2,7 @@
   "name": "primeng-shadowdom-directives",
   "title": "Primeng Shadowdom Directives",
   "description": "Directives that make PrimeNG plays nicely with ShadowDOM",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"
