@@ -4,6 +4,7 @@ import { psdInputMaskDirective } from './inputmask';
 import { psdSlideMenuDirective } from './slidemenu';
 import { psdSplitButtonDirective } from './splitbutton';
 import { psdTieredMenuDirective } from './tieredmenu';
+import { psdCalendarDirective } from './calendar';
 
 export {
   psdMenuDirective,
@@ -12,4 +13,5 @@ export {
   psdSlideMenuDirective,
   psdSplitButtonDirective,
   psdTieredMenuDirective,
+  psdCalendarDirective
 };

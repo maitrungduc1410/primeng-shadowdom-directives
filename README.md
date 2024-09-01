@@ -9,7 +9,7 @@ Below are list of components that currently supported (all directives start with
 <details>
   <summary>Angular 17 & 18</summary>
   
-  - [x] Calendar (*No directive required*)
+  - [x] Calendar (`psdCalendar`)
   - [x] Dropdown (*No directive required*)
   - [x] Dropdown inside Paginator (*No directive required*)
   - [x] Menu (`psdMenu`)
@@ -32,7 +32,7 @@ Below are list of components that currently supported (all directives start with
 <details>
   <summary>Angular 16</summary>
   
-  - [x] Calendar (*No directive required*)
+  - [x] Calendar (`psdCalendar`)
   - [x] Dropdown (*No directive required*)
   - [x] Dropdown inside Paginator (*No directive required*)
   - [x] Menu (`psdMenu`)
