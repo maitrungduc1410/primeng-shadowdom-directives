@@ -13,5 +13,5 @@ export {
   psdSlideMenuDirective,
   psdSplitButtonDirective,
   psdTieredMenuDirective,
-  psdCalendarDirective
+  psdCalendarDirective,
 };

@@ -191,4 +191,32 @@
       [rowsPerPageOptions]="[10, 20, 30]"
     ></p-paginator>
   </div>
+
+  <p-table
+    #dt
+    [value]="products"
+    [resizableColumns]="true"
+    styleClass="p-datatable-gridlines"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    showGridlines
+    (onColResize)="onColResize($event)"
+    (colResize)="onColResize($event)"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pResizableColumn>Code</th>
+        <th pResizableColumn>Name</th>
+        <th pResizableColumn>Category</th>
+        <th pResizableColumn>Quantity</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.code }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

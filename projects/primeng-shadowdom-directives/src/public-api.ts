@@ -4,3 +4,4 @@
 
 export * from './primeng-shadowdom-directives.module';
 export * from './directives'
+export * from './helpers'

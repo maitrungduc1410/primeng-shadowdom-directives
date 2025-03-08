@@ -6,7 +6,7 @@ import {
   psdSlideMenuDirective,
   psdSplitButtonDirective,
   psdTieredMenuDirective,
-  psdCalendarDirective
+  psdCalendarDirective,
 } from './directives';
 import { DomHandler } from 'primeng/dom';
 
@@ -57,7 +57,7 @@ DomHandler.getScrollableParents = (element: any) => {
     psdSlideMenuDirective,
     psdSplitButtonDirective,
     psdTieredMenuDirective,
-    psdCalendarDirective
+    psdCalendarDirective,
   ],
   exports: [
     psdMenuDirective,
@@ -66,7 +66,7 @@ DomHandler.getScrollableParents = (element: any) => {
     psdSlideMenuDirective,
     psdSplitButtonDirective,
     psdTieredMenuDirective,
-    psdCalendarDirective
+    psdCalendarDirective,
   ],
 })
 export class PrimeNGShadowDOMDirective {}

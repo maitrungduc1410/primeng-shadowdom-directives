@@ -89,6 +89,8 @@ npm install primeng-shadowdom-directives@^1.0.0
 npm install primeng-shadowdom-directives@^0.2.2
 ```
 # Usage
+
+## Directives
 Import this package into your module where you want to apply these directives (normally will be `app.module.ts`)
 ```js
 
@@ -115,6 +117,29 @@ Then in your component file, apply the directives:
 
 <!-- and others -->
 ```
+
+## Helper functions
+Other than directives, we also provide helper functions to help fix some other problems related PrimeNG + Shadow dom. See usage below
+
+### Table resizable column
+First assign a ref to `p-table`
+```html
+<p-table #dt>
+```
+
+Then access it using ViewChild:
+```ts
+@ViewChild('dt') dt!: Table;
+```
+
+Finally:
+```ts
+// you can call it in ngAfterViewInit or at any later time when you're sure that the view is rendered on screen
+ngAfterViewInit() {
+  ensureResizableColumn(this.dt, this.el.nativeElement.shadowRoot);
+}
+```
+
 # Demo
 Check `projects/demo-app` to see samples on how to use this package.
 
