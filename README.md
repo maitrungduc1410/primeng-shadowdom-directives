@@ -127,13 +127,14 @@ First assign a ref to `p-table`
 <p-table #dt>
 ```
 
-Then access it using ViewChild:
+Then your TS code:
 ```ts
 @ViewChild('dt') dt!: Table;
-```
 
-Finally:
-```ts
+constructor(
+  private readonly el: ElementRef
+) {}
+
 // you can call it in ngAfterViewInit or at any later time when you're sure that the view is rendered on screen
 ngAfterViewInit() {
   ensureResizableColumn(this.dt, this.el.nativeElement.shadowRoot);
