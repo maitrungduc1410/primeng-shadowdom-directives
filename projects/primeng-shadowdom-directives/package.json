@@ -2,11 +2,11 @@
   "name": "primeng-shadowdom-directives",
   "title": "Primeng Shadowdom Directives",
   "description": "Directives that make PrimeNG overlay components work inside Shadow DOM",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "peerDependencies": {
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "primeng": "^20.0.0"
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "primeng": "^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
