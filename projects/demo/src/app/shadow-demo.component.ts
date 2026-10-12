@@ -10,7 +10,7 @@ import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DatePickerModule } from 'primeng/datepicker';
 import { MenuModule } from 'primeng/menu';
-import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { PopoverModule } from 'primeng/popover';
 import { SelectModule } from 'primeng/select';
 import {
   PrimeNGShadowDOMDirective,
@@ -25,7 +25,7 @@ import {
     FormsModule,
     ButtonModule,
     MenuModule,
-    OverlayPanelModule,
+    PopoverModule,
     DatePickerModule,
     SelectModule,
     PrimeNGShadowDOMDirective,

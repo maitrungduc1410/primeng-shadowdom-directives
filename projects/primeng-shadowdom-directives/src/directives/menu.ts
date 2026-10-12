@@ -9,6 +9,22 @@ import {
 } from '@angular/core';
 import { Menu } from 'primeng/menu';
 
+function containerElement(host: Menu): HTMLElement | undefined {
+  const child = (host as any).containerViewChild;
+  const ref = typeof child === 'function' ? child() : child;
+  return ref?.nativeElement as HTMLElement | undefined;
+}
+
+function shadowAwareTarget(event: Event): EventTarget | null {
+  const path =
+    (event as any).path ||
+    (typeof event.composedPath === 'function' ? event.composedPath() : null);
+  if ((event.target as any)?.shadowRoot && path?.length) {
+    return path[0];
+  }
+  return event.target;
+}
+
 @Directive({
   standalone: false,
   selector: '[psdMenu]',
@@ -16,48 +32,45 @@ import { Menu } from 'primeng/menu';
 export class psdMenuDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: Menu,
-    @Inject(PLATFORM_ID) private platformId: any
+    @Inject(PLATFORM_ID) private platformId: object
   ) {
     if (!hostEl) {
       return;
     }
     hostEl.bindDocumentClickListener = () => {
-      if (!hostEl.documentClickListener && isPlatformBrowser(platformId)) {
-        const documentTarget: any = hostEl.el
-          ? hostEl.el.nativeElement.ownerDocument
-          : 'document';
-
-        hostEl.documentClickListener = hostEl.renderer.listen(
-          documentTarget,
-          'click',
-          (event) => {
-            const isOutsideContainer =
-              hostEl.containerViewChild?.nativeElement &&
-              !hostEl.containerViewChild.nativeElement.contains(
-                event.target.shadowRoot
-                  ? event.target.shadowRoot.activeElement
-                  : event.target
-              );
-            const isOutsideTarget = !(
-              hostEl.target &&
-              (hostEl.target === event.target ||
-                hostEl.target.contains(event.target))
-            );
-            if (!hostEl.popup && isOutsideContainer && isOutsideTarget) {
-              hostEl.onListBlur(event);
-            }
-            if (
-              hostEl.preventDocumentDefault &&
-              hostEl.overlayVisible &&
-              isOutsideContainer &&
-              isOutsideTarget
-            ) {
-              hostEl.hide();
-              hostEl.preventDocumentDefault = false;
-            }
-          }
-        );
+      if (hostEl.documentClickListener || !isPlatformBrowser(this.platformId)) {
+        return;
       }
+      const documentTarget: any = hostEl.el
+        ? hostEl.el.nativeElement.ownerDocument
+        : 'document';
+
+      hostEl.documentClickListener = hostEl.renderer.listen(
+        documentTarget,
+        'click',
+        (event: Event) => {
+          const target = shadowAwareTarget(event) as Node;
+          const containerEl = containerElement(hostEl);
+          const isOutsideContainer =
+            !!containerEl && !containerEl.contains(target);
+          const isOutsideTarget = !(
+            hostEl.target &&
+            (hostEl.target === target || hostEl.target.contains(target))
+          );
+          if (!hostEl.popup && isOutsideContainer && isOutsideTarget) {
+            hostEl.onListBlur(event as MouseEvent);
+          }
+          if (
+            hostEl.preventDocumentDefault &&
+            hostEl.overlayVisible &&
+            isOutsideContainer &&
+            isOutsideTarget
+          ) {
+            hostEl.hide();
+            hostEl.preventDocumentDefault = false;
+          }
+        }
+      );
     };
   }
 }

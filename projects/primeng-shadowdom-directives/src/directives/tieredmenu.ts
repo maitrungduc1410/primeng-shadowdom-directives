@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   Host,
@@ -7,7 +8,6 @@ import {
   Self,
 } from '@angular/core';
 import { TieredMenu } from 'primeng/tieredmenu';
-import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   standalone: false,
@@ -16,37 +16,41 @@ import { isPlatformBrowser } from '@angular/common';
 export class psdTieredMenuDirective {
   constructor(
     @Host() @Self() @Optional() private readonly hostEl: TieredMenu,
-    @Inject(PLATFORM_ID) private platformId: any
+    @Inject(PLATFORM_ID) private platformId: object
   ) {
     if (!hostEl) {
       return;
     }
     hostEl.bindOutsideClickListener = () => {
-      if (isPlatformBrowser(platformId)) {
-        if (!hostEl.outsideClickListener) {
-          hostEl.outsideClickListener = hostEl.renderer.listen(
-            document,
-            'click',
-            (event) => {
-              const path =
-                event.path || (event.composedPath && event.composedPath());
-              const target = event.target.shadowRoot ? path[0] : event.target;
-
-              const isOutsideContainer =
-                hostEl.containerViewChild &&
-                !hostEl.containerViewChild.nativeElement.contains(target);
-              const isOutsideTarget = hostEl.popup
-                ? !(
-                    hostEl.target &&
-                    (hostEl.target === target || hostEl.target.contains(target))
-                  )
-                : true;
-              if (isOutsideContainer && isOutsideTarget) {
-                hostEl.hide();
-              }
+      if (!isPlatformBrowser(this.platformId)) {
+        return;
+      }
+      if (!hostEl.outsideClickListener) {
+        hostEl.outsideClickListener = hostEl.renderer.listen(
+          document,
+          'click',
+          (event: any) => {
+            const path =
+              event.path || (event.composedPath && event.composedPath());
+            const target = event.target?.shadowRoot ? path?.[0] : event.target;
+            const containerEl =
+              typeof (hostEl as any).containerViewChild === 'function'
+                ? (hostEl as any).containerViewChild()?.nativeElement
+                : (hostEl as any).containerViewChild?.nativeElement;
+            const isOutsideContainer =
+              containerEl && !containerEl.contains(target);
+            const isOutsideTarget = hostEl.popup
+              ? !(
+                  hostEl.target &&
+                  (hostEl.target === target ||
+                    hostEl.target.contains(target))
+                )
+              : true;
+            if (isOutsideContainer && isOutsideTarget) {
+              hostEl.hide();
             }
-          );
-        }
+          }
+        );
       }
     };
   }
