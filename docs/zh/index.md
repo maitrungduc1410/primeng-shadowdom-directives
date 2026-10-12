@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🎯
     title: 浮层指令
-    details: 为 Menu、Popover、DatePicker、SplitButton、TieredMenu、InputMask 提供 psd*，并为许多“无需指令”的 overlay 打上 DomHandler scroll-parent patch。
+    details: 为 Menu、Popover、DatePicker、SplitButton、TieredMenu、InputMask、MegaMenu、Menubar 提供 psd*，并为许多“无需指令”的 overlay 打上 DomHandler scroll-parent patch。
     link: /zh/guide/overlays
     linkText: 浮层指南
   - icon: 🌑

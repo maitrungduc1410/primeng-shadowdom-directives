@@ -21,6 +21,12 @@ description: "Lỗi thường gặp khi dùng PrimeNG trong Shadow DOM với PSD
 Peer warning / thiếu export thường là lệch major Angular / PrimeNG / PSD. Cài cùng
 major cả ba ([Cài đặt](./installation)).
 
+## MegaMenu / Menubar burger bấm không mở trên màn hẹp
+
+Viewport hẹp thì PrimeNG thu gọn thành hamburger. Thiếu `psdMegaMenu` / `psdMenubar`
+thì cùng một document click vừa mở vừa đóng menu, vì `event.target` bị retarget về
+Shadow DOM host. Gắn đúng attribute.
+
 ## SlideMenu / OverlayPanel
 
 - `SlideMenu` bị gỡ từ PrimeNG 18, không còn trong PSD v18+.

@@ -15,6 +15,8 @@ description: "psd* 浮层指令与 DomHandler 滚动父级补丁。"
 <p-splitbutton psdSplitButton></p-splitbutton>
 <p-tieredmenu psdTieredMenu></p-tieredmenu>
 <p-inputmask psdInputMask></p-inputmask>
+<p-megamenu psdMegaMenu></p-megamenu>
+<p-menubar psdMenubar></p-menubar>
 ```
 
 ### 重命名说明

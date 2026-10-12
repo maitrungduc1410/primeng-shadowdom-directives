@@ -15,6 +15,8 @@ Add the matching attribute on the PrimeNG component:
 <p-splitbutton psdSplitButton></p-splitbutton>
 <p-tieredmenu psdTieredMenu></p-tieredmenu>
 <p-inputmask psdInputMask></p-inputmask>
+<p-megamenu psdMegaMenu></p-megamenu>
+<p-menubar psdMenubar></p-menubar>
 ```
 
 ### Rename notes

@@ -13,6 +13,8 @@ description: "Directive psd* và patch DomHandler scroll-parent."
 <p-splitbutton psdSplitButton></p-splitbutton>
 <p-tieredmenu psdTieredMenu></p-tieredmenu>
 <p-inputmask psdInputMask></p-inputmask>
+<p-megamenu psdMegaMenu></p-megamenu>
+<p-menubar psdMenubar></p-menubar>
 ```
 
 ### Đổi tên theo major

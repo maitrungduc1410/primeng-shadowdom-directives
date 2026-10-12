@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🎯
     title: Overlay directives
-    details: Explicit psd* attributes for Menu, Popover, DatePicker, SplitButton, TieredMenu, and InputMask, plus a DomHandler scroll-parent patch for many “no directive” overlays.
+    details: Explicit psd* attributes for Menu, Popover, DatePicker, SplitButton, TieredMenu, InputMask, MegaMenu, and Menubar, plus a DomHandler scroll-parent patch for many “no directive” overlays.
     link: /guide/overlays
     linkText: Overlay guide
   - icon: 🌑

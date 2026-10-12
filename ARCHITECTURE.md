@@ -110,6 +110,8 @@ directives keep working across small PrimeNG patch differences.
 | `psdSplitButton` | `SplitButton` |
 | `psdTieredMenu` | `TieredMenu` |
 | `psdInputMask` | `InputMask` |
+| `psdMegaMenu` | `MegaMenu` (mobile hamburger outside-click) |
+| `psdMenubar` | `Menubar` (mobile hamburger outside-click) |
 
 ## CSS vs overlay (v22)
 

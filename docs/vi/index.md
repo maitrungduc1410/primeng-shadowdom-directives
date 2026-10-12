@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🎯
     title: Directive overlay
-    details: Thuộc tính psd* cho Menu, Popover, DatePicker, SplitButton, TieredMenu, InputMask, kèm patch DomHandler scroll-parent cho nhiều overlay “không cần directive”.
+    details: Thuộc tính psd* cho Menu, Popover, DatePicker, SplitButton, TieredMenu, InputMask, MegaMenu, Menubar, kèm patch DomHandler scroll-parent cho nhiều overlay “không cần directive”.
     link: /vi/guide/overlays
     linkText: Xem overlay
   - icon: 🌑

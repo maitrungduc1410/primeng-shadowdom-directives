@@ -2,7 +2,12 @@
 
 Helpers so PrimeNG **22** overlays work inside Shadow DOM.
 
-Documentation: https://maitrungduc1410.github.io/primeng-shadowdom-directives/
+For contributors / agents: see [AGENTS.md](./AGENTS.md) and [ARCHITECTURE.md](./ARCHITECTURE.md).
+Public guide: [docs/](./docs) (VitePress).
+
+**Overlay directives** (`psd*`): override outside-click / scroll-parent logic (classic PSD).
+
+Theme CSS is **not** cloned by this package on v22. PrimeNG 22 shares non-variable sheets into Shadow DOM via `adoptedStyleSheets` (`UseStyle`).
 
 All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**irective.
 
@@ -20,8 +25,8 @@ All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**ire
 - [x] Auto Complete (*No directive required*)
 - [x] Cascade Select (*No directive required*)
 - [x] Color Picker (*No directive required*)
-- [x] Mega Menu (*No directive required*)
-- [x] Menu Bar (*No directive required*)
+- [x] Mega Menu (`psdMegaMenu`)
+- [x] Menu Bar (`psdMenubar`)
 - [x] Confirm Popup (*No directive required*)
 - [x] Popover (`psdPopover`)
 - [x] Split Button (`psdSplitButton`)
@@ -73,9 +78,13 @@ Standalone apps can import the same `NgModule` in the component `imports` array.
 <p-datepicker psdDatePicker ...></p-datepicker>
 
 <!-- SplitButton / TieredMenu / InputMask -->
-<p-splitButton psdSplitButton ...></p-splitButton>
-<p-tieredMenu psdTieredMenu ...></p-tieredMenu>
-<p-inputMask psdInputMask ...></p-inputMask>
+<p-splitbutton psdSplitButton ...></p-splitbutton>
+<p-tieredmenu psdTieredMenu ...></p-tieredmenu>
+<p-inputmask psdInputMask ...></p-inputmask>
+
+<!-- MegaMenu / Menubar (needed for mobile hamburger) -->
+<p-megamenu psdMegaMenu ...></p-megamenu>
+<p-menubar psdMenubar ...></p-menubar>
 ```
 
 ## Workspace layout

@@ -15,8 +15,8 @@ description: "支持的 PrimeNG 组件，以及哪些需要显式 psd*。"
 - [x] Auto Complete（*No directive required*）
 - [x] Cascade Select（*No directive required*）
 - [x] Color Picker（*No directive required*）
-- [x] Mega Menu（*No directive required*）
-- [x] Menu Bar（*No directive required*）
+- [x] Mega Menu（`psdMegaMenu`）
+- [x] Menu Bar（`psdMenubar`）
 - [x] Confirm Popup（*No directive required*）
 - [x] Popover（`psdPopover`）
 - [x] Split Button（`psdSplitButton`）

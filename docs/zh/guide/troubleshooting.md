@@ -19,6 +19,12 @@ description: "Shadow DOM + PrimeNG 常见问题，以及如何用 PSD 修复。"
 
 Peer 警告或缺少导出通常意味着 Angular / PrimeNG / PSD major 不一致。三者安装同一 major（见 [安装](./installation)）。
 
+## 窄屏下 MegaMenu / Menubar 汉堡按钮点了没反应
+
+窄视口时 PrimeNG 会收成汉堡按钮。若未加 `psdMegaMenu` / `psdMenubar`，打开菜单的
+那次 document click 也会立刻关掉它，因为 `event.target` 被 retarget 到 Shadow DOM
+宿主。请加上对应属性。
+
 ## 找不到 SlideMenu / OverlayPanel
 
 - `SlideMenu` 已在 PrimeNG 18 被上游移除，不在 PSD v18+ 中。

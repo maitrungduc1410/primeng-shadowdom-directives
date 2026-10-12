@@ -3,7 +3,9 @@ import { DomHandler } from 'primeng/dom';
 import {
   psdDatePickerDirective,
   psdInputMaskDirective,
+  psdMegaMenuDirective,
   psdMenuDirective,
+  psdMenubarDirective,
   psdPopoverDirective,
   psdSplitButtonDirective,
   psdTieredMenuDirective,
@@ -48,6 +50,8 @@ const DIRECTIVES = [
   psdSplitButtonDirective,
   psdTieredMenuDirective,
   psdDatePickerDirective,
+  psdMegaMenuDirective,
+  psdMenubarDirective,
 ];
 
 @NgModule({
