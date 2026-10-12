@@ -26,7 +26,6 @@ All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**ire
 - [x] Menu Bar (*No directive required*)
 - [x] Confirm Popup (*No directive required*)
 - [x] Popover (`psdPopover`)
-- [ ] Slide Menu — not available
 - [x] Split Button (`psdSplitButton`)
 - [x] Tiered Menu (`psdTieredMenu`)
 - [x] Tree Select (*No directive required*)
