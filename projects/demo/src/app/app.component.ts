@@ -3,8 +3,7 @@ import { ShadowDemoComponent } from './shadow-demo.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [ShadowDemoComponent],
-  template: `<app-shadow-demo />`,
+  template: `<app-shadow-demo />`
 })
-export class AppComponent {}
+export class AppComponent { }

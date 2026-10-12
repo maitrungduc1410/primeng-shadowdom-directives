@@ -1,6 +1,6 @@
 # Primeng Shadowdom Directives
 
-Helpers so PrimeNG **18** works inside Shadow DOM:
+Helpers so PrimeNG **19** works inside Shadow DOM:
 
 1. **Overlay directives** (`psd*`) — override outside-click / scroll-parent logic (classic PSD).
 2. **CSS style share** (`attachPrimeNgStylesToShadowRoot`) — clone `style[data-primeng-style-id]` from `document.head` into the shadow root (`:root` → `:host`) on each ShadowDom host.
@@ -13,7 +13,7 @@ All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**ire
 ## Supported components
 
 - [x] Calendar (`psdCalendar`) — legacy `p-calendar`
-- [x] DatePicker (`psdDatePicker`) — preferred `p-datepicker`
+- [x] DatePicker (`psdDatePicker`)
 - [x] Dropdown / Select (*No directive required*)
 - [x] Dropdown inside Paginator (*No directive required*)
 - [x] Menu (`psdMenu`)
@@ -26,7 +26,7 @@ All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**ire
 - [x] Menu Bar (*No directive required*)
 - [x] Confirm Popup (*No directive required*)
 - [x] Overlay Panel (`psdOverlayPanel`)
-- [ ] Slide Menu — removed upstream in PrimeNG 18 (no `psdSlideMenu`)
+- [ ] Slide Menu — not available (removed in PrimeNG 18+)
 - [x] Split Button (`psdSplitButton`)
 - [x] Tiered Menu (`psdTieredMenu`)
 - [x] Tree Select (*No directive required*)
@@ -37,13 +37,13 @@ To request a new component, open an issue or PR.
 ## Installation
 
 ```sh
-npm install primeng-shadowdom-directives@^18.0.0
+npm install primeng-shadowdom-directives@^19.0.0
 ```
 
 > [!TIP]
-> For older package majors (Angular / PrimeNG 17, 16, &lt; 16), see earlier tags/branches on [maitrungduc1410/primeng-shadowdom-directives](https://github.com/maitrungduc1410/primeng-shadowdom-directives) or older `v*` branches in this repo when available.
+> For older majors than **19**, check older branches such as `v18`, or historical tags on [maitrungduc1410/primeng-shadowdom-directives](https://github.com/maitrungduc1410/primeng-shadowdom-directives).
 
-Peer dependencies: `@angular/common@^18.0.0`, `@angular/core@^18.0.0`, and `primeng@^18.0.0`.
+Peer dependencies: `@angular/common@^19.0.0`, `@angular/core@^19.0.0`, and `primeng@^19.0.0`.
 
 ## Usage
 

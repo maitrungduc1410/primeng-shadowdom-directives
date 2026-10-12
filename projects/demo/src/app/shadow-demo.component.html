@@ -1,10 +1,10 @@
 <div class="demo">
   <header>
     <p class="eyebrow">demo app · consumes workspace library</p>
-    <h1>primeng-shadowdom-directives (v18)</h1>
+    <h1>primeng-shadowdom-directives (v19)</h1>
     <p class="lede">
-      This page is <code>ViewEncapsulation.ShadowDom</code>. It imports
-      <code>PrimeNGShadowDOMDirective</code> (overlay) and calls
+      This page is <code>ViewEncapsulation.ShadowDom</code> and imports <code>PrimeNGShadowDOMDirective</code> (overlay)
+      and calls
       <code>attachPrimeNgStylesToShadowRoot</code> (CSS clone for PrimeNG 18–21).
     </p>
   </header>
@@ -15,21 +15,12 @@
       <p-button label="Menu" icon="pi pi-bars" (onClick)="menu.toggle($event)" />
       <p-menu #menu [model]="menuItems" [popup]="true" psdMenu />
 
-      <p-button
-        label="OverlayPanel"
-        icon="pi pi-info-circle"
-        (onClick)="op.toggle($event)"
-      />
+      <p-button label="OverlayPanel" icon="pi pi-info-circle" (onClick)="op.toggle($event)" />
       <p-overlayPanel #op psdOverlayPanel>
         <div class="overlay-body">Outside click should dismiss under Shadow DOM.</div>
       </p-overlayPanel>
 
-      <p-datepicker
-        [(ngModel)]="date"
-        [showIcon]="true"
-        dateFormat="yy-mm-dd"
-        psdDatePicker
-      />
+      <p-datepicker [(ngModel)]="date" [showIcon]="true" dateFormat="yy-mm-dd" psdDatePicker />
     </div>
   </section>
 
@@ -41,13 +32,7 @@
     </p>
     <div class="row">
       <p-button label="Primary" />
-      <p-select
-        [options]="cities"
-        [(ngModel)]="city"
-        optionLabel="label"
-        optionValue="value"
-        placeholder="City"
-      />
+      <p-select [options]="cities" [(ngModel)]="city" optionLabel="label" optionValue="value" placeholder="City" />
     </div>
   </section>
 </div>

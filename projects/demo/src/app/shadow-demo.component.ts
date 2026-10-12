@@ -17,9 +17,6 @@ import {
   attachPrimeNgStylesToShadowRoot,
 } from 'primeng-shadowdom-directives';
 
-/**
- * Demo host: Shadow DOM + PSD overlay directives + CSS style clone (18–21).
- */
 @Component({
   selector: 'app-shadow-demo',
   standalone: true,
@@ -56,7 +53,6 @@ export class ShadowDemoComponent implements OnDestroy {
   ];
 
   constructor() {
-    // After view encapsulation creates the shadow root, share PrimeNG head styles in.
     queueMicrotask(() => {
       const root = this.host.nativeElement.shadowRoot;
       if (root) {
