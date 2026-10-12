@@ -28,6 +28,10 @@ On narrow viewports PrimeNG collapses these to a hamburger. Without `psdMegaMenu
 `psdMenubar`, the same document click that opens the menu also closes it, because
 `event.target` is retargeted to the Shadow DOM host. Add the matching attribute.
 
+If the open panel looks only as wide as the burger button, give the host
+`display: block; width: 100%` (PrimeNG sizes the absolute list as `width: 100%` of
+that host).
+
 ## SlideMenu / OverlayPanel missing
 
 - `SlideMenu` was removed upstream in PrimeNG 18, so it is not part of PSD v18+.

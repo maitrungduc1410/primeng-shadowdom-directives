@@ -25,6 +25,9 @@ Peer 警告或缺少导出通常意味着 Angular / PrimeNG / PSD major 不一�
 那次 document click 也会立刻关掉它，因为 `event.target` 被 retarget 到 Shadow DOM
 宿主。请加上对应属性。
 
+如果展开面板只有汉堡按钮那么宽，给宿主设置 `display: block; width: 100%`
+（PrimeNG 把绝对定位列表设为相对宿主的 `width: 100%`）。
+
 ## 找不到 SlideMenu / OverlayPanel
 
 - `SlideMenu` 已在 PrimeNG 18 被上游移除，不在 PSD v18+ 中。

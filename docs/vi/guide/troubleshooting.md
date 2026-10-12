@@ -27,6 +27,9 @@ Viewport hẹp thì PrimeNG thu gọn thành hamburger. Thiếu `psdMegaMenu` / 
 thì cùng một document click vừa mở vừa đóng menu, vì `event.target` bị retarget về
 Shadow DOM host. Gắn đúng attribute.
 
+Nếu panel mở chỉ rộng bằng nút burger, đặt host `display: block; width: 100%`
+(PrimeNG set list absolute `width: 100%` theo host đó).
+
 ## SlideMenu / OverlayPanel
 
 - `SlideMenu` bị gỡ từ PrimeNG 18, không còn trong PSD v18+.

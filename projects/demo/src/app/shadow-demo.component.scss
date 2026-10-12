@@ -63,6 +63,39 @@ h1 {
 .item.stacked {
   margin-top: 1rem;
   width: 100%;
+  position: relative;
+}
+
+/*
+ * Mobile MegaMenu / Menubar: PrimeNG uses width:100% on an absolutely positioned
+ * root list. Without a block-level full-width host, that collapses to the burger
+ * button width. Raise z-index while open so a lower Menubar cannot paint over
+ * an open MegaMenu.
+ */
+:host ::ng-deep p-menubar,
+:host ::ng-deep p-megamenu {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+:host ::ng-deep .p-menubar,
+:host ::ng-deep .p-megamenu {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:host ::ng-deep .p-menubar-mobile-active,
+:host ::ng-deep .p-megamenu-mobile-active {
+  position: relative;
+  z-index: 100;
+}
+
+:host ::ng-deep .p-menubar-mobile .p-menubar-root-list,
+:host ::ng-deep .p-megamenu-mobile .p-megamenu-root-list {
+  z-index: 101;
+  min-width: 12.5rem;
 }
 
 .item h3 {
