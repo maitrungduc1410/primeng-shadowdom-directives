@@ -9,6 +9,17 @@ import {
 } from '@angular/core';
 import { TieredMenu } from 'primeng/tieredmenu';
 
+function readPopup(host: TieredMenu): boolean {
+  const popup = (host as any).popup;
+  return typeof popup === 'function' ? !!popup() : !!popup;
+}
+
+function containerElement(host: TieredMenu): HTMLElement | undefined {
+  const child = (host as any).containerViewChild;
+  const ref = typeof child === 'function' ? child() : child;
+  return ref?.nativeElement as HTMLElement | undefined;
+}
+
 @Directive({
   standalone: false,
   selector: '[psdTieredMenu]',
@@ -33,13 +44,10 @@ export class psdTieredMenuDirective {
             const path =
               event.path || (event.composedPath && event.composedPath());
             const target = event.target?.shadowRoot ? path?.[0] : event.target;
-            const containerEl =
-              typeof (hostEl as any).containerViewChild === 'function'
-                ? (hostEl as any).containerViewChild()?.nativeElement
-                : (hostEl as any).containerViewChild?.nativeElement;
+            const containerEl = containerElement(hostEl);
             const isOutsideContainer =
-              containerEl && !containerEl.contains(target);
-            const isOutsideTarget = hostEl.popup
+              !!containerEl && !containerEl.contains(target);
+            const isOutsideTarget = readPopup(hostEl)
               ? !(
                   hostEl.target &&
                   (hostEl.target === target ||

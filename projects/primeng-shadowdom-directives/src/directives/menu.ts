@@ -15,6 +15,11 @@ function containerElement(host: Menu): HTMLElement | undefined {
   return ref?.nativeElement as HTMLElement | undefined;
 }
 
+function readFlag(host: Menu, key: string): boolean {
+  const value = (host as any)[key];
+  return typeof value === 'function' ? !!value() : !!value;
+}
+
 function shadowAwareTarget(event: Event): EventTarget | null {
   const path =
     (event as any).path ||
@@ -57,12 +62,12 @@ export class psdMenuDirective {
             hostEl.target &&
             (hostEl.target === target || hostEl.target.contains(target))
           );
-          if (!hostEl.popup && isOutsideContainer && isOutsideTarget) {
+          if (!readFlag(hostEl, 'popup') && isOutsideContainer && isOutsideTarget) {
             hostEl.onListBlur(event as MouseEvent);
           }
           if (
             hostEl.preventDocumentDefault &&
-            hostEl.overlayVisible &&
+            readFlag(hostEl, 'overlayVisible') &&
             isOutsideContainer &&
             isOutsideTarget
           ) {

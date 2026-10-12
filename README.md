@@ -1,9 +1,10 @@
 # Primeng Shadowdom Directives
 
-Helpers so PrimeNG **21** works inside Shadow DOM:
+Helpers so PrimeNG **22** overlays work inside Shadow DOM:
 
-1. **Overlay directives** (`psd*`) — override outside-click / scroll-parent logic (classic PSD).
-2. **CSS style share** (`attachPrimeNgStylesToShadowRoot`) — clone `style[data-primeng-style-id]` from `document.head` into the shadow root (`:root` → `:host`) on each ShadowDom host.
+**Overlay directives** (`psd*`) — override outside-click / scroll-parent logic (classic PSD).
+
+Theme CSS is **not** cloned by this package on v22 — PrimeNG 22 shares non-variable sheets into Shadow DOM via `adoptedStyleSheets` (`UseStyle`).
 
 All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**irective.
 
@@ -36,13 +37,13 @@ To request a new component, open an issue or PR.
 ## Installation
 
 ```sh
-npm install primeng-shadowdom-directives@^21.0.0
+npm install primeng-shadowdom-directives@^22.0.0
 ```
 
 > [!TIP]
-> For older majors than **21**, check older branches such as `v18`, `v19`, `v20`, or historical tags on [maitrungduc1410/primeng-shadowdom-directives](https://github.com/maitrungduc1410/primeng-shadowdom-directives).
+> For older majors than **22**, check older branches such as `v18`, `v19`, `v20`, `v21`, or historical tags on [maitrungduc1410/primeng-shadowdom-directives](https://github.com/maitrungduc1410/primeng-shadowdom-directives).
 
-Peer dependencies: `@angular/common@^21.0.0`, `@angular/core@^21.0.0`, and `primeng@^21.0.0`.
+Peer dependencies: `@angular/common@^22.0.0`, `@angular/core@^22.0.0`, and `primeng@^22.0.0`.
 
 ## Usage
 
@@ -61,33 +62,6 @@ export class AppModule {}
 ```
 
 Standalone apps can import the same `NgModule` in the component `imports` array.
-
-### CSS clone (styled mode)
-
-On each Shadow DOM host (e.g. `ViewEncapsulation.ShadowDom`):
-
-```ts
-import { ElementRef, OnDestroy, inject } from '@angular/core';
-import { attachPrimeNgStylesToShadowRoot } from 'primeng-shadowdom-directives';
-
-export class MyShadowHost implements OnDestroy {
-  private readonly host = inject(ElementRef<HTMLElement>);
-  private detachStyles: (() => void) | null = null;
-
-  constructor() {
-    queueMicrotask(() => {
-      const root = this.host.nativeElement.shadowRoot;
-      if (root) {
-        this.detachStyles = attachPrimeNgStylesToShadowRoot(root);
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.detachStyles?.();
-  }
-}
-```
 
 ### Overlay directives
 

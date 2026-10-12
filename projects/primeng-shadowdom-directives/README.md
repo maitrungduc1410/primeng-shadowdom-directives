@@ -1,8 +1,9 @@
 # primeng-shadowdom-directives
 
-1. **Overlay directives** — outside-click / scroll-parent fixes for Shadow DOM.
-2. **`attachPrimeNgStylesToShadowRoot`** — CSS clone for PrimeNG **18–21** styled
-   mode (`document.head` → shadow root). Prefer official sharing on PrimeNG 22+.
+**Overlay directives** for Shadow DOM — outside-click / scroll-parent fixes (`psd*`).
+
+On PrimeNG **22**, theme CSS inside Shadow DOM is handled upstream via
+`adoptedStyleSheets`. This package does **not** export a CSS clone helper.
 
 ## Install
 
@@ -13,23 +14,17 @@ npm install primeng-shadowdom-directives
 ## Use
 
 ```ts
-import {
-  PrimeNGShadowDOMDirective,
-  attachPrimeNgStylesToShadowRoot,
-} from 'primeng-shadowdom-directives';
+import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
 
 @NgModule({
   imports: [PrimeNGShadowDOMDirective],
 })
 export class AppModule {}
-
-// On each ShadowDom host:
-// attachPrimeNgStylesToShadowRoot(host.nativeElement.shadowRoot!)
 ```
 
 ```html
 <p-menu [popup]="true" psdMenu></p-menu>
-<p-overlayPanel psdOverlayPanel></p-overlayPanel>
+<p-popover psdPopover></p-popover>
 <p-datepicker psdDatePicker></p-datepicker>
 ```
 
@@ -41,7 +36,7 @@ npm run build
 cd dist/primeng-shadowdom-directives && npm publish
 ```
 
-## PrimeNG 18 notes
+## PrimeNG 22 notes
 
-- `SlideMenu` was removed upstream — no `psdSlideMenu` in this major.
-- Prefer `psdDatePicker` with `p-datepicker`; `psdCalendar` remains for legacy `p-calendar`.
+- Prefer official style sharing for theming; keep `psd*` only for overlay behavior.
+- For CSS clone on older majors, use branches `v18`–`v21`.

@@ -1,10 +1,11 @@
 <div class="demo">
   <header>
     <p class="eyebrow">demo app · consumes workspace library</p>
-    <h1>primeng-shadowdom-directives (v21)</h1>
+    <h1>primeng-shadowdom-directives (v22)</h1>
     <p class="lede">
-      This page is <code>ViewEncapsulation.ShadowDom</code> and imports <code>PrimeNGShadowDOMDirective</code> (overlay) and calls
-      <code>attachPrimeNgStylesToShadowRoot</code> (CSS clone for PrimeNG 18–21).
+      This page is <code>ViewEncapsulation.ShadowDom</code> and imports
+      <code>PrimeNGShadowDOMDirective</code> for overlay behavior. Theme CSS is
+      shared by PrimeNG 22 via <code>adoptedStyleSheets</code> — no CSS clone.
     </p>
   </header>
 
@@ -33,10 +34,11 @@
   </section>
 
   <section class="panel">
-    <h2>In-shadow controls (need CSS clone on 18–21)</h2>
+    <h2>In-shadow controls (PrimeNG 22 style share)</h2>
     <p class="hint">
-      Demo attaches <code>attachPrimeNgStylesToShadowRoot</code> so Button / Select
-      class styles from <code>document.head</code> apply inside this shadow host.
+      Button / Select theming inside this shadow host comes from PrimeNG
+      <code>UseStyle.adoptedStyleSheets</code>, not from cloning
+      <code>document.head</code>.
     </p>
     <div class="row">
       <p-button label="Primary" />

@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  ViewEncapsulation,
-  inject,
-} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -12,10 +6,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { MenuModule } from 'primeng/menu';
 import { PopoverModule } from 'primeng/popover';
 import { SelectModule } from 'primeng/select';
-import {
-  PrimeNGShadowDOMDirective,
-  attachPrimeNgStylesToShadowRoot,
-} from 'primeng-shadowdom-directives';
+import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
 
 @Component({
   selector: 'app-shadow-demo',
@@ -33,10 +24,7 @@ import {
   templateUrl: './shadow-demo.component.html',
   styleUrl: './shadow-demo.component.scss',
 })
-export class ShadowDemoComponent implements OnDestroy {
-  private readonly host = inject(ElementRef<HTMLElement>);
-  private detachStyles: (() => void) | null = null;
-
+export class ShadowDemoComponent {
   date: Date | null = null;
   city: string | null = null;
   cities = [
@@ -51,17 +39,4 @@ export class ShadowDemoComponent implements OnDestroy {
     { separator: true },
     { label: 'Logout', icon: 'pi pi-sign-out' },
   ];
-
-  constructor() {
-    queueMicrotask(() => {
-      const root = this.host.nativeElement.shadowRoot;
-      if (root) {
-        this.detachStyles = attachPrimeNgStylesToShadowRoot(root);
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.detachStyles?.();
-  }
 }
