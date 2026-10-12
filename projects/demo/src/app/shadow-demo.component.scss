@@ -64,38 +64,56 @@ h1 {
   margin-top: 1rem;
   width: 100%;
   position: relative;
+  /* stretch so p-megamenu / p-menubar can be width:100% of the panel */
+  align-items: stretch;
+}
+
+.nav-host {
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 /*
- * Mobile MegaMenu / Menubar: PrimeNG uses width:100% on an absolutely positioned
- * root list. Without a block-level full-width host, that collapses to the burger
- * button width. Raise z-index while open so a lower Menubar cannot paint over
- * an open MegaMenu.
+ * Mobile MegaMenu / Menubar: PrimeNG sizes the absolute root list as width:100%
+ * of the component host. Custom elements default to inline + content width, so
+ * the open panel collapses to the burger button. Styles live in this ShadowRoot
+ * (no ::ng-deep needed); !important beats PrimeNG sheets adopted into the root.
  */
-:host ::ng-deep p-menubar,
-:host ::ng-deep p-megamenu {
-  display: block;
-  width: 100%;
+p-menubar,
+p-megamenu {
+  display: block !important;
+  width: 100% !important;
   max-width: 100%;
   box-sizing: border-box;
 }
 
-:host ::ng-deep .p-menubar,
-:host ::ng-deep .p-megamenu {
-  width: 100%;
+.p-menubar,
+.p-megamenu {
+  display: flex;
+  width: 100% !important;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-:host ::ng-deep .p-menubar-mobile-active,
-:host ::ng-deep .p-megamenu-mobile-active {
+.p-menubar-mobile-active,
+.p-megamenu-mobile-active {
   position: relative;
   z-index: 100;
 }
 
-:host ::ng-deep .p-menubar-mobile .p-menubar-root-list,
-:host ::ng-deep .p-megamenu-mobile .p-megamenu-root-list {
+.p-menubar-mobile .p-menubar-root-list,
+.p-megamenu-mobile .p-megamenu-root-list,
+.demo-nav.p-menubar-mobile .p-menubar-root-list,
+.demo-nav.p-megamenu-mobile .p-megamenu-root-list {
   z-index: 101;
-  min-width: 12.5rem;
+  left: 0 !important;
+  right: auto !important;
+  /* beat PrimeNG adoptedStyleSheets (width:100% of burger-sized host) */
+  width: max(100%, 16rem) !important;
+  min-width: 16rem !important;
+  max-width: min(100vw - 2rem, 28rem);
+  box-sizing: border-box;
 }
 
 .item h3 {
@@ -117,6 +135,6 @@ h1 {
   font-size: 0.875rem;
 }
 
-:host ::ng-deep .w-full {
+.w-full {
   width: 100%;
 }

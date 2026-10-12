@@ -65,12 +65,16 @@
 
     <div class="item stacked">
       <h3>MegaMenu <code>psdMegaMenu</code></h3>
-      <p-megamenu [model]="megaItems" psdMegaMenu />
+      <div class="nav-host">
+        <p-megamenu [model]="megaItems" styleClass="demo-nav" psdMegaMenu />
+      </div>
     </div>
 
     <div class="item stacked">
       <h3>Menubar <code>psdMenubar</code></h3>
-      <p-menubar [model]="menubarItems" psdMenubar />
+      <div class="nav-host">
+        <p-menubar [model]="menubarItems" styleClass="demo-nav" psdMenubar />
+      </div>
     </div>
   </section>
 
