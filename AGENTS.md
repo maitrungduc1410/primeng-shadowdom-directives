@@ -1,4 +1,4 @@
-# AGENTS.md — primeng-shadowdom-directives
+# AGENTS.md: primeng-shadowdom-directives
 
 Short guide for AI coding agents (and humans) working in this repo.
 If this disagrees with [ARCHITECTURE.md](./ARCHITECTURE.md), that file wins.
@@ -11,16 +11,16 @@ Angular library that makes **PrimeNG overlays** behave correctly inside
 Current line is **v22** (Angular 22 + PrimeNG 22):
 
 - Overlay fixes via `psd*` directives + a `DomHandler.getScrollableParents` patch
-- **No** CSS clone helper — PrimeNG 22 shares theme sheets with `adoptedStyleSheets`
+- **No** CSS clone helper. PrimeNG 22 shares theme sheets with `adoptedStyleSheets`
 
 Published package name: `primeng-shadowdom-directives`.
 
 ## Read these first
 
-1. [ARCHITECTURE.md](./ARCHITECTURE.md) — how overlays break under Shadow DOM and how we patch them (v22).
-2. Docs site in [`docs/`](./docs) — public guide (en / vi / zh). Start with
-   [How it works](./docs/guide/how-it-works.md).
-3. [`.changeset/README.md`](./.changeset/README.md) — how releases are cut.
+1. [ARCHITECTURE.md](./ARCHITECTURE.md): how overlays break under Shadow DOM and how we patch them (v22).
+2. Docs site in [`docs/`](./docs): public guide (en / vi / zh). Start with
+   [How it works](./docs/guide/how-it-works.md) or the [Live demo](./docs/guide/demo.md).
+3. [`.changeset/README.md`](./.changeset/README.md): how releases are cut.
 
 ## Repository layout
 
@@ -30,10 +30,10 @@ projects/
     src/
       public-api.ts               # public exports
       primeng-shadowdom-directives.module.ts  # NgModule + DomHandler patch
-      directives/                 # psdMenu, psdPopover, …
+      directives/                 # psdMenu, psdPopover, ...
     package.json                  # npm version / peers (source of truth)
     CHANGELOG.md                  # written by changesets
-  demo/                           # local ShadowDom host app (not published)
+  demo/                           # ShadowDom host app (also shipped under docs /demo)
 
 docs/                             # VitePress site (GitHub Pages)
   .vitepress/config.mts
@@ -41,7 +41,7 @@ docs/                             # VitePress site (GitHub Pages)
 
 .changeset/                       # pending release notes
 .github/workflows/
-  docs.yml                        # build + deploy VitePress
+  docs.yml                        # build VitePress + demo app, deploy Pages
   release.yml                     # changesets → npm (OIDC) + GitHub release
 ```
 
@@ -62,7 +62,7 @@ Node **22+** (see `.nvmrc`). npm, not yarn.
 | `npm run changeset` | Add a changeset for a publishable behaviour change |
 | `npm run version-packages` | Apply changesets (CI / release PR only) |
 
-Do **not** hand-edit version in the lib `package.json` for releases — use changesets.
+Do **not** hand-edit version in the lib `package.json` for releases. Use changesets.
 
 ## When you change code
 
@@ -72,7 +72,7 @@ Do **not** hand-edit version in the lib `package.json` for releases — use chan
 - Mirror patterns already used: override `bindDocumentClickListener` (or equivalent)
   with `composedPath()` / shadow-aware target helpers.
 - Keep the `DomHandler.getScrollableParents` patch in the module file unless you
-  have a better global hook — it must stay side-effect-on-import.
+  have a better global hook. It must stay side-effect-on-import.
 - After behaviour changes users care about: `npm run changeset` (patch/minor/major).
 
 ### Docs
@@ -80,13 +80,16 @@ Do **not** hand-edit version in the lib `package.json` for releases — use chan
 - Guide pages are **triplicated**: `docs/guide/`, `docs/vi/guide/`, `docs/zh/guide/`.
   Update all three locales (or call out if you only did English).
 - Register new pages in `docs/.vitepress/config.mts` (`slugs` + `pages` labels for en/vi/zh).
+- The live demo page iframes the Angular app built from `projects/demo`. Keep the
+  Supported components checklist in sync with that demo.
 - Docs-only PRs do **not** need a changeset.
 
 ### Do not
 
-- Reintroduce `attachPrimeNgStylesToShadowRoot` on v22 (CSS is PrimeNG’s job).
-- Publish with a raw npm token in CI — use trusted publisher / `release.yml`.
-- Put publishable code in `projects/demo` or `docs/`.
+- Reintroduce `attachPrimeNgStylesToShadowRoot` on v22 (CSS is PrimeNG's job).
+- Publish with a raw npm token in CI. Use trusted publisher / `release.yml`.
+- Put publishable library code in `projects/demo` or `docs/`.
+- Use Unicode em dashes in docs or code comments. Prefer commas, periods, or parentheses.
 
 ## PR checklist
 

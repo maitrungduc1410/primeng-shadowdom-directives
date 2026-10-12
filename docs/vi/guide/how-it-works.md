@@ -4,20 +4,20 @@ description: "Cách primeng-shadowdom-directives sửa overlay PrimeNG trong Sha
 
 # Cách hoạt động
 
-Trang này mô tả **major hiện tại (v22)** — Angular 22 + PrimeNG 22.
+Trang này nói về **major hiện tại (v22)**: Angular 22 + PrimeNG 22.
 
 ## Vấn đề
 
 Khi UI dùng `ViewEncapsulation.ShadowDom` (hoặc custom element có shadow root),
-overlay PrimeNG thường lỗi:
+overlay PrimeNG hay lỗi kiểu:
 
 - Panel nổi gắn vào `document.body`, **ngoài** shadow tree.
-- Listener outside-click trên `document` thấy `event.target` bị **retarget** về
-  host, không phải node thật trong shadow.
+- Listener outside-click trên `document` thấy `event.target` bị **retarget** về host,
+  không phải node thật trong shadow.
 - Tìm scroll parent có thể vướng `ShadowRoot`.
 
-Hệ quả: menu không đóng, popover bỏ qua click ngoài, logic scroll/vị trí sai —
-dù panel vẫn nhìn thấy được.
+Hệ quả: menu không đóng, popover bỏ qua click ngoài, logic scroll / vị trí sai, dù
+panel vẫn nhìn thấy được.
 
 ## Hai việc tách biệt
 
@@ -30,10 +30,10 @@ dù panel vẫn nhìn thấy được.
 
 ### 1. Import module → patch DomHandler
 
-Import `PrimeNGShadowDOMDirective` sẽ **thay** `DomHandler.getScrollableParents`
-để bỏ qua `ShadowRoot` và vẫn tìm đúng scroll container.
+Import `PrimeNGShadowDOMDirective` sẽ **thay** `DomHandler.getScrollableParents` để
+bỏ qua `ShadowRoot` và vẫn tìm đúng scroll container.
 
-Nhiều overlay “không cần directive” chỉ cần bước này.
+Nhiều overlay “không cần directive” chỉ cần bước này (Select, Tooltip, AutoComplete, ...).
 
 ### 2. Directive `psd*` → click document nhận biết shadow
 
@@ -43,8 +43,8 @@ Nhiều overlay “không cần directive” chỉ cần bước này.
 ```
 
 Directive inject instance PrimeNG và override binder (ví dụ
-`bindDocumentClickListener`) để dùng `event.composedPath()` khi quyết định
-trong/ngoài.
+`bindDocumentClickListener`) để dùng `event.composedPath()` khi quyết định trong /
+ngoài.
 
 ## Luồng (rút gọn)
 
@@ -68,10 +68,11 @@ Listener trên document (đã patch bởi psd*)
 
 - Clone CSS PrimeNG từ `document.head` vào shadow root
 - Đổi chỗ append overlay của PrimeNG (panel vẫn có thể nằm trên `body`)
-- Tự sửa mọi component — một số vẫn cần `psd*` tường minh
+- Tự sửa mọi component (một số vẫn cần `psd*` tường minh)
 
 ## Đọc thêm
 
 - [ARCHITECTURE.md](https://github.com/maitrungduc1410/primeng-shadowdom-directives/blob/master/ARCHITECTURE.md) trên repo
 - [Directive overlay](./overlays)
 - [CSS trong Shadow DOM](./styles)
+- [Demo trực tiếp](./demo)

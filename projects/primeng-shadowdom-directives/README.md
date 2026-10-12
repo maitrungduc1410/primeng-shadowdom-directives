@@ -1,6 +1,6 @@
 # primeng-shadowdom-directives
 
-**Overlay directives** for Shadow DOM — outside-click / scroll-parent fixes (`psd*`).
+**Overlay directives** for Shadow DOM: outside-click / scroll-parent fixes (`psd*`).
 
 On PrimeNG **22**, theme CSS inside Shadow DOM is handled upstream via
 `adoptedStyleSheets`. This package does **not** export a CSS clone helper.
@@ -39,4 +39,4 @@ cd dist/primeng-shadowdom-directives && npm publish
 ## PrimeNG 22 notes
 
 - Prefer official style sharing for theming; keep `psd*` only for overlay behavior.
-- For CSS clone on older majors, use branches `v18`–`v21`.
+- For CSS clone on older majors, use branches `v18`-`v21`.

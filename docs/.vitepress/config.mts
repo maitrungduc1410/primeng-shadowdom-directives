@@ -2,7 +2,6 @@ import { readFileSync } from 'node:fs';
 import {
   type DefaultTheme,
   type HeadConfig,
-  type PageData,
   defineConfig,
 } from 'vitepress';
 
@@ -18,6 +17,7 @@ const { version } = JSON.parse(
 
 type Labels = {
   guide: string;
+  demo: string;
   changelog: string;
   groups: [string, string, string];
   pages: Record<(typeof slugs)[number], string>;
@@ -31,13 +31,14 @@ const slugs = [
   'overlays',
   'styles',
   'supported-components',
+  'demo',
   'versions',
   'troubleshooting',
 ] as const;
 
 const groups: (typeof slugs)[number][][] = [
   ['', 'how-it-works', 'installation', 'quick-start'],
-  ['overlays', 'styles', 'supported-components'],
+  ['overlays', 'styles', 'supported-components', 'demo'],
   ['versions', 'troubleshooting'],
 ];
 
@@ -57,7 +58,12 @@ function themeConfig(prefix: string, l: Labels): DefaultTheme.Config {
       {
         text: l.guide,
         link: `${prefix}/guide/`,
-        activeMatch: `^${prefix}/guide/`,
+        activeMatch: `^${prefix}/guide/(?!demo)`,
+      },
+      {
+        text: l.demo,
+        link: `${prefix}/guide/demo`,
+        activeMatch: `^${prefix}/guide/demo`,
       },
       {
         text: `v${version}`,
@@ -78,6 +84,7 @@ function themeConfig(prefix: string, l: Labels): DefaultTheme.Config {
 
 const en: Labels = {
   guide: 'Guide',
+  demo: 'Demo',
   changelog: 'Releases',
   groups: ['Introduction', 'Using PSD', 'Reference'],
   pages: {
@@ -88,6 +95,7 @@ const en: Labels = {
     overlays: 'Overlay directives',
     styles: 'Styles in Shadow DOM',
     'supported-components': 'Supported components',
+    demo: 'Live demo',
     versions: 'Versions & branches',
     troubleshooting: 'Troubleshooting',
   },
@@ -95,6 +103,7 @@ const en: Labels = {
 
 const vi: Labels = {
   guide: 'Hướng dẫn',
+  demo: 'Demo',
   changelog: 'Bản phát hành',
   groups: ['Giới thiệu', 'Dùng PSD', 'Tham chiếu'],
   pages: {
@@ -105,6 +114,7 @@ const vi: Labels = {
     overlays: 'Directive overlay',
     styles: 'CSS trong Shadow DOM',
     'supported-components': 'Component hỗ trợ',
+    demo: 'Demo trực tiếp',
     versions: 'Phiên bản & nhánh',
     troubleshooting: 'Khắc phục sự cố',
   },
@@ -112,6 +122,7 @@ const vi: Labels = {
 
 const zh: Labels = {
   guide: '指南',
+  demo: 'Demo',
   changelog: '发布记录',
   groups: ['入门', '使用 PSD', '参考'],
   pages: {
@@ -122,6 +133,7 @@ const zh: Labels = {
     overlays: '浮层指令',
     styles: 'Shadow DOM 中的样式',
     'supported-components': '支持的组件',
+    demo: '在线 Demo',
     versions: '版本与分支',
     troubleshooting: '故障排查',
   },
@@ -132,19 +144,19 @@ const seoLocales = {
     prefix: '',
     lang: 'en-US',
     og: 'en_US',
-    imageAlt: 'PrimeNG Shadow DOM Directives — overlays that work inside ShadowRoot',
+    imageAlt: 'PrimeNG Shadow DOM Directives: overlays that work inside ShadowRoot',
   },
   vi: {
     prefix: 'vi/',
     lang: 'vi-VN',
     og: 'vi_VN',
-    imageAlt: 'PrimeNG Shadow DOM Directives — overlay hoạt động trong ShadowRoot',
+    imageAlt: 'PrimeNG Shadow DOM Directives: overlay hoạt động trong ShadowRoot',
   },
   zh: {
     prefix: 'zh/',
     lang: 'zh-CN',
     og: 'zh_CN',
-    imageAlt: 'PrimeNG Shadow DOM Directives — 在 ShadowRoot 中正常工作的浮层',
+    imageAlt: 'PrimeNG Shadow DOM Directives: 在 ShadowRoot 中正常工作的浮层',
   },
 } as const;
 type SeoLocale = keyof typeof seoLocales;
@@ -168,7 +180,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}logo.svg` }],
-    ['meta', { name: 'theme-color', content: '#6366F1' }],
+    ['meta', { name: 'theme-color', content: '#DD0031' }],
   ],
   sitemap: {
     hostname: site,
@@ -238,7 +250,7 @@ export default defineConfig({
       lang: 'vi-VN',
       title: 'PrimeNG Shadow DOM Directives',
       description:
-        'Directive Angular giúp overlay PrimeNG hoạt động trong Shadow DOM (psdMenu, psdPopover, …).',
+        'Directive Angular giúp overlay PrimeNG hoạt động trong Shadow DOM (psdMenu, psdPopover, ...).',
       themeConfig: {
         ...themeConfig('/vi', vi),
         outline: { level: [2, 3], label: 'Trên trang này' },

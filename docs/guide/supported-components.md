@@ -4,7 +4,7 @@ description: "Supported PrimeNG components and which need an explicit psd* direc
 
 # Supported components
 
-Current major (**22**) — checklist from the package README:
+Current major (**22**). Checklist from the package README:
 
 - [x] DatePicker (`psdDatePicker`)
 - [x] Select (*No directive required*)
@@ -24,6 +24,10 @@ Current major (**22**) — checklist from the package README:
 - [x] Tree Select (*No directive required*)
 - [x] Input Mask (`psdInputMask`)
 
-“No directive required” still depends on importing `PrimeNGShadowDOMDirective` so the scroll-parent patch is active.
+“No directive required” still depends on importing `PrimeNGShadowDOMDirective` so the
+scroll-parent patch is active.
 
-Need another overlay? Open an issue or PR on [GitHub](https://github.com/maitrungduc1410/primeng-shadowdom-directives).
+Want to click through them all? See the [Live demo](./demo).
+
+Need another overlay? Open an issue or PR on
+[GitHub](https://github.com/maitrungduc1410/primeng-shadowdom-directives).

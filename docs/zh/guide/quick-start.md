@@ -51,9 +51,12 @@ export class ShadowDemoComponent {
 
 在 **PrimeNG 22** 上，styled-mode 样式表会通过 `adoptedStyleSheets` 共享进 shadow root。**不需要** PSD 的 CSS 助手。
 
-在 **PrimeNG 18–21** 上，见 [Shadow DOM 中的样式](./styles) 了解 `attachPrimeNgStylesToShadowRoot`。
+在 **PrimeNG 18-21** 上，见 [Shadow DOM 中的样式](./styles) 了解 `attachPrimeNgStylesToShadowRoot`。
 
-## 4. 运行仓库 demo
+## 4. 试试 Demo
+
+- 文档站：[在线 Demo](./demo)
+- 本仓库：
 
 ```bash
 npm install

@@ -17,12 +17,12 @@ app: Angular N + PrimeNG N  →  primeng-shadowdom-directives@^N
 | 分支 | 作用 |
 |------|------|
 | `master` | 当前 major（v22） |
-| `v18` … `v21` | 较旧栈的冻结 / 维护线 |
+| `v18` ... `v21` | 较旧栈的冻结 / 维护线 |
 | `v22` | 存在时与当前 master 同线 |
 
 ## v22 的变化
 
-- 主题 CSS：依赖 PrimeNG `adoptedStyleSheets` — **无** CSS clone 导出
+- 主题 CSS：依赖 PrimeNG `adoptedStyleSheets`（**无** CSS clone 导出）
 - 浮层：保留 `psd*` + 模块补丁
 - `OverlayPanel` → `Popover`（自 v20+）
 

@@ -6,6 +6,8 @@ description: "Cài primeng-shadowdom-directives khớp major Angular và PrimeNG
 
 ## Chọn đúng major
 
+Cài PSD cùng major với **PrimeNG** (và Angular):
+
 | PSD | Angular | PrimeNG |
 |-----|---------|---------|
 | `^18` | 18 | 18 |
@@ -18,13 +20,16 @@ description: "Cài primeng-shadowdom-directives khớp major Angular và PrimeNG
 npm install primeng-shadowdom-directives@^22.0.0
 ```
 
-Major cũ nằm trên nhánh GitHub `v18` … `v21` và bản npm tương ứng.
+Major cũ nằm trên nhánh GitHub `v18` ... `v21` và bản npm tương ứng.
 
 ## Peer dependencies
 
-Ví dụ v22: `@angular/common`, `@angular/core`, `primeng` — cùng major với bảng trên.
+Ví dụ v22: `@angular/common`, `@angular/core`, `primeng`. Giữ cùng major với bảng trên.
 
 ## Import module
+
+`PrimeNGShadowDOMDirective` là `NgModule` khai báo / export các directive overlay và
+bật patch scroll-parent khi được import.
 
 ```ts
 import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
@@ -35,4 +40,5 @@ import { PrimeNGShadowDOMDirective } from 'primeng-shadowdom-directives';
 export class AppModule {}
 ```
 
-Standalone: thêm module vào `imports` của component host. Vẫn gắn `psd*` trên từng overlay cần override — xem [Overlay](./overlays).
+Standalone: thêm module vào `imports` của component host. Vẫn gắn `psd*` trên từng
+overlay cần override. Xem [Overlay](./overlays).

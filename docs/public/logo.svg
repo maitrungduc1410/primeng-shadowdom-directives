@@ -2,8 +2,8 @@
   <title>primeng-shadowdom-directives</title>
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38BDF8" />
-      <stop offset="1" stop-color="#6366F1" />
+      <stop stop-color="#FF2D55" />
+      <stop offset="1" stop-color="#DD0031" />
     </linearGradient>
   </defs>
   <!-- outer host -->

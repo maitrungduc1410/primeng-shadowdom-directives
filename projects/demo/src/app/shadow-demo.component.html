@@ -1,54 +1,169 @@
 <div class="demo">
   <header>
-    <p class="eyebrow">demo app · consumes workspace library</p>
-    <h1>primeng-shadowdom-directives (v22)</h1>
+    <p class="eyebrow">v22 · ViewEncapsulation.ShadowDom</p>
+    <h1>primeng-shadowdom-directives</h1>
     <p class="lede">
-      This page is <code>ViewEncapsulation.ShadowDom</code> and imports
-      <code>PrimeNGShadowDOMDirective</code> for overlay behavior. Theme CSS is
-      shared by PrimeNG 22 via <code>adoptedStyleSheets</code> — no CSS clone.
+      Live showcase of every component listed under Supported components.
+      Theme CSS comes from PrimeNG 22 <code>adoptedStyleSheets</code>. Overlay
+      fixes come from <code>PrimeNGShadowDOMDirective</code> and
+      <code>psd*</code> attributes where needed.
     </p>
   </header>
 
   <section class="panel">
-    <h2>Overlays (PSD directives)</h2>
-    <div class="row">
-      <p-button label="Menu" icon="pi pi-bars" (onClick)="menu.toggle($event)" />
-      <p-menu #menu [model]="menuItems" [popup]="true" psdMenu />
+    <h2>Needs <code>psd*</code></h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Menu <code>psdMenu</code></h3>
+        <p-button label="Open menu" icon="pi pi-bars" (onClick)="menu.toggle($event)" />
+        <p-menu #menu [model]="menuItems" [popup]="true" psdMenu />
+      </div>
 
-      <p-button
-        label="Popover"
-        icon="pi pi-info-circle"
-        (onClick)="op.toggle($event)"
-      />
-      <p-popover #op psdPopover>
-        <div class="overlay-body">Outside click should dismiss under Shadow DOM.</div>
-      </p-popover>
+      <div class="item">
+        <h3>Popover <code>psdPopover</code></h3>
+        <p-button
+          label="Open popover"
+          icon="pi pi-info-circle"
+          (onClick)="op.toggle($event)"
+        />
+        <p-popover #op psdPopover>
+          <div class="overlay-body">Outside click should dismiss under Shadow DOM.</div>
+        </p-popover>
+      </div>
 
-      <p-datepicker
-        [(ngModel)]="date"
-        [showIcon]="true"
-        dateFormat="yy-mm-dd"
-        psdDatePicker
-      />
+      <div class="item">
+        <h3>DatePicker <code>psdDatePicker</code></h3>
+        <p-datepicker
+          [(ngModel)]="date"
+          [showIcon]="true"
+          dateFormat="yy-mm-dd"
+          psdDatePicker
+        />
+      </div>
+
+      <div class="item">
+        <h3>SplitButton <code>psdSplitButton</code></h3>
+        <p-splitbutton label="Save" [model]="splitItems" psdSplitButton />
+      </div>
+
+      <div class="item">
+        <h3>TieredMenu <code>psdTieredMenu</code></h3>
+        <p-button label="Open tiered" icon="pi pi-list" (onClick)="tiered.toggle($event)" />
+        <p-tieredmenu #tiered [model]="tieredItems" [popup]="true" psdTieredMenu />
+      </div>
+
+      <div class="item">
+        <h3>InputMask <code>psdInputMask</code></h3>
+        <p-inputmask
+          [(ngModel)]="maskValue"
+          mask="999-99-9999"
+          placeholder="999-99-9999"
+          psdInputMask
+        />
+      </div>
     </div>
   </section>
 
   <section class="panel">
-    <h2>In-shadow controls (PrimeNG 22 style share)</h2>
+    <h2>No directive required</h2>
     <p class="hint">
-      Button / Select theming inside this shadow host comes from PrimeNG
-      <code>UseStyle.adoptedStyleSheets</code>, not from cloning
-      <code>document.head</code>.
+      Still needs <code>PrimeNGShadowDOMDirective</code> imported so the DomHandler
+      scroll-parent patch is active.
     </p>
-    <div class="row">
-      <p-button label="Primary" />
-      <p-select
-        [options]="cities"
-        [(ngModel)]="city"
-        optionLabel="label"
-        optionValue="value"
-        placeholder="City"
-      />
+    <div class="grid">
+      <div class="item">
+        <h3>Select</h3>
+        <p-select
+          [options]="cities"
+          [(ngModel)]="city"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="City"
+          styleClass="w-full"
+        />
+      </div>
+
+      <div class="item">
+        <h3>Select inside Paginator</h3>
+        <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
+      </div>
+
+      <div class="item">
+        <h3>MultiSelect</h3>
+        <p-multiselect
+          [options]="cities"
+          [(ngModel)]="multiCities"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Cities"
+          display="chip"
+          styleClass="w-full"
+        />
+      </div>
+
+      <div class="item">
+        <h3>Tooltip</h3>
+        <p-button label="Hover me" pTooltip="Works inside Shadow DOM" tooltipPosition="top" />
+      </div>
+
+      <div class="item">
+        <h3>AutoComplete</h3>
+        <p-autocomplete
+          [(ngModel)]="autoValue"
+          [suggestions]="autoSuggestions"
+          (completeMethod)="searchAuto($event)"
+          placeholder="Type..."
+          styleClass="w-full"
+        />
+      </div>
+
+      <div class="item">
+        <h3>CascadeSelect</h3>
+        <p-cascadeselect
+          [(ngModel)]="cascadeValue"
+          [options]="cascadeOptions"
+          optionLabel="name"
+          optionGroupLabel="name"
+          [optionGroupChildren]="['cities']"
+          placeholder="Country / city"
+          styleClass="w-full"
+        />
+      </div>
+
+      <div class="item">
+        <h3>ColorPicker</h3>
+        <p-colorpicker [(ngModel)]="color" />
+      </div>
+
+      <div class="item">
+        <h3>ConfirmPopup</h3>
+        <p-confirmpopup />
+        <p-button
+          label="Confirm"
+          icon="pi pi-check"
+          (onClick)="confirmPopup($event)"
+        />
+      </div>
+
+      <div class="item">
+        <h3>TreeSelect</h3>
+        <p-treeselect
+          [(ngModel)]="treeValue"
+          [options]="treeNodes"
+          placeholder="Pick a node"
+          styleClass="w-full"
+        />
+      </div>
+    </div>
+
+    <div class="item stacked">
+      <h3>MegaMenu</h3>
+      <p-megamenu [model]="megaItems" />
+    </div>
+
+    <div class="item stacked">
+      <h3>Menubar</h3>
+      <p-menubar [model]="menubarItems" />
     </div>
   </section>
 </div>

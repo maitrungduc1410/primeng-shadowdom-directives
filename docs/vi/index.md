@@ -1,18 +1,18 @@
 ---
-description: "Directive Angular giúp overlay PrimeNG hoạt động trong Shadow DOM — Menu, Popover, DatePicker, và nhiều hơn."
+description: "Directive Angular giúp overlay PrimeNG chạy được trong Shadow DOM: Menu, Popover, DatePicker, và các overlay khác."
 layout: home
 
 hero:
   name: PrimeNG Shadow DOM Directives
   text: Overlay hoạt động đúng trong ShadowRoot
-  tagline: Sửa outside-click, scroll parent và lỗi overlay khi PrimeNG chạy dưới ViewEncapsulation.ShadowDom hoặc custom element. Với PrimeNG 22, CSS theme được share phía upstream — package này tập trung vào hành vi overlay.
+  tagline: Sửa outside-click, scroll parent và các lỗi overlay khi PrimeNG chạy dưới ViewEncapsulation.ShadowDom hoặc custom element. Với PrimeNG 22, CSS theme đã được share phía upstream, nên package này tập trung vào hành vi overlay.
   actions:
     - theme: brand
       text: Bắt đầu
       link: /vi/guide/quick-start
     - theme: alt
-      text: PSD là gì?
-      link: /vi/guide/
+      text: Demo
+      link: /vi/guide/demo
     - theme: alt
       text: npm
       link: https://www.npmjs.com/package/primeng-shadowdom-directives
@@ -20,22 +20,22 @@ hero:
 features:
   - icon: 🎯
     title: Directive overlay
-    details: Thuộc tính psd* cho Menu, Popover, DatePicker, SplitButton, TieredMenu, InputMask — kèm patch DomHandler scroll-parent cho nhiều overlay “không cần directive”.
+    details: Thuộc tính psd* cho Menu, Popover, DatePicker, SplitButton, TieredMenu, InputMask, kèm patch DomHandler scroll-parent cho nhiều overlay “không cần directive”.
     link: /vi/guide/overlays
     linkText: Xem overlay
   - icon: 🌑
     title: Dành cho Shadow DOM
-    details: Event bị retarget ở biên shadow. Override dùng composedPath() để khôi phục dismiss / outside-click.
+    details: Event bị retarget ở biên shadow. Override dùng composedPath() để outside-click / dismiss hoạt động lại.
     link: /vi/guide/
     linkText: Vì sao cần PSD
   - icon: 🎨
     title: CSS và overlay là hai việc
-    details: PrimeNG 18–21 cần clone CSS. PrimeNG 22 share sheet qua adoptedStyleSheets — trên v22 chỉ giữ PSD cho overlay.
+    details: PrimeNG 18-21 cần clone CSS. PrimeNG 22 share sheet qua adoptedStyleSheets, nên trên v22 chỉ giữ PSD cho overlay.
     link: /vi/guide/styles
     linkText: CSS trong Shadow DOM
   - icon: 📦
     title: Major theo PrimeNG
-    details: Publish theo major 18–22. Cài đúng major khớp Angular + PrimeNG của bạn.
+    details: Publish theo major 18-22. Cài đúng major khớp Angular + PrimeNG của bạn.
     link: /vi/guide/versions
     linkText: Phiên bản
 ---

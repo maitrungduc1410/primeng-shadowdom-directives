@@ -10,9 +10,9 @@ description: "Directive psd* và patch DomHandler scroll-parent."
 <p-menu [popup]="true" psdMenu></p-menu>
 <p-popover psdPopover>...</p-popover>
 <p-datepicker psdDatePicker></p-datepicker>
-<p-splitButton psdSplitButton></p-splitButton>
-<p-tieredMenu psdTieredMenu></p-tieredMenu>
-<p-inputMask psdInputMask></p-inputMask>
+<p-splitbutton psdSplitButton></p-splitbutton>
+<p-tieredmenu psdTieredMenu></p-tieredmenu>
+<p-inputmask psdInputMask></p-inputmask>
 ```
 
 ### Đổi tên theo major
@@ -23,13 +23,19 @@ description: "Directive psd* và patch DomHandler scroll-parent."
 | ≥ 20 | Dùng `psdPopover` với `p-popover` |
 | ≤ 19 | `psdCalendar` legacy; ưu tiên `psdDatePicker` |
 
+Danh sách đầy đủ trên major hiện tại: [Component hỗ trợ](./supported-components).
+
 ## Patch cấp module
 
-Import `PrimeNGShadowDOMDirective` còn patch `DomHandler.getScrollableParents` để nhiều overlay “No directive required” chạy được.
+Import `PrimeNGShadowDOMDirective` còn patch `DomHandler.getScrollableParents` để nhiều
+overlay “No directive required” chạy được.
+
+Component nào tự bind document click thì vẫn cần `psd*` tường minh để dùng
+`composedPath()`.
 
 ## Ý tưởng override
 
-- Outside-click → ưu tiên `event.composedPath()`
+- Outside-click → ưu tiên `event.composedPath()` thay vì `event.target`
 - Scrollable parents → nhìn xuyên biên shadow khi cần
 
-Hook cụ thể khác nhau theo major PrimeNG — cài đúng major PSD.
+Hook cụ thể khác nhau theo major PrimeNG. Cài đúng major PSD.

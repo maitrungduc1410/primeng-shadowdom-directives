@@ -5,9 +5,9 @@ Helpers so PrimeNG **22** overlays work inside Shadow DOM.
 For contributors / agents: see [AGENTS.md](./AGENTS.md) and [ARCHITECTURE.md](./ARCHITECTURE.md).
 Public guide: [docs/](./docs) (VitePress).
 
-**Overlay directives** (`psd*`) — override outside-click / scroll-parent logic (classic PSD).
+**Overlay directives** (`psd*`): override outside-click / scroll-parent logic (classic PSD).
 
-Theme CSS is **not** cloned by this package on v22 — PrimeNG 22 shares non-variable sheets into Shadow DOM via `adoptedStyleSheets` (`UseStyle`).
+Theme CSS is **not** cloned by this package on v22. PrimeNG 22 shares non-variable sheets into Shadow DOM via `adoptedStyleSheets` (`UseStyle`).
 
 All overlay directives use the prefix `psd` = **P**rimeNG **S**hadowDOM **D**irective.
 

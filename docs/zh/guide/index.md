@@ -4,16 +4,18 @@ description: "primeng-shadowdom-directives 解决什么：Angular Shadow DOM 宿
 
 # 这是什么？
 
-**primeng-shadowdom-directives**（PSD）是一组小型 Angular 指令，用于在 [Shadow DOM](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components/Using_shadow_DOM) 中使用 PrimeNG **浮层**时修复行为问题 — 例如 `ViewEncapsulation.ShadowDom` 或 Angular Elements。
+**primeng-shadowdom-directives**（PSD）是一组小型 Angular 指令，用来在
+[Shadow DOM](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components/Using_shadow_DOM)
+里把 PrimeNG **浮层**跑顺，例如 `ViewEncapsulation.ShadowDom` 或 Angular Elements。
 
 ## 两个独立问题
 
 | 问题 | 现象 | 谁来解决 |
 |------|------|----------|
-| **主题 CSS** | Shadow 宿主内 Button / Select 无样式 | PrimeNG **22+** 通过 `adoptedStyleSheets` 共享。**18–21** 需从 `document.head` clone（见 [样式](./styles)）。 |
+| **主题 CSS** | Shadow 宿主内 Button / Select 无样式 | PrimeNG **22+** 通过 `adoptedStyleSheets` 共享。**18-21** 需从 `document.head` clone（见 [样式](./styles)）。 |
 | **浮层行为** | Menu / Popover 无法 outside-click 关闭；滚动父级错误 | PSD 的 `psd*` 指令 + `DomHandler.getScrollableParents` 补丁 |
 
-PSD 历史上专注 **浮层**。本包 v22 **不再**提供 CSS clone 助手 — 主题样式交给 PrimeNG。
+PSD 一直专注 **浮层**。本包 v22 **不再**提供 CSS clone 助手，主题样式交给 PrimeNG。
 
 ## 浮层为何在 Shadow DOM 中失效
 
@@ -34,4 +36,5 @@ PrimeNG 浮层通常会：
 - [工作原理](./how-it-works)
 - [安装](./installation)
 - [快速开始](./quick-start)
+- [在线 Demo](./demo)
 - [浮层指令](./overlays)

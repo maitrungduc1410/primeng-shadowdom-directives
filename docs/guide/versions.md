@@ -17,12 +17,12 @@ app: Angular N + PrimeNG N  →  primeng-shadowdom-directives@^N
 | Branch | Role |
 |--------|------|
 | `master` | Current major (v22) |
-| `v18` … `v21` | Frozen / maintained lines for older stacks |
+| `v18` ... `v21` | Frozen / maintained lines for older stacks |
 | `v22` | Same line as current master when present |
 
 ## What changed on v22
 
-- Theme CSS: rely on PrimeNG `adoptedStyleSheets` — **no** CSS clone export
+- Theme CSS: rely on PrimeNG `adoptedStyleSheets` (no CSS clone export)
 - Overlays: keep `psd*` + module patch
 - `OverlayPanel` → `Popover` (from v20+)
 

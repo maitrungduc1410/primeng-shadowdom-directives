@@ -10,7 +10,7 @@ npm run changeset
 Pick the bump (patch / minor / major) and write one or two sentences for the
 changelog. The [Release](../.github/workflows/release.yml) workflow turns pending
 changesets into a `chore: release vX.Y.Z` pull request (branch `release/vX.Y.Z`);
-merging that pull request publishes to npm with **trusted publishing** (OIDC —
+merging that pull request publishes to npm with **trusted publishing** (OIDC,
 no npm token in the repo) and creates the GitHub release.
 
 You can also write the file by hand:

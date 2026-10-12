@@ -4,26 +4,30 @@ description: "Component PrimeNG được hỗ trợ và khi nào cần psd*."
 
 # Component hỗ trợ
 
-Major hiện tại (**22**):
+Major hiện tại (**22**), checklist từ README:
 
 - [x] DatePicker (`psdDatePicker`)
-- [x] Select (*Không cần directive*)
-- [x] Select trong Paginator (*Không cần directive*)
+- [x] Select (*No directive required*)
+- [x] Select trong Paginator (*No directive required*)
 - [x] Menu (`psdMenu`)
-- [x] Multi Select (*Không cần directive*)
-- [x] Tooltip (*Không cần directive*)
-- [x] Auto Complete (*Không cần directive*)
-- [x] Cascade Select (*Không cần directive*)
-- [x] Color Picker (*Không cần directive*)
-- [x] Mega Menu (*Không cần directive*)
-- [x] Menu Bar (*Không cần directive*)
-- [x] Confirm Popup (*Không cần directive*)
+- [x] Multi Select (*No directive required*)
+- [x] Tooltip (*No directive required*)
+- [x] Auto Complete (*No directive required*)
+- [x] Cascade Select (*No directive required*)
+- [x] Color Picker (*No directive required*)
+- [x] Mega Menu (*No directive required*)
+- [x] Menu Bar (*No directive required*)
+- [x] Confirm Popup (*No directive required*)
 - [x] Popover (`psdPopover`)
 - [x] Split Button (`psdSplitButton`)
 - [x] Tiered Menu (`psdTieredMenu`)
-- [x] Tree Select (*Không cần directive*)
+- [x] Tree Select (*No directive required*)
 - [x] Input Mask (`psdInputMask`)
 
-“Không cần directive” vẫn cần import `PrimeNGShadowDOMDirective` để bật patch scroll-parent.
+“No directive required” vẫn cần import `PrimeNGShadowDOMDirective` để bật patch
+scroll-parent.
 
-Cần thêm overlay? Mở issue/PR trên [GitHub](https://github.com/maitrungduc1410/primeng-shadowdom-directives).
+Muốn bấm thử hết? Vào [Demo trực tiếp](./demo).
+
+Cần thêm overlay? Mở issue / PR trên
+[GitHub](https://github.com/maitrungduc1410/primeng-shadowdom-directives).

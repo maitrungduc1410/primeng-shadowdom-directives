@@ -1,41 +1,41 @@
 /*
- * Identity: sky → indigo (Shadow DOM host + overlay escaping to document).
+ * Identity: Angular red (logo shield #DD0031).
  */
 :root {
-  --psd-identity: #38bdf8;
-  --psd-identity-2: #6366f1;
+  --psd-identity: #dd0031;
+  --psd-identity-2: #c3002f;
 
-  --vp-c-brand-1: #2563eb;
-  --vp-c-brand-2: #1d4ed8;
-  --vp-c-brand-3: #3b82f6;
-  --vp-c-brand-soft: rgba(59, 130, 246, 0.14);
+  --vp-c-brand-1: #dd0031;
+  --vp-c-brand-2: #c3002f;
+  --vp-c-brand-3: #e90340;
+  --vp-c-brand-soft: rgba(221, 0, 49, 0.14);
 
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(120deg, #2563eb 20%, #6366f1);
+  --vp-home-hero-name-background: linear-gradient(120deg, #dd0031 15%, #ff2d55 85%);
   --vp-home-hero-image-background-image: radial-gradient(
     closest-side,
-    rgba(56, 189, 248, 0.32),
-    rgba(99, 102, 241, 0.12) 55%,
+    rgba(221, 0, 49, 0.34),
+    rgba(195, 0, 47, 0.12) 55%,
     transparent
   );
   --vp-home-hero-image-filter: blur(28px);
 }
 
 .dark {
-  --vp-c-brand-1: #7dd3fc;
-  --vp-c-brand-2: #38bdf8;
-  --vp-c-brand-3: #6366f1;
-  --vp-c-brand-soft: rgba(56, 189, 248, 0.16);
+  --vp-c-brand-1: #ff5c7a;
+  --vp-c-brand-2: #ff3b5c;
+  --vp-c-brand-3: #e90340;
+  --vp-c-brand-soft: rgba(255, 92, 122, 0.16);
 
   --vp-home-hero-name-background: linear-gradient(
     120deg,
-    var(--psd-identity) 20%,
-    var(--psd-identity-2)
+    #ff5c7a 15%,
+    #dd0031 85%
   );
   --vp-home-hero-image-background-image: radial-gradient(
     closest-side,
-    rgba(56, 189, 248, 0.28),
-    rgba(99, 102, 241, 0.12) 55%,
+    rgba(255, 92, 122, 0.3),
+    rgba(221, 0, 49, 0.12) 55%,
     transparent
   );
 }
@@ -78,4 +78,32 @@
 
 .VPNavBarTitle .logo {
   flex-shrink: 0;
+}
+
+.psd-demo {
+  margin: 1rem 0 2rem;
+}
+
+.psd-demo__actions {
+  margin: 0 0 0.75rem;
+}
+
+.psd-demo__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.psd-demo__frame {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+
+.psd-demo__iframe {
+  display: block;
+  width: 100%;
+  height: min(78vh, 920px);
+  border: 0;
+  background: #f8fafc;
 }

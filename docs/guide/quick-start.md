@@ -49,13 +49,16 @@ export class ShadowDemoComponent {
 
 ## 3. Theme CSS (v22)
 
-On **PrimeNG 22**, styled-mode sheets are shared into the shadow root via `adoptedStyleSheets`. You do **not** need a PSD CSS helper.
+On **PrimeNG 22**, styled-mode sheets are shared into the shadow root via
+`adoptedStyleSheets`. You do **not** need a PSD CSS helper.
 
-On **PrimeNG 18–21**, see [Styles in Shadow DOM](./styles) for `attachPrimeNgStylesToShadowRoot`.
+On **PrimeNG 18-21**, see [Styles in Shadow DOM](./styles) for
+`attachPrimeNgStylesToShadowRoot`.
 
-## 4. Try the workspace demo
+## 4. Try the demo
 
-In this repository:
+- In the docs: [Live demo](./demo)
+- In this repository:
 
 ```bash
 npm install

@@ -39,11 +39,14 @@ export class ShadowDemoComponent {
 
 ## 3. CSS theme (v22)
 
-PrimeNG **22** share style qua `adoptedStyleSheets` — **không** cần helper CSS của PSD.
+PrimeNG **22** share style qua `adoptedStyleSheets`. **Không** cần helper CSS của PSD.
 
-PrimeNG **18–21**: xem [CSS trong Shadow DOM](./styles).
+PrimeNG **18-21**: xem [CSS trong Shadow DOM](./styles).
 
-## 4. Demo trong repo
+## 4. Thử demo
+
+- Trong docs: [Demo trực tiếp](./demo)
+- Trong repo:
 
 ```bash
 npm install && npm run build && npm start

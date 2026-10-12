@@ -12,9 +12,9 @@ description: "psd* 浮层指令与 DomHandler 滚动父级补丁。"
 <p-menu [popup]="true" psdMenu></p-menu>
 <p-popover psdPopover>...</p-popover>
 <p-datepicker psdDatePicker></p-datepicker>
-<p-splitButton psdSplitButton></p-splitButton>
-<p-tieredMenu psdTieredMenu></p-tieredMenu>
-<p-inputMask psdInputMask></p-inputMask>
+<p-splitbutton psdSplitButton></p-splitbutton>
+<p-tieredmenu psdTieredMenu></p-tieredmenu>
+<p-inputmask psdInputMask></p-inputmask>
 ```
 
 ### 重命名说明

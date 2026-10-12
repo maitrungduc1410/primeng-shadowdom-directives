@@ -4,26 +4,28 @@ description: "支持的 PrimeNG 组件，以及哪些需要显式 psd*。"
 
 # 支持的组件
 
-当前 major（**22**）— 来自包 README：
+当前 major（**22**），来自包 README：
 
 - [x] DatePicker（`psdDatePicker`）
-- [x] Select（*无需指令*）
-- [x] Paginator 内的 Select（*无需指令*）
+- [x] Select（*No directive required*）
+- [x] Paginator 内的 Select（*No directive required*）
 - [x] Menu（`psdMenu`）
-- [x] Multi Select（*无需指令*）
-- [x] Tooltip（*无需指令*）
-- [x] Auto Complete（*无需指令*）
-- [x] Cascade Select（*无需指令*）
-- [x] Color Picker（*无需指令*）
-- [x] Mega Menu（*无需指令*）
-- [x] Menu Bar（*无需指令*）
-- [x] Confirm Popup（*无需指令*）
+- [x] Multi Select（*No directive required*）
+- [x] Tooltip（*No directive required*）
+- [x] Auto Complete（*No directive required*）
+- [x] Cascade Select（*No directive required*）
+- [x] Color Picker（*No directive required*）
+- [x] Mega Menu（*No directive required*）
+- [x] Menu Bar（*No directive required*）
+- [x] Confirm Popup（*No directive required*）
 - [x] Popover（`psdPopover`）
 - [x] Split Button（`psdSplitButton`）
 - [x] Tiered Menu（`psdTieredMenu`）
-- [x] Tree Select（*无需指令*）
+- [x] Tree Select（*No directive required*）
 - [x] Input Mask（`psdInputMask`）
 
 「无需指令」仍依赖导入 `PrimeNGShadowDOMDirective` 以启用滚动父级补丁。
+
+想点一遍？看 [在线 Demo](./demo)。
 
 需要更多浮层？在 [GitHub](https://github.com/maitrungduc1410/primeng-shadowdom-directives) 提 issue 或 PR。

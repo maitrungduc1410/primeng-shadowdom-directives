@@ -16,7 +16,7 @@ export class psdInputMaskDirective {
     if (!hostEl) {
       return;
     }
-    // @ts-ignore — caret typing differs across PrimeNG majors
+    // @ts-ignore: caret typing differs across PrimeNG majors
     hostEl.caret = (first?: number, last?: number) => {
       let range: any, begin: any, end: any;
       const el = inputEl(hostEl);

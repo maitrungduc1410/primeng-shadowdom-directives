@@ -5,7 +5,7 @@
 }
 
 .demo {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem 2rem;
   min-height: 100%;
   background: #f8fafc;
   box-sizing: border-box;
@@ -16,7 +16,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #4f46e5;
+  color: #dd0031;
 }
 
 h1 {
@@ -29,7 +29,8 @@ h1 {
   margin: 0 0 1rem;
   color: #4b5563;
   font-size: 0.9rem;
-  max-width: 40rem;
+  max-width: 44rem;
+  line-height: 1.5;
 }
 
 .panel {
@@ -41,18 +42,48 @@ h1 {
 }
 
 .panel h2 {
-  margin: 0 0 0.75rem;
-  font-size: 1rem;
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
 }
 
-.row {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.item.stacked {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.item h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.item h3 code {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #dd0031;
+  margin-left: 0.25rem;
 }
 
 .overlay-body {
   max-width: 16rem;
   font-size: 0.875rem;
+}
+
+:host ::ng-deep .w-full {
+  width: 100%;
 }

@@ -53,7 +53,7 @@ shadow root via `adoptedStyleSheets`. We do not clone `document.head`.
 
 Public API (`src/public-api.ts`):
 
-- `PrimeNGShadowDOMDirective` — `NgModule` that declares/exports all directives
+- `PrimeNGShadowDOMDirective`: `NgModule` that declares/exports all directives
   and applies the DomHandler patch when the module file is evaluated.
 - Directive classes from `src/directives/` (also exported for typing).
 
@@ -96,7 +96,7 @@ function shadowAwareTarget(event: Event): EventTarget | null {
 
 Then outside-container checks use that target instead of raw `event.target`.
 
-PrimeNG 22 APIs may expose `ViewChild` as signals — helpers like
+PrimeNG 22 APIs may expose `ViewChild` as signals. Helpers like
 `containerElement()` / `readFlag()` unwrap both signal and classic fields so
 directives keep working across small PrimeNG patch differences.
 
@@ -133,5 +133,6 @@ from `dist/` with OIDC provenance (`release.yml`).
 
 ## Demo app
 
-`projects/demo` is a local ShadowDom host that imports the workspace library.
-It is for manual verification, not part of the published tarball.
+`projects/demo` is a ShadowDom host that imports the workspace library and
+showcases every Supported component. Docs Pages ships it under `/demo/` and the
+VitePress [Live demo](./docs/guide/demo.md) page embeds it in an iframe.

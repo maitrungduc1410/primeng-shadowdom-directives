@@ -4,16 +4,20 @@ description: "PSD giải quyết gì: overlay PrimeNG trong host Shadow DOM củ
 
 # PSD là gì?
 
-**primeng-shadowdom-directives** (PSD) là thư viện Angular nhỏ gồm các directive giúp overlay PrimeNG hoạt động khi UI nằm trong [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) — ví dụ `ViewEncapsulation.ShadowDom` hoặc Angular Elements.
+**primeng-shadowdom-directives** (PSD) là thư viện Angular nhỏ gồm các directive giúp
+overlay PrimeNG hoạt động khi UI nằm trong
+[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM),
+ví dụ `ViewEncapsulation.ShadowDom` hoặc Angular Elements.
 
-## Hai vấn đề tách biệt
+## Hai vấn đề hay bị lẫn
 
 | Vấn đề | Hiện tượng | Ai xử lý |
 |--------|------------|----------|
-| **Theme CSS** | Button / Select trong shadow không có style | PrimeNG **22+** share bằng `adoptedStyleSheets`. **18–21** cần clone từ `document.head` (xem [CSS](./styles)). |
+| **Theme CSS** | Button / Select trong shadow không có style | PrimeNG **22+** share bằng `adoptedStyleSheets`. **18-21** cần clone từ `document.head` (xem [CSS](./styles)). |
 | **Hành vi overlay** | Menu / Popover không dismiss; scroll parent sai | Directive `psd*` + patch `DomHandler.getScrollableParents` |
 
-PSD vốn tập trung **overlay**. Bản v22 **không** export helper clone CSS — theming nhờ PrimeNG.
+PSD vốn tập trung **overlay**. Bản v22 **không** export helper clone CSS; theming để
+PrimeNG lo.
 
 ## Overlay hỏng vì sao?
 
@@ -21,17 +25,19 @@ Overlay PrimeNG thường:
 
 1. Append panel ra `document.body` (ngoài shadow tree).
 2. Lắng nghe click “bên ngoài” trên `document`.
-3. Dùng `event.target` / duyệt cây dừng ở biên shadow.
+3. Dùng `event.target` / duyệt cây rồi dừng ở biên shadow.
 
-Click trong shadow bị **retarget**. Không dùng `composedPath()` thì host trông như target → logic dismiss sai.
+Click trong shadow bị **retarget**. Không dùng `composedPath()` thì host trông như
+target, logic dismiss dễ sai.
 
 ## Tiền tố
 
-**`psd`** = **P**rimeNG **S**hadowDOM **D**irective.
+**`psd`** = **P**rimeNG **S**hadowDOM **D**irective (`psdMenu`, `psdPopover`, ...).
 
 ## Tiếp theo
 
 - [Cách hoạt động](./how-it-works)
 - [Cài đặt](./installation)
 - [Bắt đầu nhanh](./quick-start)
+- [Demo trực tiếp](./demo)
 - [Directive overlay](./overlays)

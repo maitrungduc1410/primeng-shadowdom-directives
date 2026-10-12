@@ -4,7 +4,7 @@ description: "primeng-shadowdom-directives 在 v22 下如何修复 Shadow DOM �
 
 # 工作原理
 
-本页描述 **当前 major（v22）** — Angular 22 + PrimeNG 22。
+本页描述 **当前 major（v22）**：Angular 22 + PrimeNG 22。
 
 ## 问题
 
@@ -16,8 +16,7 @@ PrimeNG 浮层经常异常：
   `event.target`，而不是 shadow 内的真实节点。
 - 查找滚动父级时可能卡在 `ShadowRoot` 上。
 
-结果是菜单关不掉、Popover 忽略外部点击、滚动/定位逻辑出错 — 即使面板看起来
-还在。
+结果是菜单关不掉、Popover 忽略外部点击、滚动 / 定位逻辑出错，即使面板看起来还在。
 
 ## 两件独立的事
 
@@ -43,7 +42,7 @@ PrimeNG 浮层经常异常：
 ```
 
 指令注入 PrimeNG 组件实例，并覆盖绑定方法（如
-`bindDocumentClickListener`），用 `event.composedPath()` 判断内/外。
+`bindDocumentClickListener`），用 `event.composedPath()` 判断内 / 外。
 
 ## 流程（简化）
 
@@ -67,10 +66,11 @@ document 监听器（已被 psd* 修补）
 
 - 从 `document.head` clone PrimeNG 样式进 shadow root
 - 改变 PrimeNG 浮层的挂载目标（面板仍可能在 `body` 上）
-- 自动修复所有组件 — 有些仍需显式 `psd*`
+- 自动修复所有组件（有些仍需显式 `psd*`）
 
 ## 深入阅读
 
 - 仓库中的 [ARCHITECTURE.md](https://github.com/maitrungduc1410/primeng-shadowdom-directives/blob/master/ARCHITECTURE.md)
 - [浮层指令](./overlays)
 - [Shadow DOM 中的样式](./styles)
+- [在线 Demo](./demo)

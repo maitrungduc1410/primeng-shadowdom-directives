@@ -5,12 +5,22 @@ on:
     branches: [master]
     paths:
       - 'docs/**'
-      - 'projects/primeng-shadowdom-directives/package.json'
+      - 'projects/demo/**'
+      - 'projects/primeng-shadowdom-directives/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'angular.json'
+      - 'tsconfig.json'
       - '.github/workflows/docs.yml'
   pull_request:
     paths:
       - 'docs/**'
-      - 'projects/primeng-shadowdom-directives/package.json'
+      - 'projects/demo/**'
+      - 'projects/primeng-shadowdom-directives/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'angular.json'
+      - 'tsconfig.json'
       - '.github/workflows/docs.yml'
   workflow_dispatch:
 
@@ -35,15 +45,34 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: docs/package-lock.json
+          cache-dependency-path: |
+            package-lock.json
+            docs/package-lock.json
+
+      - name: Install workspace dependencies
+        run: npm ci
 
       - name: Install docs dependencies
         working-directory: docs
         run: npm ci
 
+      - name: Build library
+        run: npm run build:lib
+
+      - name: Build demo app
+        run: >-
+          npx ng build demo
+          --configuration production
+          --base-href /primeng-shadowdom-directives/demo/
+
       - name: Build docs
         working-directory: docs
         run: npm run build
+
+      - name: Bundle demo into docs dist
+        run: |
+          mkdir -p docs/.vitepress/dist/demo
+          cp -R dist/demo/browser/. docs/.vitepress/dist/demo/
 
       - name: Configure Pages
         if: github.event_name != 'pull_request'
