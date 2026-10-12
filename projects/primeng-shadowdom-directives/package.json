@@ -29,6 +29,10 @@
   "readme": "README.md",
   "license": "MIT",
   "licenseFilename": "LICENSE",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "keywords": [
     "primeng",
     "primeng shadowdom",

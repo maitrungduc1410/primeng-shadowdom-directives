@@ -1,6 +1,9 @@
 # Primeng Shadowdom Directives
 
-Helpers so PrimeNG **22** overlays work inside Shadow DOM:
+Helpers so PrimeNG **22** overlays work inside Shadow DOM.
+
+For contributors / agents: see [AGENTS.md](./AGENTS.md) and [ARCHITECTURE.md](./ARCHITECTURE.md).
+Public guide: [docs/](./docs) (VitePress).
 
 **Overlay directives** (`psd*`) — override outside-click / scroll-parent logic (classic PSD).
 
@@ -103,9 +106,18 @@ npm start
 
 
 
-## Demo
+## Documentation (VitePress)
 
-Local:
+```bash
+npm run docs:dev      # http://localhost:5173/primeng-shadowdom-directives/
+npm run docs:build
+```
+
+GitHub Pages deploys the docs site from `docs/` (workflow `.github/workflows/docs.yml`):
+
+`https://maitrungduc1410.github.io/primeng-shadowdom-directives/`
+
+## Demo app (local)
 
 ```bash
 npm install
@@ -115,24 +127,20 @@ npm start
 
 Open [http://localhost:4200](http://localhost:4200).
 
-GitHub Pages: push to this branch runs `.github/workflows/demo-page.yml`, which builds the demo with
+## Release (changesets + trusted publisher)
 
-`base-href /primeng-shadowdom-directives/` and deploys to Pages
-
-(e.g. `https://<user>.github.io/primeng-shadowdom-directives/`).
+1. On a feature PR, add a changeset:
 
 ```bash
-npm run build:pages
+npm run changeset
 ```
 
-## Publish to npm
+2. Merge to `master`. The [Release](.github/workflows/release.yml) workflow opens
+   `chore: release vX.Y.Z` (branch `release/vX.Y.Z`).
 
-```bash
-npm run build:lib
-cd dist/primeng-shadowdom-directives
-npm publish --access public
-```
+3. Merge that release PR → npm publish with OIDC provenance + GitHub release.
 
-Or from the workspace root: `npm run publish:lib`.
+One-time: configure the npm **Trusted Publisher** for this GitHub repo / workflow
+`release.yml` (see [.changeset/README.md](.changeset/README.md)).
 
 Package metadata / version: `projects/primeng-shadowdom-directives/package.json`.

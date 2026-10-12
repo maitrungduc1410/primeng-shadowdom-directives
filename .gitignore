@@ -8,6 +8,9 @@
 
 # Node
 /node_modules
+/docs/node_modules
+/docs/.vitepress/dist
+/docs/.vitepress/cache
 npm-debug.log
 yarn-error.log
 
