@@ -1,5 +1,11 @@
 # primeng-shadowdom-directives
 
+## 22.0.2
+
+### Patch Changes
+
+- ff73c13: Fix Menubar mobile outside-click under Shadow DOM: clear `mobileActive` and call `markForCheck` (OnPush).
+
 ## 22.0.1
 
 ### Patch Changes
