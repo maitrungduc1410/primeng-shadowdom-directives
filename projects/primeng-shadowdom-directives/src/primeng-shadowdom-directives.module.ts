@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
+import { DomHandler } from 'primeng/dom';
 import {
-  psdOverlayPanelDirective,
+  psdCalendarDirective,
+  psdDatePickerDirective,
   psdInputMaskDirective,
   psdMenuDirective,
-  psdSlideMenuDirective,
+  psdOverlayPanelDirective,
   psdSplitButtonDirective,
   psdTieredMenuDirective,
-  psdCalendarDirective
 } from './directives';
-import { DomHandler } from 'primeng/dom';
 
+/**
+ * Patch scroll-parent walk so ShadowRoot nodes are skipped (PrimeNG default
+ * breaks when an overlay lives under a shadow host).
+ */
 DomHandler.getScrollableParents = (element: any) => {
-  let scrollableParents = [];
+  const scrollableParents: any[] = [];
 
   if (element) {
-    let parents = DomHandler.getParents(element).filter(
+    const parents = DomHandler.getParents(element).filter(
       (item: any) => !(item instanceof ShadowRoot)
     );
     const overflowRegex = /(auto|scroll)/;
     const overflowCheck = (node: any) => {
-      let styleDeclaration = window['getComputedStyle'](node, null);
+      const styleDeclaration = window.getComputedStyle(node, null);
       return (
         overflowRegex.test(styleDeclaration.getPropertyValue('overflow')) ||
         overflowRegex.test(styleDeclaration.getPropertyValue('overflowX')) ||
@@ -27,13 +31,13 @@ DomHandler.getScrollableParents = (element: any) => {
       );
     };
 
-    for (let parent of parents) {
-      let scrollSelectors =
-        parent.nodeType === 1 && parent.dataset['scrollselectors'];
+    for (const parent of parents) {
+      const scrollSelectors =
+        parent.nodeType === 1 && parent.dataset?.['scrollselectors'];
       if (scrollSelectors) {
-        let selectors = scrollSelectors.split(',');
-        for (let selector of selectors) {
-          let el = DomHandler.findSingle(parent, selector);
+        const selectors = scrollSelectors.split(',');
+        for (const selector of selectors) {
+          const el = DomHandler.findSingle(parent, selector);
           if (el && overflowCheck(el)) {
             scrollableParents.push(el);
           }
@@ -49,24 +53,18 @@ DomHandler.getScrollableParents = (element: any) => {
   return scrollableParents;
 };
 
+const DIRECTIVES = [
+  psdMenuDirective,
+  psdOverlayPanelDirective,
+  psdInputMaskDirective,
+  psdSplitButtonDirective,
+  psdTieredMenuDirective,
+  psdCalendarDirective,
+  psdDatePickerDirective,
+];
+
 @NgModule({
-  declarations: [
-    psdMenuDirective,
-    psdOverlayPanelDirective,
-    psdInputMaskDirective,
-    psdSlideMenuDirective,
-    psdSplitButtonDirective,
-    psdTieredMenuDirective,
-    psdCalendarDirective
-  ],
-  exports: [
-    psdMenuDirective,
-    psdOverlayPanelDirective,
-    psdInputMaskDirective,
-    psdSlideMenuDirective,
-    psdSplitButtonDirective,
-    psdTieredMenuDirective,
-    psdCalendarDirective
-  ],
+  declarations: DIRECTIVES,
+  exports: DIRECTIVES,
 })
 export class PrimeNGShadowDOMDirective {}

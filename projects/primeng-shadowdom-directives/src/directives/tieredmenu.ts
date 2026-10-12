@@ -10,6 +10,7 @@ import { TieredMenu } from 'primeng/tieredmenu';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
+  standalone: false,
   selector: '[psdTieredMenu]',
 })
 export class psdTieredMenuDirective {
@@ -17,6 +18,9 @@ export class psdTieredMenuDirective {
     @Host() @Self() @Optional() private readonly hostEl: TieredMenu,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
+    if (!hostEl) {
+      return;
+    }
     hostEl.bindOutsideClickListener = () => {
       if (isPlatformBrowser(platformId)) {
         if (!hostEl.outsideClickListener) {

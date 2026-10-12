@@ -6,10 +6,14 @@ import { InputMask } from 'primeng/inputmask';
 */
 
 @Directive({
+  standalone: false,
   selector: '[psdInputMask]',
 })
 export class psdInputMaskDirective {
   constructor(@Host() @Self() @Optional() private readonly hostEl: InputMask) {
+    if (!hostEl) {
+      return;
+    }
     // @ts-ignore
     hostEl.caret = (first?: number, last?: number) => {
       let range, begin, end;

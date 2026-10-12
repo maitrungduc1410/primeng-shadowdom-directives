@@ -10,6 +10,7 @@ import {
 import { SplitButton } from 'primeng/splitbutton';
 
 @Directive({
+  standalone: false,
   selector: '[psdSplitButton]',
 })
 export class psdSplitButtonDirective {
@@ -17,6 +18,9 @@ export class psdSplitButtonDirective {
     @Host() @Self() @Optional() private readonly hostEl: SplitButton,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
+    if (!hostEl) {
+      return;
+    }
     hostEl.onDropdownButtonClick = (event?: MouseEvent) => {
       hostEl.onDropdownClick.emit(event);
       hostEl.menu?.toggle({

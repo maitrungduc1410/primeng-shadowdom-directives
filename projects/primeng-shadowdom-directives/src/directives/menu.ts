@@ -10,6 +10,7 @@ import {
 import { Menu } from 'primeng/menu';
 
 @Directive({
+  standalone: false,
   selector: '[psdMenu]',
 })
 export class psdMenuDirective {
@@ -17,6 +18,9 @@ export class psdMenuDirective {
     @Host() @Self() @Optional() private readonly hostEl: Menu,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
+    if (!hostEl) {
+      return;
+    }
     hostEl.bindDocumentClickListener = () => {
       if (!hostEl.documentClickListener && isPlatformBrowser(platformId)) {
         const documentTarget: any = hostEl.el

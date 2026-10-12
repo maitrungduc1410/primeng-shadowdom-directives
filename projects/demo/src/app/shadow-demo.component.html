@@ -1,0 +1,53 @@
+<div class="demo">
+  <header>
+    <p class="eyebrow">demo app · consumes workspace library</p>
+    <h1>primeng-shadowdom-directives (v18)</h1>
+    <p class="lede">
+      This page is <code>ViewEncapsulation.ShadowDom</code>. It imports
+      <code>PrimeNGShadowDOMDirective</code> (overlay) and calls
+      <code>attachPrimeNgStylesToShadowRoot</code> (CSS clone for PrimeNG 18–21).
+    </p>
+  </header>
+
+  <section class="panel">
+    <h2>Overlays (PSD directives)</h2>
+    <div class="row">
+      <p-button label="Menu" icon="pi pi-bars" (onClick)="menu.toggle($event)" />
+      <p-menu #menu [model]="menuItems" [popup]="true" psdMenu />
+
+      <p-button
+        label="OverlayPanel"
+        icon="pi pi-info-circle"
+        (onClick)="op.toggle($event)"
+      />
+      <p-overlayPanel #op psdOverlayPanel>
+        <div class="overlay-body">Outside click should dismiss under Shadow DOM.</div>
+      </p-overlayPanel>
+
+      <p-datepicker
+        [(ngModel)]="date"
+        [showIcon]="true"
+        dateFormat="yy-mm-dd"
+        psdDatePicker
+      />
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>In-shadow controls (need CSS clone on 18–21)</h2>
+    <p class="hint">
+      Demo attaches <code>attachPrimeNgStylesToShadowRoot</code> so Button / Select
+      class styles from <code>document.head</code> apply inside this shadow host.
+    </p>
+    <div class="row">
+      <p-button label="Primary" />
+      <p-select
+        [options]="cities"
+        [(ngModel)]="city"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="City"
+      />
+    </div>
+  </section>
+</div>

@@ -3,6 +3,7 @@ import { OverlayPanel } from "primeng/overlaypanel";
 import { DomHandler } from "primeng/dom";
 
 @Directive({
+  standalone: false,
   selector: '[psdOverlayPanel]',
 })
 export class psdOverlayPanelDirective {
@@ -10,6 +11,9 @@ export class psdOverlayPanelDirective {
     @Host() @Self() @Optional() private readonly hostEl: OverlayPanel,
     private zone: NgZone
   ) {
+    if (!hostEl) {
+      return;
+    }
     hostEl.bindDocumentClickListener = () => {
       if (!hostEl.documentClickListener && hostEl.dismissable) {
         this.zone.runOutsideAngular(() => {

@@ -1,17 +1,7 @@
-import { psdMenuDirective } from './menu';
-import { psdOverlayPanelDirective } from './overlaypanel';
-import { psdInputMaskDirective } from './inputmask';
-import { psdSlideMenuDirective } from './slidemenu';
-import { psdSplitButtonDirective } from './splitbutton';
-import { psdTieredMenuDirective } from './tieredmenu';
-import { psdCalendarDirective } from './calendar';
-
-export {
-  psdMenuDirective,
-  psdOverlayPanelDirective,
-  psdInputMaskDirective,
-  psdSlideMenuDirective,
-  psdSplitButtonDirective,
-  psdTieredMenuDirective,
-  psdCalendarDirective
-};
+export { psdMenuDirective } from './menu';
+export { psdOverlayPanelDirective } from './overlaypanel';
+export { psdInputMaskDirective } from './inputmask';
+export { psdSplitButtonDirective } from './splitbutton';
+export { psdTieredMenuDirective } from './tieredmenu';
+export { psdCalendarDirective } from './calendar';
+export { psdDatePickerDirective } from './datepicker';
